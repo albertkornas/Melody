@@ -6,6 +6,8 @@
 //  Copyright © 2020 Albert Kornas. All rights reserved.
 //
 
+//This view shows the progress of the user, and how many questions they have answered as well as whether they answered correctly or incorrectly
+
 import SwiftUI
 
 struct ProblemStatus: View {

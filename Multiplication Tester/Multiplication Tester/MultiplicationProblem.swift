@@ -6,6 +6,7 @@
 //  Copyright © 2020 Albert Kornas. All rights reserved.
 //
 
+//This view displays the number of the problem, as well as the arithemtic problem itself.
 import SwiftUI
 
 struct MultiplicationProblem: View {

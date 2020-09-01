@@ -32,7 +32,6 @@ struct ContentView: View {
                 AnswerButtons()
                 Spacer().frame(height:30)
                 Button(action: {
-                    print("hi")
                 }) {
                     
                     Text("Next Question")
@@ -60,9 +59,9 @@ struct AnswerButtons: View {
         HStack {
             ForEach(0..<4) { i in
                 Button(action: {
-                    print("hi")
+                    //Placeholder for action
                 }) {
-                    
+                    //Will eventually be randomly generated
                     Text("123")
                         .padding(7.5)
                         .background(Color.blue)
