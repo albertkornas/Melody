@@ -14,8 +14,11 @@
 		1BA01F3024FC8B3400554159 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BA01F2F24FC8B3400554159 /* Preview Assets.xcassets */; };
 		1BA01F3324FC8B3400554159 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA01F3124FC8B3400554159 /* LaunchScreen.storyboard */; };
 		1BA01F3E24FC8B3400554159 /* Multiplication_TesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F3D24FC8B3400554159 /* Multiplication_TesterTests.swift */; };
-		1BA01F4924FCAAC100554159 /* MultiplicationProblem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F4824FCAAC100554159 /* MultiplicationProblem.swift */; };
-		1BA01F4D24FCABDD00554159 /* ProblemStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F4C24FCABDD00554159 /* ProblemStatus.swift */; };
+		1BA01F4924FCAAC100554159 /* MultiplicationProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F4824FCAAC100554159 /* MultiplicationProblemView.swift */; };
+		1BA01F4D24FCABDD00554159 /* ProblemStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F4C24FCABDD00554159 /* ProblemStatusView.swift */; };
+		1BC03D632502B64B0039013F /* MultiplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC03D622502B64B0039013F /* MultiplicationModel.swift */; };
+		1BC03D652502B7BA0039013F /* MultiplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC03D642502B7BA0039013F /* MultiplicationViewModel.swift */; };
+		1BC03D672502CB820039013F /* ProblemSubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC03D662502CB820039013F /* ProblemSubModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +43,11 @@
 		1BA01F3924FC8B3400554159 /* Multiplication TesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multiplication TesterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA01F3D24FC8B3400554159 /* Multiplication_TesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplication_TesterTests.swift; sourceTree = "<group>"; };
 		1BA01F3F24FC8B3400554159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1BA01F4824FCAAC100554159 /* MultiplicationProblem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationProblem.swift; sourceTree = "<group>"; };
-		1BA01F4C24FCABDD00554159 /* ProblemStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemStatus.swift; sourceTree = "<group>"; };
+		1BA01F4824FCAAC100554159 /* MultiplicationProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationProblemView.swift; sourceTree = "<group>"; };
+		1BA01F4C24FCABDD00554159 /* ProblemStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemStatusView.swift; sourceTree = "<group>"; };
+		1BC03D622502B64B0039013F /* MultiplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationModel.swift; sourceTree = "<group>"; };
+		1BC03D642502B7BA0039013F /* MultiplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationViewModel.swift; sourceTree = "<group>"; };
+		1BC03D662502CB820039013F /* ProblemSubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemSubModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,11 +89,10 @@
 		1BA01F2524FC8B3200554159 /* Multiplication Tester */ = {
 			isa = PBXGroup;
 			children = (
+				1BC03D612502AD270039013F /* Views */,
 				1BA01F2624FC8B3200554159 /* AppDelegate.swift */,
+				1BC03D642502B7BA0039013F /* MultiplicationViewModel.swift */,
 				1BA01F2824FC8B3200554159 /* SceneDelegate.swift */,
-				1BA01F2A24FC8B3200554159 /* ContentView.swift */,
-				1BA01F4C24FCABDD00554159 /* ProblemStatus.swift */,
-				1BA01F4824FCAAC100554159 /* MultiplicationProblem.swift */,
 				1BA01F2C24FC8B3400554159 /* Assets.xcassets */,
 				1BA01F3124FC8B3400554159 /* LaunchScreen.storyboard */,
 				1BA01F3424FC8B3400554159 /* Info.plist */,
@@ -111,6 +116,18 @@
 				1BA01F3F24FC8B3400554159 /* Info.plist */,
 			);
 			path = "Multiplication TesterTests";
+			sourceTree = "<group>";
+		};
+		1BC03D612502AD270039013F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1BA01F2A24FC8B3200554159 /* ContentView.swift */,
+				1BC03D622502B64B0039013F /* MultiplicationModel.swift */,
+				1BC03D662502CB820039013F /* ProblemSubModel.swift */,
+				1BA01F4C24FCABDD00554159 /* ProblemStatusView.swift */,
+				1BA01F4824FCAAC100554159 /* MultiplicationProblemView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,9 +231,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BC03D652502B7BA0039013F /* MultiplicationViewModel.swift in Sources */,
 				1BA01F2724FC8B3200554159 /* AppDelegate.swift in Sources */,
-				1BA01F4924FCAAC100554159 /* MultiplicationProblem.swift in Sources */,
-				1BA01F4D24FCABDD00554159 /* ProblemStatus.swift in Sources */,
+				1BA01F4924FCAAC100554159 /* MultiplicationProblemView.swift in Sources */,
+				1BA01F4D24FCABDD00554159 /* ProblemStatusView.swift in Sources */,
+				1BC03D672502CB820039013F /* ProblemSubModel.swift in Sources */,
+				1BC03D632502B64B0039013F /* MultiplicationModel.swift in Sources */,
 				1BA01F2924FC8B3200554159 /* SceneDelegate.swift in Sources */,
 				1BA01F2B24FC8B3200554159 /* ContentView.swift in Sources */,
 			);

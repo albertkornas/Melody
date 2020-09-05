@@ -19,7 +19,7 @@ struct ContentView: View {
                 Spacer().frame(height:60)
                 
                 //Show the 5 circles displaying status of problems (correct, incorrect, or N/A)
-                ProblemStatus()
+                ProblemStatusView()
                 Text("You've answered 2/5 questions correctly")
                     .font(.caption)
                 Spacer().frame(height:50)

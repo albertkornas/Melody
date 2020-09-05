@@ -10,7 +10,7 @@
 
 import SwiftUI
 
-struct ProblemStatus: View {
+struct ProblemStatusView: View {
     var body: some View {
         HStack {
             ForEach(0..<5) { i in

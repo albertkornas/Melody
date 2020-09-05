@@ -9,7 +9,7 @@
 //This view displays the number of the problem, as well as the arithemtic problem itself.
 import SwiftUI
 
-struct MultiplicationProblem: View {
+struct MultiplicationProblemView: View {
     var body: some View {
          VStack {
             Text("Problem 4")
