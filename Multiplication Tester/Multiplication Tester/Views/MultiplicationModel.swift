@@ -12,7 +12,7 @@ import Foundation
 
 
 struct MultiplicationModel {
-    var problems: [ProblemSubModel] = []
+    var problems: [ProblemSubModel] = [] //Array of problem sub models
     
     private let questionsPerRound = 4
     
