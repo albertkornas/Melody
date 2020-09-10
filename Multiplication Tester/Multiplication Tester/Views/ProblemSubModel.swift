@@ -22,9 +22,7 @@ class ProblemSubModel : ObservableObject {
         answer = multiplier*multiplicand
         possibleAnswers.append(answer)
         answerIndex = Int.random(in:0..<answerChoices)
-        print(answerIndex)
         var index = 0
-        print("Answer Index: %s", answerIndex)
         while (possibleAnswers.count < answerChoices) {
             if (index == answerIndex && !possibleAnswers.contains(answer)) {
                 possibleAnswers.append(answer)
@@ -43,25 +41,14 @@ class ProblemSubModel : ObservableObject {
                 answerIndex = index
             }
         }
-        
-        print(possibleAnswers)
     }
-
-    @Published var gameState : State = .inactive
+    var gameState : State = .inactive
     
     var multiplicand = 0
     var multiplier = 0
     var answer = 0
     var possibleAnswers : [Int] = []
     var answerIndex = 0
-    
-    func checkAnswer(guess: Int) {
-        if guess == answerIndex { //correct
-            gameState = .correct
-            print("Correct")
-        } else { //wrong
-            gameState = .incorrect
-        }
-    }
+
     
 }

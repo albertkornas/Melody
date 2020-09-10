@@ -58,13 +58,16 @@ struct GameRootView: View {
                 AnswerButtons(withVM: multiplicationViewModel)
                 Spacer().frame(height:30)
                 Button(action: {
+                    self.multiplicationViewModel.multiplicationModel.nextQuestion()
                 }) {
                     
-                    Text("Next Question")
+                    Text(self.multiplicationViewModel.multiplicationModel.nextQuestionText)
                         .padding(7.5)
                     .cornerRadius(5)
                     .disabled(true)
                 }
+                
+                
 
             }
         }
@@ -92,9 +95,9 @@ struct AnswerButtons: View {
     
     var body: some View {
         HStack {
-            ForEach(0..<(multiplicationVM.answerChoices)) { i in
-                GuessButtonView(index: i, numString: String(self.multiplicationVM.problems[self.multiplicationVM.questionNumber].possibleAnswers[i]))
-            }.environmentObject(multiplicationVM.problemModel)
+            ForEach(0..<(self.multiplicationVM.problems[0].answerChoices)) { i in
+                GuessButtonView(color:Color.blue, index: i, numString: String(self.multiplicationVM.problems[self.multiplicationVM.questionNumber].possibleAnswers[i]))
+            }.environmentObject(multiplicationVM.multiplicationModel)
         }
     }
 }

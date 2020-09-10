@@ -11,6 +11,8 @@
 import SwiftUI
 
 struct ProblemStatusView: View {
+    //@EnvironmentObject var problemModel : ProblemSubModel
+    
     let multiplicationVM : MultiplicationViewModel
     init(withVM: MultiplicationViewModel) {
         multiplicationVM = withVM

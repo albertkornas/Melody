@@ -11,22 +11,18 @@ import SwiftUI
 struct GuessButtonView: View {
     @EnvironmentObject var problemModel : ProblemSubModel
     
+    @EnvironmentObject var multModel : MultiplicationModel
+    let color: Color
      let index : Int
     let numString: String
      
      var body: some View {
-        Button(action: { self.problemModel.checkAnswer(guess: self.index)  }) {  //TODO: add action to make guess
+        Button(action: { self.multModel.checkAnswer(guess: self.index, problemNum: 0, answerIndex: 0)  }) {  //TODO: add action to make guess
             Text(numString)
                 .padding(7.5)
-                .background(Color.blue)
+                .background(color)
                 .foregroundColor(.white)
             .cornerRadius(5)
         }
      }
-}
-
-struct ColorButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        GuessButtonView(index: 0, numString: "0")
-    }
 }

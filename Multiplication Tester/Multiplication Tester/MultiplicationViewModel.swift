@@ -10,12 +10,13 @@ import Foundation
 
 class MultiplicationViewModel: ObservableObject {
     @Published var multiplicationModel = MultiplicationModel() //with: x problems per round
-    @Published var problemModel = ProblemSubModel()
+    //@Published var problemModel = multiplicationModel.problems
     //Intents from View
     //var multiplicand : String {MultiplicationModel}
     var questionNumber : Int {multiplicationModel.currentQuestionCount}
     var totalQuestions : Int {multiplicationModel.problemCount}
     var problems: [ProblemSubModel] {multiplicationModel.problems}
-    var answerChoices : Int {problemModel.answerChoices}
-    var gameState : State { problemModel.gameState }
+    //var answerChoices : Int {problemModel.answerChoices}
+    //var gameState : State { problemModel.gameState }
+    var nextQuestion: String {multiplicationModel.nextQuestionText}
 }
