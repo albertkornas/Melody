@@ -9,12 +9,59 @@
 import Foundation
 
 enum State {
-    case inactive, correct, incorrect
+    case inactive, active, correct, incorrect
 }
 
-struct ProblemSubModel {
+class ProblemSubModel : ObservableObject {
+    let lowMultiplicationNumber = 1 //The lower bound of the multiplicand/multiplier (inclusive)
+    let highMultiplicationNumber = 16 //The higher bound of the multiplicand/multiplier (exclusive)
+    let answerChoices = 4 //The number of answer choices available to the user
+    init() {
+        multiplicand = Int.random(in:lowMultiplicationNumber..<highMultiplicationNumber)
+        multiplier = Int.random(in:lowMultiplicationNumber..<highMultiplicationNumber)
+        answer = multiplier*multiplicand
+        possibleAnswers.append(answer)
+        answerIndex = Int.random(in:0..<answerChoices)
+        print(answerIndex)
+        var index = 0
+        print("Answer Index: %s", answerIndex)
+        while (possibleAnswers.count < answerChoices) {
+            if (index == answerIndex && !possibleAnswers.contains(answer)) {
+                possibleAnswers.append(answer)
+            } else {
+                let randomChoice = Int.random(in:answer-5..<answer+6)
+                if (!possibleAnswers.contains(randomChoice) && randomChoice > 0) {
+                    possibleAnswers.append(randomChoice)
+                }
+            }
+            index += 1
+        }
+        
+        for (index, value) in possibleAnswers.enumerated()
+        {
+            if value == answer {
+                answerIndex = index
+            }
+        }
+        
+        print(possibleAnswers)
+    }
 
-    //Placeholder values
-    private var multiplicand = 0
-    private var multiplier = 0
+    @Published var gameState : State = .inactive
+    
+    var multiplicand = 0
+    var multiplier = 0
+    var answer = 0
+    var possibleAnswers : [Int] = []
+    var answerIndex = 0
+    
+    func checkAnswer(guess: Int) {
+        if guess == answerIndex { //correct
+            gameState = .correct
+            print("Correct")
+        } else { //wrong
+            gameState = .incorrect
+        }
+    }
+    
 }

@@ -11,29 +11,28 @@
 import SwiftUI
 
 struct ProblemStatusView: View {
+    let multiplicationVM : MultiplicationViewModel
+    init(withVM: MultiplicationViewModel) {
+        multiplicationVM = withVM
+    }
+    
     var body: some View {
         HStack {
-            ForEach(0..<5) { i in
-                if (i < 2) {
+            ForEach(0..<multiplicationVM.totalQuestions) { i in
+                if (self.multiplicationVM.problems[i].gameState == .inactive) {
                     Circle()
-                    .fill(Color.green)
-                    .frame(width: 15, height: 15)
-                } else if (i == 2){
+                        .fill(Color.white)
+                        .frame(width: 15, height: 15)
+                } else if (self.multiplicationVM.problems[i].gameState == .correct) {
                     Circle()
-                    .fill(Color.red)
-                    .frame(width: 15, height: 15)
-                } else {
+                        .fill(Color.green)
+                        .frame(width: 15, height: 15)
+                } else if (self.multiplicationVM.problems[i].gameState == .incorrect) {
                     Circle()
-                    .fill(Color.white)
-                    .frame(width: 15, height: 15)
-                }
+                        .fill(Color.red)
+                        .frame(width: 15, height: 15)
+                } 
             }
         }
-    }
-}
-
-struct ProblemStatus_Previews: PreviewProvider {
-    static var previews: some View {
-        ProblemStatus()
     }
 }

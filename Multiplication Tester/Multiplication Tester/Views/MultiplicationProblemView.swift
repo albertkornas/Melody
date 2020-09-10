@@ -10,18 +10,22 @@
 import SwiftUI
 
 struct MultiplicationProblemView: View {
+        let multiplicationVM : MultiplicationViewModel
+    init(withVM: MultiplicationViewModel) {
+        multiplicationVM = withVM
+    }
     var body: some View {
          VStack {
-            Text("Problem 4")
+            Text("Problem \(multiplicationVM.questionNumber)")
             Spacer().frame(height:20)
             
                        VStack(alignment: .trailing) {
-                           Text("17")
+                        Text(String(multiplicationVM.problems[multiplicationVM.questionNumber].multiplicand))
                                .font(.headline)
                            HStack {
                                Text("X")
                                    .font(.headline)
-                               Text("  8")
+                               Text(String(multiplicationVM.problems[multiplicationVM.questionNumber].multiplier))
                                    .font(.headline)
                            }
                        }
@@ -30,8 +34,4 @@ struct MultiplicationProblemView: View {
     }
 }
 
-struct MultiplicationProblem_Previews: PreviewProvider {
-    static var previews: some View {
-        MultiplicationProblem()
-    }
-}
+

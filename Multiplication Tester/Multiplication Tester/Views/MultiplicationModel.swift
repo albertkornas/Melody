@@ -10,15 +10,30 @@
 
 import Foundation
 
-
-struct MultiplicationModel {
+class MultiplicationModel {
     var problems: [ProblemSubModel] = [] //Array of problem sub models
+    private let questionsPerRound = 1
+    var problemCount: Int
     
-    private let questionsPerRound = 4
+    init() {
+        problemCount = questionsPerRound
+        for _ in 0..<problemCount {
+            let newProblem = ProblemSubModel.init()
+            problems.append(newProblem)
+        }
+        print(problems.count)
+    }
     
-    private var currentQuestionCount = 0
-    mutating func incrementQuestionCount() {
+    @Published var currentQuestionCount = 0
+    
+    func incrementQuestionCount() {
         currentQuestionCount += 1
     }
+    
+    func resetGame() {
+        
+
+    }
+    
     
 }
