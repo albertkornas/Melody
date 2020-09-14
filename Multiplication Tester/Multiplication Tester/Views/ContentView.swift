@@ -10,6 +10,7 @@ import SwiftUI
 
 
 struct ContentView: View {
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -35,7 +36,11 @@ struct ContentView: View {
 }
 
 struct GameRootView: View {
-    @ObservedObject var multiplicationViewModel = MultiplicationViewModel()
+    //@ObservedObject var multiplicationViewModel = MultiplicationViewModel()
+    @State private var multiplicationModel = MultiplicationModel()
+    
+    var questionNumber : Int {multiplicationModel.currentQuestionCount}
+    var totalQuestions : Int {multiplicationModel.problemCount}
     var body: some View {
         ZStack {
             Color.orange.edgesIgnoringSafeArea(.all)
@@ -45,23 +50,31 @@ struct GameRootView: View {
                 Spacer().frame(height:60)
                 
                 //Show the 5 circles displaying status of problems (correct, incorrect, or N/A)
-                ProblemStatusView(withVM: multiplicationViewModel)
-                Text("You've answered \(multiplicationViewModel.questionNumber)/\(multiplicationViewModel.totalQuestions) questions correctly")
+                ProblemStatusView(withModel: multiplicationModel)
+                Text("You've answered \(multiplicationModel.currentQuestionCount)/\(totalQuestions) questions correctly")
                     .font(.caption)
                 Spacer().frame(height:50)
                 
                 
                 //Show the randomly generated multiplication problem
-                MultiplicationProblemView(withVM: multiplicationViewModel)
+                MultiplicationProblemView(withModel: multiplicationModel)
                 Spacer().frame(height: 30)
                 
-                AnswerButtons(withVM: multiplicationViewModel)
+                //AnswerButtons(withModel: multiplicationModel)
+                HStack {
+                    ForEach(0..<(self.multiplicationModel.problems[0].answerChoices)) { i in
+                        
+                        
+                        GuessButtonView(model: self.$multiplicationModel, color:Color.blue, index: i, numString: String(self.multiplicationModel.problems[self.questionNumber].possibleAnswers[i]))
+                    }.environmentObject(multiplicationModel)
+                }
+                
                 Spacer().frame(height:30)
                 Button(action: {
-                    self.multiplicationViewModel.multiplicationModel.nextQuestion()
+                    self.multiplicationModel.nextQuestion()
                 }) {
                     
-                    Text(self.multiplicationViewModel.multiplicationModel.nextQuestionText)
+                    Text(self.multiplicationModel.nextQuestionText)
                         .padding(7.5)
                     .cornerRadius(5)
                     .disabled(true)
@@ -86,18 +99,19 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
-struct AnswerButtons: View {
-    let multiplicationVM : MultiplicationViewModel
-    init(withVM: MultiplicationViewModel) {
-        multiplicationVM = withVM
+/*struct AnswerButtons: View {
+    let multiplicationModel : MultiplicationModel
+    init(withModel: MultiplicationModel) {
+        multiplicationModel = withModel
     }
-    
-    
+    var questionNumber : Int {multiplicationModel.currentQuestionCount}
     var body: some View {
         HStack {
-            ForEach(0..<(self.multiplicationVM.problems[0].answerChoices)) { i in
-                GuessButtonView(color:Color.blue, index: i, numString: String(self.multiplicationVM.problems[self.multiplicationVM.questionNumber].possibleAnswers[i]))
-            }.environmentObject(multiplicationVM.multiplicationModel)
+            ForEach(0..<(self.multiplicationModel.problems[0].answerChoices)) { i in
+                
+                
+                GuessButtonView(multiplicationModel: $multiplicationModel, color:Color.blue, index: i, numString: String(self.multiplicationModel.problems[self.questionNumber].possibleAnswers[i]))
+            }.environmentObject(multiplicationModel)
         }
     }
-}
+}*/

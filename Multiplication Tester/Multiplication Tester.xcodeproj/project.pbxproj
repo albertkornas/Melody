@@ -17,7 +17,6 @@
 		1BA01F4924FCAAC100554159 /* MultiplicationProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F4824FCAAC100554159 /* MultiplicationProblemView.swift */; };
 		1BA01F4D24FCABDD00554159 /* ProblemStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F4C24FCABDD00554159 /* ProblemStatusView.swift */; };
 		1BC03D632502B64B0039013F /* MultiplicationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC03D622502B64B0039013F /* MultiplicationModel.swift */; };
-		1BC03D652502B7BA0039013F /* MultiplicationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC03D642502B7BA0039013F /* MultiplicationViewModel.swift */; };
 		1BC03D672502CB820039013F /* ProblemSubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC03D662502CB820039013F /* ProblemSubModel.swift */; };
 		1BE10C8B250980D700E2F76E /* GuessButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE10C8A250980D700E2F76E /* GuessButtonView.swift */; };
 /* End PBXBuildFile section */
@@ -47,7 +46,6 @@
 		1BA01F4824FCAAC100554159 /* MultiplicationProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationProblemView.swift; sourceTree = "<group>"; };
 		1BA01F4C24FCABDD00554159 /* ProblemStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemStatusView.swift; sourceTree = "<group>"; };
 		1BC03D622502B64B0039013F /* MultiplicationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationModel.swift; sourceTree = "<group>"; };
-		1BC03D642502B7BA0039013F /* MultiplicationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationViewModel.swift; sourceTree = "<group>"; };
 		1BC03D662502CB820039013F /* ProblemSubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemSubModel.swift; sourceTree = "<group>"; };
 		1BE10C8A250980D700E2F76E /* GuessButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +91,6 @@
 			children = (
 				1BC03D612502AD270039013F /* Views */,
 				1BA01F2624FC8B3200554159 /* AppDelegate.swift */,
-				1BC03D642502B7BA0039013F /* MultiplicationViewModel.swift */,
 				1BA01F2824FC8B3200554159 /* SceneDelegate.swift */,
 				1BA01F2C24FC8B3400554159 /* Assets.xcassets */,
 				1BA01F3124FC8B3400554159 /* LaunchScreen.storyboard */,
@@ -234,7 +231,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BC03D652502B7BA0039013F /* MultiplicationViewModel.swift in Sources */,
 				1BA01F2724FC8B3200554159 /* AppDelegate.swift in Sources */,
 				1BA01F4924FCAAC100554159 /* MultiplicationProblemView.swift in Sources */,
 				1BA01F4D24FCABDD00554159 /* ProblemStatusView.swift in Sources */,

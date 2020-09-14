@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum State {
+enum problemState {
     case inactive, active, correct, incorrect
 }
 
@@ -42,7 +42,7 @@ class ProblemSubModel : ObservableObject {
             }
         }
     }
-    var gameState : State = .inactive
+    var gameState : problemState = .inactive
     
     var multiplicand = 0
     var multiplier = 0

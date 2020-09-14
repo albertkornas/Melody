@@ -9,15 +9,15 @@
 import SwiftUI
 
 struct GuessButtonView: View {
-    @EnvironmentObject var problemModel : ProblemSubModel
+    //@EnvironmentObject var problemModel : ProblemSubModel
     
-    @EnvironmentObject var multModel : MultiplicationModel
+    @Binding var model : MultiplicationModel
     let color: Color
      let index : Int
     let numString: String
      
      var body: some View {
-        Button(action: { self.multModel.checkAnswer(guess: self.index, problemNum: 0, answerIndex: 0)  }) {  //TODO: add action to make guess
+        Button(action: { self.model.checkAnswer(guess: self.index, problemNum: 0, answerIndex: 0)  }) { 
             Text(numString)
                 .padding(7.5)
                 .background(color)

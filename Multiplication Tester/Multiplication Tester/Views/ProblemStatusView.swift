@@ -13,23 +13,24 @@ import SwiftUI
 struct ProblemStatusView: View {
     //@EnvironmentObject var problemModel : ProblemSubModel
     
-    let multiplicationVM : MultiplicationViewModel
-    init(withVM: MultiplicationViewModel) {
-        multiplicationVM = withVM
+    let multiplicationModel : MultiplicationModel
+    init(withModel: MultiplicationModel) {
+        multiplicationModel = withModel
     }
-    
+    var totalQuestions : Int {multiplicationModel.problemCount}
+    var problems: [ProblemSubModel] {multiplicationModel.problems}
     var body: some View {
         HStack {
-            ForEach(0..<multiplicationVM.totalQuestions) { i in
-                if (self.multiplicationVM.problems[i].gameState == .inactive) {
+            ForEach(0..<totalQuestions) { i in
+                if (self.problems[i].gameState == .inactive) {
                     Circle()
                         .fill(Color.white)
                         .frame(width: 15, height: 15)
-                } else if (self.multiplicationVM.problems[i].gameState == .correct) {
+                } else if (self.problems[i].gameState == .correct) {
                     Circle()
                         .fill(Color.green)
                         .frame(width: 15, height: 15)
-                } else if (self.multiplicationVM.problems[i].gameState == .incorrect) {
+                } else if (self.problems[i].gameState == .incorrect) {
                     Circle()
                         .fill(Color.red)
                         .frame(width: 15, height: 15)

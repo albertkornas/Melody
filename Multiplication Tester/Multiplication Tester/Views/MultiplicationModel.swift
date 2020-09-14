@@ -11,11 +11,11 @@
 import Foundation
 
 enum OverallState {
-    case playing, finished
+    case notPlaying, playing, finished
 }
 
 class MultiplicationModel : ObservableObject {
-    @Published var problems: [ProblemSubModel] = [] //Array of problem sub models
+     var problems: [ProblemSubModel] = [] //Array of problem sub models
     private let questionsPerRound = 1
     var problemCount: Int
     
@@ -26,14 +26,26 @@ class MultiplicationModel : ObservableObject {
             problems.append(newProblem)
         }
     }
+    @Published var overallState : OverallState = .notPlaying
     
-    var overallState : OverallState {
+    /*var overallState : OverallState {
         for problem in problems {
             if problem.gameState != .inactive {
                 return .finished
             }
         }
         return .playing
+    }*/
+    
+    func advanceGameState() {
+        switch overallState {
+        case .notPlaying:
+            overallState = .playing
+        case .playing:
+            overallState = .finished
+        default:
+            assert(false, "Cannot advance state")
+        }
     }
     
     var nextQuestionText: String {
@@ -42,9 +54,12 @@ class MultiplicationModel : ObservableObject {
             return "Next Question"
         case .finished:
             return "Reset"
+        case .notPlaying:
+            return "-"
         }
     }
-    @Published var currentQuestionCount = 0
+    
+    var currentQuestionCount = 0
     
     func incrementQuestionCount() {
         currentQuestionCount += 1
@@ -62,6 +77,8 @@ class MultiplicationModel : ObservableObject {
         if guess == answerIndex { //correct
             problems[problemNum].gameState = .correct
             currentQuestionCount += 1
+            print("Correct")
+            print(currentQuestionCount)
         } else { //wrong
             problems[problemNum].gameState = .incorrect
         }
