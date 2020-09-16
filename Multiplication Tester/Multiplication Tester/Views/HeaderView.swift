@@ -10,15 +10,17 @@ import SwiftUI
 
 struct HeaderView: View {
     let arithmeticModel : ArithmeticModel
-    var modeOfArithmetic : String {arithmeticModel.modeIndex.rawValue.capitalized}
-    var difficulty: String {arithmeticModel.difficultyIndex.rawValue.capitalized}
+    var difficulty : ArithmeticModel.Difficulty { arithmeticModel.difficultyIndex}
+    var modeOfArithmeticText : String {arithmeticModel.modeIndex.rawValue.capitalized}
+    var difficultyText: String {arithmeticModel.difficultyIndex.rawValue.capitalized}
     
     var body: some View {
         VStack(alignment: .leading, spacing: 7.5) {
-        Text("\(modeOfArithmetic) Challenge")
+        Text("\(modeOfArithmeticText) Challenge")
             .font(.largeTitle)
-        Text("\(difficulty) mode")
-            .font(.caption)
+        Text("\(difficultyText) Difficulty")
+            .font(.body)
+            .foregroundColor(Color.fontColor(for: difficulty))
         }
     }
 }

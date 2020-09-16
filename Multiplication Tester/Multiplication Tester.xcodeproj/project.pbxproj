@@ -11,6 +11,7 @@
 		1B56023A25127C1E00360E68 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B56023925127C1E00360E68 /* PreferencesView.swift */; };
 		1B56023C25127F9B00360E68 /* PreferenceButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B56023B25127F9B00360E68 /* PreferenceButtonView.swift */; };
 		1B56023E2512A5D600360E68 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B56023D2512A5D600360E68 /* HeaderView.swift */; };
+		1B5602422512C0F600360E68 /* ViewConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B5602412512C0F600360E68 /* ViewConstants.swift */; };
 		1BA01F2724FC8B3200554159 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F2624FC8B3200554159 /* AppDelegate.swift */; };
 		1BA01F2924FC8B3200554159 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F2824FC8B3200554159 /* SceneDelegate.swift */; };
 		1BA01F2B24FC8B3200554159 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F2A24FC8B3200554159 /* ContentView.swift */; };
@@ -18,7 +19,7 @@
 		1BA01F3024FC8B3400554159 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BA01F2F24FC8B3400554159 /* Preview Assets.xcassets */; };
 		1BA01F3324FC8B3400554159 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1BA01F3124FC8B3400554159 /* LaunchScreen.storyboard */; };
 		1BA01F3E24FC8B3400554159 /* Multiplication_TesterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F3D24FC8B3400554159 /* Multiplication_TesterTests.swift */; };
-		1BA01F4924FCAAC100554159 /* MultiplicationProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F4824FCAAC100554159 /* MultiplicationProblemView.swift */; };
+		1BA01F4924FCAAC100554159 /* ArithmeticProblemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F4824FCAAC100554159 /* ArithmeticProblemView.swift */; };
 		1BA01F4D24FCABDD00554159 /* ProblemStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA01F4C24FCABDD00554159 /* ProblemStatusView.swift */; };
 		1BC03D632502B64B0039013F /* ArithmeticModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC03D622502B64B0039013F /* ArithmeticModel.swift */; };
 		1BC03D672502CB820039013F /* ProblemSubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BC03D662502CB820039013F /* ProblemSubModel.swift */; };
@@ -40,6 +41,7 @@
 		1B56023925127C1E00360E68 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		1B56023B25127F9B00360E68 /* PreferenceButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceButtonView.swift; sourceTree = "<group>"; };
 		1B56023D2512A5D600360E68 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		1B5602412512C0F600360E68 /* ViewConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstants.swift; sourceTree = "<group>"; };
 		1BA01F2324FC8B3200554159 /* Multiplication Tester.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiplication Tester.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA01F2624FC8B3200554159 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1BA01F2824FC8B3200554159 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,7 +53,7 @@
 		1BA01F3924FC8B3400554159 /* Multiplication TesterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Multiplication TesterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA01F3D24FC8B3400554159 /* Multiplication_TesterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multiplication_TesterTests.swift; sourceTree = "<group>"; };
 		1BA01F3F24FC8B3400554159 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1BA01F4824FCAAC100554159 /* MultiplicationProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiplicationProblemView.swift; sourceTree = "<group>"; };
+		1BA01F4824FCAAC100554159 /* ArithmeticProblemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticProblemView.swift; sourceTree = "<group>"; };
 		1BA01F4C24FCABDD00554159 /* ProblemStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemStatusView.swift; sourceTree = "<group>"; };
 		1BC03D622502B64B0039013F /* ArithmeticModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArithmeticModel.swift; sourceTree = "<group>"; };
 		1BC03D662502CB820039013F /* ProblemSubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProblemSubModel.swift; sourceTree = "<group>"; };
@@ -76,6 +78,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B56023F2512C02E00360E68 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1BC03D622502B64B0039013F /* ArithmeticModel.swift */,
+				1BC03D662502CB820039013F /* ProblemSubModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1B5602402512C07300360E68 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1B18DC7E25111E7900B0CC49 /* Color+Background.swift */,
+				1B5602412512C0F600360E68 /* ViewConstants.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		1BA01F1A24FC8B3200554159 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +117,8 @@
 		1BA01F2524FC8B3200554159 /* Multiplication Tester */ = {
 			isa = PBXGroup;
 			children = (
+				1B5602402512C07300360E68 /* Components */,
+				1B56023F2512C02E00360E68 /* Models */,
 				1BC03D612502AD270039013F /* Views */,
 				1BA01F2624FC8B3200554159 /* AppDelegate.swift */,
 				1BA01F2824FC8B3200554159 /* SceneDelegate.swift */,
@@ -131,13 +153,10 @@
 				1BA01F2A24FC8B3200554159 /* ContentView.swift */,
 				1B56023D2512A5D600360E68 /* HeaderView.swift */,
 				1B56023B25127F9B00360E68 /* PreferenceButtonView.swift */,
-				1B18DC7E25111E7900B0CC49 /* Color+Background.swift */,
 				1BE10C8A250980D700E2F76E /* GuessButtonView.swift */,
-				1BC03D622502B64B0039013F /* ArithmeticModel.swift */,
-				1BC03D662502CB820039013F /* ProblemSubModel.swift */,
 				1B56023925127C1E00360E68 /* PreferencesView.swift */,
 				1BA01F4C24FCABDD00554159 /* ProblemStatusView.swift */,
-				1BA01F4824FCAAC100554159 /* MultiplicationProblemView.swift */,
+				1BA01F4824FCAAC100554159 /* ArithmeticProblemView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -245,10 +264,11 @@
 			files = (
 				1B56023C25127F9B00360E68 /* PreferenceButtonView.swift in Sources */,
 				1BA01F2724FC8B3200554159 /* AppDelegate.swift in Sources */,
-				1BA01F4924FCAAC100554159 /* MultiplicationProblemView.swift in Sources */,
+				1BA01F4924FCAAC100554159 /* ArithmeticProblemView.swift in Sources */,
 				1BA01F4D24FCABDD00554159 /* ProblemStatusView.swift in Sources */,
 				1B18DC7F25111E7900B0CC49 /* Color+Background.swift in Sources */,
 				1BE10C8B250980D700E2F76E /* GuessButtonView.swift in Sources */,
+				1B5602422512C0F600360E68 /* ViewConstants.swift in Sources */,
 				1B56023A25127C1E00360E68 /* PreferencesView.swift in Sources */,
 				1B56023E2512A5D600360E68 /* HeaderView.swift in Sources */,
 				1BC03D672502CB820039013F /* ProblemSubModel.swift in Sources */,

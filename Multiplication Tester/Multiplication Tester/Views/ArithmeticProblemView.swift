@@ -9,7 +9,7 @@
 //This view displays the number of the problem, as well as the arithemtic problem itself.
 import SwiftUI
 
-struct MultiplicationProblemView: View {
+struct ArithmeticProblemView: View {
     let arithmeticModel : ArithmeticModel
     init(withModel: ArithmeticModel) {
         arithmeticModel = withModel

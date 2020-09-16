@@ -27,7 +27,7 @@ struct PreferencesView: View {
                 Section(header: Text("Choose Difficulty")) {
                     Picker("Difficulty", selection: $difficultyIndex) {
                         ForEach(ArithmeticModel.Difficulty.allCases) {
-                            Text($0.rawValue).tag($0)
+                            Text($0.rawValue.capitalized).tag($0)
                         }
                     }
                     
@@ -36,7 +36,7 @@ struct PreferencesView: View {
                 Section(header: Text("Choose Arithmetic Mode")) {
                     Picker("Mode", selection: $modeIndex) {
                         ForEach(ArithmeticModel.Mode.allCases) {
-                            Text($0.rawValue).tag($0)
+                            Text($0.rawValue.capitalized).tag($0)
                         }
                     }
                     

@@ -16,7 +16,7 @@ struct ContentView: View {
             ZStack {
                 Color.pink.edgesIgnoringSafeArea(.all)
                 VStack(alignment:.center, spacing: 50) {
-                    Text("Arithmetic Challenge")
+                    Text(ViewConstants.startingScreenTitle)
                         .foregroundColor(.white)
                         .font(.system(size: 40, weight: .bold, design: .rounded))
                         .multilineTextAlignment(.center)
@@ -36,14 +36,10 @@ struct ContentView: View {
 }
 
 struct GameRootView: View {
-    //@ObservedObject var multiplicationViewModel = MultiplicationViewModel()
     @State private var arithmeticModel = ArithmeticModel()
-    
-    
     var questionNumber : Int {arithmeticModel.currentQuestionCount}
     var totalQuestions : Int {arithmeticModel.questionsPerRound}
 
-    
     var body: some View {
         ZStack {
             Color.orange.edgesIgnoringSafeArea(.all)
@@ -65,7 +61,7 @@ struct GameRootView: View {
                 }
                 
                 //Show the randomly generated multiplication problem
-                MultiplicationProblemView(withModel: arithmeticModel)
+                ArithmeticProblemView(withModel: arithmeticModel)
 
                 
                 AnswerButtons(arithmeticModel: $arithmeticModel)
@@ -77,7 +73,7 @@ struct GameRootView: View {
                     
                     Text(self.arithmeticModel.nextQuestionText)
                         .padding(7.5)
-                    .cornerRadius(5)
+                        .cornerRadius(CGFloat(ViewConstants.buttonCornerRadius))
                     .disabled(true)
                 }
                 

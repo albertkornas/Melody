@@ -20,5 +20,16 @@ extension Color {
             return Color.white
             }
     }
+    
+    static func fontColor(for difficulty: ArithmeticModel.Difficulty) -> Color {
+        switch difficulty {
+        case .easy:
+            return Color.green
+        case .medium:
+            return Color.yellow
+        case .hard:
+            return Color.red
+            }
+    }
 }
 
