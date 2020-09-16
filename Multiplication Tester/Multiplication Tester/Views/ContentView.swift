@@ -16,7 +16,7 @@ struct ContentView: View {
             ZStack {
                 Color.pink.edgesIgnoringSafeArea(.all)
                 VStack(alignment:.center, spacing: 50) {
-                    Text("Multiplication Tester")
+                    Text("Arithmetic Challenge")
                         .foregroundColor(.white)
                         .font(.system(size: 40, weight: .bold, design: .rounded))
                         .multilineTextAlignment(.center)
@@ -37,48 +37,52 @@ struct ContentView: View {
 
 struct GameRootView: View {
     //@ObservedObject var multiplicationViewModel = MultiplicationViewModel()
-    @State private var multiplicationModel = MultiplicationModel()
+    @State private var arithmeticModel = ArithmeticModel()
     
-    var questionNumber : Int {multiplicationModel.currentQuestionCount}
-    var totalQuestions : Int {multiplicationModel.problemCount}
+    
+    var questionNumber : Int {arithmeticModel.currentQuestionCount}
+    var totalQuestions : Int {arithmeticModel.questionsPerRound}
+
+    
     var body: some View {
         ZStack {
             Color.orange.edgesIgnoringSafeArea(.all)
-            VStack {
-                Text("Multiplication Exercises")
-                    .font(.largeTitle)
-                Spacer().frame(height:60)
+            VStack(alignment: .center, spacing: 25) {
+
+                HeaderView(arithmeticModel: arithmeticModel)
+
                 
-                //Show the 5 circles displaying status of problems (correct, incorrect, or N/A)
-                ProblemStatusView(withModel: multiplicationModel)
-                Text("You've answered \(multiplicationModel.currentQuestionCount)/\(totalQuestions) questions correctly")
+                //Show the x # of circles displaying status of problems (correct, incorrect, or N/A), as well as text to show user
+                VStack(spacing:10) {
+                    HStack {
+                ForEach(0..<totalQuestions, id: \.self) { i in
+                    ProblemStatusView(arithmeticModel: self.arithmeticModel, questionNumber: i)
+                    }
+                    }
+                Text("You've answered \(arithmeticModel.correctAnswers)/\(totalQuestions) questions correctly")
                     .font(.caption)
-                Spacer().frame(height:50)
-                
-                
-                //Show the randomly generated multiplication problem
-                MultiplicationProblemView(withModel: multiplicationModel)
-                Spacer().frame(height: 30)
-                
-                //AnswerButtons(withModel: multiplicationModel)
-                HStack {
-                    ForEach(0..<(self.multiplicationModel.problems[0].answerChoices)) { i in
-                        
-                        
-                        GuessButtonView(model: self.$multiplicationModel, color:Color.blue, index: i, numString: String(self.multiplicationModel.problems[self.questionNumber].possibleAnswers[i]))
-                    }.environmentObject(multiplicationModel)
+
                 }
                 
-                Spacer().frame(height:30)
+                //Show the randomly generated multiplication problem
+                MultiplicationProblemView(withModel: arithmeticModel)
+
+                
+                AnswerButtons(arithmeticModel: $arithmeticModel)
+                
+
                 Button(action: {
-                    self.multiplicationModel.nextQuestion()
+                    self.arithmeticModel.nextQuestion()
                 }) {
                     
-                    Text(self.multiplicationModel.nextQuestionText)
+                    Text(self.arithmeticModel.nextQuestionText)
                         .padding(7.5)
                     .cornerRadius(5)
                     .disabled(true)
                 }
+                
+                PreferenceButtonView(questionsPerRound: self.$arithmeticModel.questionsPerRound, difficultyIndex: self.$arithmeticModel.difficultyIndex, arithmeticModel: self.arithmeticModel, modeIndex: self.$arithmeticModel.modeIndex)
+                
                 
                 
 
@@ -99,19 +103,17 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
-/*struct AnswerButtons: View {
-    let multiplicationModel : MultiplicationModel
-    init(withModel: MultiplicationModel) {
-        multiplicationModel = withModel
-    }
-    var questionNumber : Int {multiplicationModel.currentQuestionCount}
+struct AnswerButtons: View { //This view contains the 4 guess buttons
+    @Binding var arithmeticModel : ArithmeticModel
+    var questionNumber : Int {arithmeticModel.currentQuestionCount}
     var body: some View {
+        VStack(spacing: 20.0) {
         HStack {
-            ForEach(0..<(self.multiplicationModel.problems[0].answerChoices)) { i in
-                
-                
-                GuessButtonView(multiplicationModel: $multiplicationModel, color:Color.blue, index: i, numString: String(self.multiplicationModel.problems[self.questionNumber].possibleAnswers[i]))
-            }.environmentObject(multiplicationModel)
+            ForEach(0..<(self.arithmeticModel.problems[0].answerChoices)) { i in
+                GuessButtonView(model: self.$arithmeticModel, color:Color.blue, index: i, numString: String(self.arithmeticModel.problems[self.questionNumber].possibleAnswers[i]), ansIndex: self.arithmeticModel.problems[self.questionNumber].answerIndex)
+            }
+        }
+                            Text(self.arithmeticModel.problems[self.questionNumber].nextQuestionText)
         }
     }
-}*/
+}

@@ -8,19 +8,44 @@
 
 import Foundation
 
-enum problemState {
+enum ProblemState {
     case inactive, active, correct, incorrect
 }
 
-class ProblemSubModel : ObservableObject {
-    let lowMultiplicationNumber = 1 //The lower bound of the multiplicand/multiplier (inclusive)
-    let highMultiplicationNumber = 16 //The higher bound of the multiplicand/multiplier (exclusive)
+struct ProblemSubModel {
+    
+
+
     let answerChoices = 4 //The number of answer choices available to the user
-    init() {
-        multiplicand = Int.random(in:lowMultiplicationNumber..<highMultiplicationNumber)
-        multiplier = Int.random(in:lowMultiplicationNumber..<highMultiplicationNumber)
-        answer = multiplier*multiplicand
-        possibleAnswers.append(answer)
+    init(mode: ArithmeticModel.Mode, difficulty: ArithmeticModel.Difficulty) {
+        var arithmeticRange : Range = 0..<0
+        
+        switch difficulty {
+        case .easy:
+            arithmeticRange = 1..<11
+        case .medium:
+            if (mode == .addition) {
+                arithmeticRange = 7..<100
+            } else {
+                arithmeticRange = 7..<16
+            }
+        case .hard:
+            if (mode == .addition) {
+                arithmeticRange = 50..<1000
+            } else {
+                arithmeticRange = 12..<31
+            }
+        }
+        
+        firstArithmeticNumber = Int.random(in:arithmeticRange)
+        secondArithmeticNumber = Int.random(in:arithmeticRange)
+        
+        if (mode == .multiplication) {
+            answer = firstArithmeticNumber*secondArithmeticNumber
+        } else {
+            answer = firstArithmeticNumber+secondArithmeticNumber
+        }
+        //possibleAnswers.append(answer)
         answerIndex = Int.random(in:0..<answerChoices)
         var index = 0
         while (possibleAnswers.count < answerChoices) {
@@ -41,14 +66,29 @@ class ProblemSubModel : ObservableObject {
                 answerIndex = index
             }
         }
+
     }
-    var gameState : problemState = .inactive
+    var gameState : ProblemState = .inactive
     
-    var multiplicand = 0
-    var multiplier = 0
+    var firstArithmeticNumber = 0
+    var secondArithmeticNumber = 0
     var answer = 0
     var possibleAnswers : [Int] = []
     var answerIndex = 0
+    
+    var nextQuestionText: String {
+        switch gameState {
+        case .correct:
+            return "Correct!"
+        case .incorrect:
+            return "Incorrect! The correct answer was \(answer)."
+        default:
+            return ""
+        }
+    }
+    
+    
+
 
     
 }
