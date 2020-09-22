@@ -89,7 +89,6 @@
 			children = (
 				1B536A7E251A5C1E001747E9 /* Color+PokemonType.swift */,
 				1B536A82251A5C45001747E9 /* Models */,
-				1B536A7C251A5C1E001747E9 /* pokedex.json */,
 				1B536A7D251A5C1E001747E9 /* PokemonType.swift */,
 				1B536A5A251A5BD1001747E9 /* AppDelegate.swift */,
 				1B536A5C251A5BD1001747E9 /* SceneDelegate.swift */,
@@ -123,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				1B536A83251A5C64001747E9 /* PokemonModel.swift */,
+				1B536A7C251A5C1E001747E9 /* pokedex.json */,
 			);
 			path = Models;
 			sourceTree = "<group>";

@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    let model = PokemonModel()
     var body: some View {
         Text("Hello, World!")
     }
