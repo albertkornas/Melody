@@ -29,7 +29,7 @@ struct Pokemon: Codable {
         case nextEvolution = "next_evolution"
         case prevEvolution = "prev_evolution"
     }
-}
+}//added branch
 
 typealias AllPokemon = [Pokemon]
 
