@@ -29,7 +29,7 @@ struct Pokemon: Codable {
         case nextEvolution = "next_evolution"
         case prevEvolution = "prev_evolution"
     }
-}//added branch
+}
 
 typealias AllPokemon = [Pokemon]
 
@@ -51,5 +51,15 @@ struct PokemonModel {
             allPokemon = []
         }
     }
+    
+    
+    
+    
+    func indices(for property: (Pokemon) -> Bool) -> [Int] {
+        let filteredStates = allPokemon.filter(property)
+        let indices = filteredStates.map {s in allPokemon.firstIndex(where: {$0.name == s.name})!}
+        return indices
+    }
+    
 }
 
