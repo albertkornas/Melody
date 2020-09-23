@@ -45,21 +45,9 @@ struct PokemonModel {
             let data = try Data(contentsOf: jsonURL)
             let decoder = JSONDecoder()
             allPokemon = try decoder.decode(AllPokemon.self, from: data)
-            print(allPokemon)
         } catch {
-            print("Error info: \(error)")
             allPokemon = []
         }
     }
-    
-    
-    
-    
-    func indices(for property: (Pokemon) -> Bool) -> [Int] {
-        let filteredStates = allPokemon.filter(property)
-        let indices = filteredStates.map {s in allPokemon.firstIndex(where: {$0.name == s.name})!}
-        return indices
-    }
-    
 }
 

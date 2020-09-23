@@ -29,11 +29,3 @@ struct PokemonListView: View {
         
     }
 }
-    /*
-struct PokemonListView_Previews: PreviewProvider {
-    static var previews: some View {
-        PokemonListView()
-    }
-}
-
-*/

@@ -28,10 +28,3 @@ struct PokeRowView: View {
     }
     let rowHeight : CGFloat = 50
 }
-/*
-struct PokeRowView_Previews: PreviewProvider {
-    static var previews: some View {
-        PokeRowView()
-    }
-}
-*/
