@@ -6,7 +6,7 @@
 //  Copyright © 2020 Goki. All rights reserved.
 //
 
-enum PokemonType: String, Codable, Identifiable {
+enum PokemonType: String, Codable, Identifiable, CaseIterable {
     var id: String { self.rawValue }
     
     case bug = "Bug"

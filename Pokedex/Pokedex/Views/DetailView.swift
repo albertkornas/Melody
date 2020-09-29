@@ -10,8 +10,11 @@ import SwiftUI
 
 struct DetailView: View {
     @Binding var pokemon: Pokemon
+
     var body: some View {
             VStack(spacing:20) {
+                
+                CapturedButton(isCaptured: $pokemon.captured)
                         Image(String(format: "%03d", pokemon.id))
                         .resizable()
                         .padding()

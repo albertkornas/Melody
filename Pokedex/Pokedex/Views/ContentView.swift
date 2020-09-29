@@ -12,16 +12,14 @@ struct ContentView: View {
     let model = PokemonModel()
     @State var pokeModel = PokemonModel()
     @State var sectionStyle : SectionStyle = .none
-    
     var body: some View {
         PokemonListView(pokemodel: $pokeModel, sectionStyle: $sectionStyle)
     }
-    
-    
 }
 
-struct ContentView_Previews: PreviewProvider {
+/*struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
+*/
