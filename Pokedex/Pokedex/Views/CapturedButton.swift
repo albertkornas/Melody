@@ -12,7 +12,7 @@ struct CapturedButton: View {
     @Binding var isCaptured: Bool
     var body: some View {
         Button(action: {self.isCaptured.toggle()}) {
-            Text(isCaptured ? "Captured" : "Not Captured")
+            Text(isCaptured ? "Release" : "Capture")
         }
     }
 }

@@ -30,7 +30,7 @@ struct PokemonListView: View {
                      ForEach(PokemonType.allCases) { pokemon in
                          Text(pokemon.rawValue).tag(pokemon as PokemonType?)
                      }
-                }.pickerStyle(DefaultPickerStyle()))
+                }.pickerStyle(MenuPickerStyle()))
         }
     }
     
