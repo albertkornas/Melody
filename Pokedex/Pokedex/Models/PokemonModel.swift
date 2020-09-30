@@ -37,7 +37,7 @@ struct Pokemon: Codable {
 typealias AllPokemon = [Pokemon]
 
 class PokemonModel : ObservableObject {
-    var allPokemon : AllPokemon {
+    @Published var allPokemon : AllPokemon {
         didSet {
             saveData()
         }

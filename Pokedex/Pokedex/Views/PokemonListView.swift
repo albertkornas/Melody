@@ -13,7 +13,7 @@ enum SectionStyle: String, CaseIterable {
 }
 
 struct PokemonListView: View {
-    @Binding var pokemodel : PokemonModel
+    @EnvironmentObject var pokemodel : PokemonModel
     @Binding var sectionStyle : SectionStyle
     @State private var pokeType: PokemonType?
 
@@ -24,24 +24,20 @@ struct PokemonListView: View {
                     NavigationLink(destination: DetailView(pokemon: self.$pokemodel.allPokemon[index])) {
                         PokeRowView(pokemon: self.pokemodel.allPokemon[index])
                     }
-                    
                 }
-                
-
             }.navigationBarTitle("Pokedex", displayMode: .inline)
-                .navigationBarItems(trailing: Picker(selection: $pokeType, label: Text("Fruit")) {
-                     ForEach(PokemonType.allCases) { fruit in
-                         Text(fruit.rawValue).tag(fruit as PokemonType?)
+                .navigationBarItems(trailing: Picker(selection: $pokeType, label: Text("Pokedex")) {
+                     ForEach(PokemonType.allCases) { pokemon in
+                         Text(pokemon.rawValue).tag(pokemon as PokemonType?)
                      }
                 }.pickerStyle(DefaultPickerStyle()))
         }
-        
     }
     
     var menuPicker: some View {
-        Picker(selection: $pokeType, label: Text("Fruit")) {
-             ForEach(PokemonType.allCases) { fruit in
-                 Text(fruit.rawValue).tag(fruit as PokemonType?)
+        Picker(selection: $pokeType, label: Text("Pokedex")) {
+             ForEach(PokemonType.allCases) { pokemon in
+                 Text(pokemon.rawValue).tag(pokemon as PokemonType?)
              }
          }
     }

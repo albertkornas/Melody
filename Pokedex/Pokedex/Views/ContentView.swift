@@ -9,11 +9,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    let model = PokemonModel()
-    @State var pokeModel = PokemonModel()
+    @ObservedObject var model = PokemonModel()
     @State var sectionStyle : SectionStyle = .none
     var body: some View {
-        PokemonListView(pokemodel: $pokeModel, sectionStyle: $sectionStyle)
+        PokemonListView(sectionStyle: $sectionStyle)
+            .environmentObject(model)
     }
 }
 
