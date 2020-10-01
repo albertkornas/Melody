@@ -16,11 +16,17 @@ struct PokemonListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(sectionTitles(), id: \.self) { sectionTitle in
-                    Section(header: Text(sectionTitle)) {
+                if pokeType != nil {
+                    Section(header: Text(pokeType!.rawValue)) {
                         SectionViews(model: self._pokemodel,
-                                     filter: self.sectionFilter(for: sectionTitle))
-                        
+                                     filter: self.sectionFilter(for: pokeType!.rawValue))
+                    }
+                } else {
+                    ForEach(sectionTitles(), id: \.self) { sectionTitle in
+                        Section(header: Text(sectionTitle)) {
+                            SectionViews(model: self._pokemodel,
+                                         filter: self.sectionFilter(for: sectionTitle))
+                        }
                     }
                 }
             }.navigationBarTitle("Pokedex", displayMode: .inline)
