@@ -42,7 +42,7 @@ class PokemonModel : ObservableObject {
             saveData()
         }
     }
-    var selectedFilter: PokemonType?
+    @Published var selectedFilter: PokemonType?
     let destinationURL : URL
     
     init() {
@@ -74,6 +74,19 @@ class PokemonModel : ObservableObject {
             print("Error writing: \(error)")
         }
     }
+    
+    var types : [String] {
+        return PokemonType.allCases.map{$0.rawValue}
+    }
+    
+    
+
+    func pokemonIndices(for property: (Pokemon) -> Bool) -> [Int] {
+        let filteredStates = allPokemon.filter(property)
+        let indices = filteredStates.map {s in allPokemon.firstIndex(where: {$0.name == s.name})!}
+        return indices
+    }
+    
     
 }
 

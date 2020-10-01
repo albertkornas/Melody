@@ -8,25 +8,23 @@
 
 import SwiftUI
 
-enum SectionStyle: String, CaseIterable {
-    case none, byName, byDecade
-}
 
 struct PokemonListView: View {
     @EnvironmentObject var pokemodel : PokemonModel
-    @Binding var sectionStyle : SectionStyle
     @State private var pokeType: PokemonType?
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(pokemodel.allPokemon.indices, id:\.self) {index in
-                    NavigationLink(destination: DetailView(pokemon: self.$pokemodel.allPokemon[index])) {
-                        PokeRowView(pokemon: self.pokemodel.allPokemon[index])
+                ForEach(sectionTitles(), id: \.self) { sectionTitle in
+                    Section(header: Text(sectionTitle)) {
+                        SectionViews(model: self._pokemodel,
+                                     filter: self.sectionFilter(for: sectionTitle))
+                        
                     }
                 }
             }.navigationBarTitle("Pokedex", displayMode: .inline)
-                .navigationBarItems(trailing: Picker(selection: $pokeType, label: Text("Pokedex")) {
+            .navigationBarItems(trailing: Picker(selection: $pokeType, label: Text("Pokedex")) {
                      ForEach(PokemonType.allCases) { pokemon in
                          Text(pokemon.rawValue).tag(pokemon as PokemonType?)
                      }
@@ -34,11 +32,13 @@ struct PokemonListView: View {
         }
     }
     
-    var menuPicker: some View {
-        Picker(selection: $pokeType, label: Text("Pokedex")) {
-             ForEach(PokemonType.allCases) { pokemon in
-                 Text(pokemon.rawValue).tag(pokemon as PokemonType?)
-             }
-         }
+    // generate array of section titles based on section style
+    func sectionTitles() -> [String] {
+        return PokemonType.allCases.map{$0.rawValue}
+    }
+    
+    // generate a filter (predicate function) that tests whether a Pokemon belongs in the section with title sectionTitle
+    func sectionFilter(for sectionTitle:String) -> ((Pokemon) -> Bool) {
+        return {$0.types.contains(PokemonType(rawValue: sectionTitle)!)}
     }
 }
