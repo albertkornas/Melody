@@ -20,10 +20,3 @@ struct SectionViews: View {
         }
     }
 }
-/*
-struct SectionViews_Previews: PreviewProvider {
-    static var previews: some View {
-        SectionViews()
-    }
-}
-*/

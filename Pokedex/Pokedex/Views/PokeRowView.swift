@@ -12,7 +12,6 @@ struct PokeRowView: View {
     var pokemon: Pokemon
     var body: some View {
         HStack {
-            
             Text(String(format: "%03d", pokemon.id))
             Image(String(format: "%03d", pokemon.id))
                 .resizable()
@@ -22,8 +21,6 @@ struct PokeRowView: View {
                 .padding()
             Spacer()
             Text(pokemon.name)
-    
-            
         }
     }
     let rowHeight : CGFloat = 50

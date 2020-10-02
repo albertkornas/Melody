@@ -21,7 +21,7 @@ struct PokemonListView: View {
                         SectionViews(model: self._pokemodel,
                                      filter: self.sectionFilter(for: pokeType!.rawValue))
                     }
-                } else {
+                } else if pokeType == nil || pokeType!.rawValue == "All" {
                     ForEach(sectionTitles(), id: \.self) { sectionTitle in
                         Section(header: Text(sectionTitle)) {
                             SectionViews(model: self._pokemodel,
@@ -31,9 +31,11 @@ struct PokemonListView: View {
                 }
             }.navigationBarTitle("Pokedex", displayMode: .inline)
             .navigationBarItems(trailing: Picker(selection: $pokeType, label: Text("Pokedex")) {
+                Text("All").tag(nil as PokemonType?)
                      ForEach(PokemonType.allCases) { pokemon in
                          Text(pokemon.rawValue).tag(pokemon as PokemonType?)
                      }
+                
                 }.pickerStyle(MenuPickerStyle()))
         }
     }

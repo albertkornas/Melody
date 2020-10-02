@@ -10,10 +10,12 @@ import SwiftUI
 
 struct DetailView: View {
     @Binding var pokemon: Pokemon
+    @EnvironmentObject var model : PokemonModel
 
     var body: some View {
+        
             VStack(spacing:20) {
-                
+                List {
                 CapturedButton(isCaptured: $pokemon.captured)
                         Image(String(format: "%03d", pokemon.id))
                         .resizable()
@@ -23,29 +25,62 @@ struct DetailView: View {
                         .clipped()
                         .listRowInsets(EdgeInsets())
                 VStack(alignment: .center, spacing: 50) {
-                HStack {
-                        Text(String(format: "Height: %.2fm",  pokemon.height))
-                            Text(String(format: "Weight: %.1fkg", pokemon.weight))
+                    HStack {
+                            Text(String(format: "Height: %.2fm",  pokemon.height))
+                                Text(String(format: "Weight: %.1fkg", pokemon.weight))
+                        }
+                    HStack(alignment: .top, spacing: 100) {
+                            VStack {
+                                Text("Types:")
+                                ForEach(pokemon.types, id: \.self) {type in
+                                    Text(type.rawValue)
+                                        .foregroundColor(Color.init(pokemonType: type))
+                                }
+                            }
+                            VStack {
+                                Text("Weaknesses:")
+                                ForEach(pokemon.weaknesses, id: \.self) {weakness in
+                                    Text(weakness.rawValue)
+                                        .foregroundColor(Color.init(pokemonType:weakness))
+                                }
+                            }
                     }
-                HStack(alignment: .top, spacing: 100) {
-                        
-                        VStack {
-                            Text("Types:")
-                            ForEach(pokemon.types, id: \.self) {type in
-                                Text(type.rawValue)
-                                    .foregroundColor(Color.init(pokemonType: type))
+
+                }
+
+                        if (pokemon.nextEvolution != nil) {
+                        Text("Evolves into:")
+                            
+                            ForEach(pokemon.nextEvolution!.indices, id: \.self) {evol in
+                                VStack {
+                                NavigationLink(destination: DetailView(pokemon: self.$model.allPokemon[pokemon.nextEvolution![evol]-1])) {
+                                    
+                            Image(String(format: "%03d", pokemon.nextEvolution![evol]))
+                                .resizable()
+                                .scaledToFit()
+                                .frame(height:self.imageHeight/2)
+                                }
                             }
                         }
+                    }
+                    
+                    if (pokemon.prevEvolution != nil) {
+                    Text("Evolves from:")
                         
-                        VStack {
-                            Text("Weaknesses:")
-                            ForEach(pokemon.weaknesses, id: \.self) {weakness in
-                                Text(weakness.rawValue)
-                                    .foregroundColor(Color.init(pokemonType:weakness))
+                        ForEach(pokemon.prevEvolution!.indices, id: \.self) {evol in
+                            VStack {
+                            NavigationLink(destination: DetailView(pokemon: self.$model.allPokemon[pokemon.prevEvolution![evol]-1])) {
+                                
+                        Image(String(format: "%03d", pokemon.prevEvolution![evol]))
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height:self.imageHeight/2)
                             }
                         }
                     }
                 }
+                
+            }
             }.navigationBarTitle(pokemon.name)
     }
     let imageHeight : CGFloat = 250
