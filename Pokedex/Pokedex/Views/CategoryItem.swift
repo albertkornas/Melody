@@ -26,10 +26,3 @@ struct CategoryItem: View {
     }
     let frameSize : CGFloat = 155
 }
-
-/*struct CategoryItem_Previews: PreviewProvider {
-    static var previews: some View {
-        CategoryItem()
-    }
-}
-*/
