@@ -13,6 +13,10 @@
 		1BA49BF9252AA39400B9DDA8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BA49BF8252AA39400B9DDA8 /* Preview Assets.xcassets */; };
 		1BA49C04252AA39500B9DDA8 /* CampusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA49C03252AA39500B9DDA8 /* CampusTests.swift */; };
 		1BA49C0F252AA39500B9DDA8 /* CampusUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA49C0E252AA39500B9DDA8 /* CampusUITests.swift */; };
+		1BA49C2A252AA80900B9DDA8 /* buildings.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BA49C29252AA80900B9DDA8 /* buildings.json */; };
+		1BA49C2F252AA86E00B9DDA8 /* CampusMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA49C2E252AA86E00B9DDA8 /* CampusMapView.swift */; };
+		1BA49C34252AA99C00B9DDA8 /* LocationsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA49C33252AA99C00B9DDA8 /* LocationsManager.swift */; };
+		1BA49C3C252AAA5800B9DDA8 /* CampusData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA49C3B252AAA5800B9DDA8 /* CampusData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +49,10 @@
 		1BA49C0A252AA39500B9DDA8 /* CampusUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CampusUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1BA49C0E252AA39500B9DDA8 /* CampusUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusUITests.swift; sourceTree = "<group>"; };
 		1BA49C10252AA39500B9DDA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BA49C29252AA80900B9DDA8 /* buildings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = buildings.json; sourceTree = "<group>"; };
+		1BA49C2E252AA86E00B9DDA8 /* CampusMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusMapView.swift; sourceTree = "<group>"; };
+		1BA49C33252AA99C00B9DDA8 /* LocationsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocationsManager.swift; path = Campus/Model/LocationsManager.swift; sourceTree = SOURCE_ROOT; };
+		1BA49C3B252AAA5800B9DDA8 /* CampusData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampusData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,8 +103,9 @@
 		1BA49BF0252AA39200B9DDA8 /* Campus */ = {
 			isa = PBXGroup;
 			children = (
-				1BA49BF1252AA39200B9DDA8 /* CampusApp.swift */,
-				1BA49BF3252AA39200B9DDA8 /* ContentView.swift */,
+				1BA49C25252AA6FB00B9DDA8 /* Other */,
+				1BA49C23252AA6E700B9DDA8 /* View */,
+				1BA49C22252AA6CF00B9DDA8 /* Model */,
 				1BA49BF5252AA39400B9DDA8 /* Assets.xcassets */,
 				1BA49BFA252AA39400B9DDA8 /* Info.plist */,
 				1BA49BF7252AA39400B9DDA8 /* Preview Content */,
@@ -128,6 +137,33 @@
 				1BA49C10252AA39500B9DDA8 /* Info.plist */,
 			);
 			path = CampusUITests;
+			sourceTree = "<group>";
+		};
+		1BA49C22252AA6CF00B9DDA8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1BA49C33252AA99C00B9DDA8 /* LocationsManager.swift */,
+				1BA49C29252AA80900B9DDA8 /* buildings.json */,
+				1BA49C3B252AAA5800B9DDA8 /* CampusData.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1BA49C23252AA6E700B9DDA8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1BA49BF3252AA39200B9DDA8 /* ContentView.swift */,
+				1BA49C2E252AA86E00B9DDA8 /* CampusMapView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1BA49C25252AA6FB00B9DDA8 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				1BA49BF1252AA39200B9DDA8 /* CampusApp.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BA49BF9252AA39400B9DDA8 /* Preview Assets.xcassets in Resources */,
+				1BA49C2A252AA80900B9DDA8 /* buildings.json in Resources */,
 				1BA49BF6252AA39400B9DDA8 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +296,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BA49C34252AA99C00B9DDA8 /* LocationsManager.swift in Sources */,
 				1BA49BF4252AA39200B9DDA8 /* ContentView.swift in Sources */,
 				1BA49BF2252AA39200B9DDA8 /* CampusApp.swift in Sources */,
+				1BA49C2F252AA86E00B9DDA8 /* CampusMapView.swift in Sources */,
+				1BA49C3C252AAA5800B9DDA8 /* CampusData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

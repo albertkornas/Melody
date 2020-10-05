@@ -6,11 +6,14 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
+    @ObservedObject var locationsManager = LocationsManager()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            CampusMapView()
+        }.environmentObject(locationsManager)
     }
 }
 
