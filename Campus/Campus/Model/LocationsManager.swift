@@ -18,6 +18,7 @@ import MapKit
 }*/
 
 struct Place: Codable, Identifiable {
+    var isFavorited: Bool
     var id = UUID()
     var latitude: CLLocationDegrees
     var longitude: CLLocationDegrees
@@ -25,15 +26,14 @@ struct Place: Codable, Identifiable {
     var opp_bldg_code: Double
     var year_constructed: Int?
     var coordinate: CLLocationCoordinate2D?
-    var isFavorited: Bool
     
     enum CodingKeys: String, CodingKey {
+        case isFavorited = "is_favorited"
         case latitude
         case longitude
         case name
         case opp_bldg_code
         case year_constructed
-        case isFavorited = "is_favorited"
     }
 }
 
@@ -51,17 +51,24 @@ class LocationsManager: ObservableObject {
         }
     }
     
-    let mainURL: URL
+    let destinationURL : URL
     
     init() {
         allPlaces = []
-        mainURL = Bundle.main.url(forResource: "buildings", withExtension: "json")!
+        let mainBundle = Bundle.main
+        let filename = "buildings"
+        let bundleURL = mainBundle.url(forResource: filename, withExtension: "json")!
+        
+        let fileManager = FileManager.default
+        let documentURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        destinationURL = documentURL.appendingPathComponent(filename + ".json")
+        let fileExists = fileManager.fileExists(atPath: destinationURL.path)
         
         do {
-            let data = try Data(contentsOf: mainURL)
+            let url = fileExists ? destinationURL : bundleURL
+            let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
             self.allPlaces = try decoder.decode(AllPlaces.self, from: data)
-            
         } catch {
             self.allPlaces = []
         }
@@ -73,9 +80,8 @@ class LocationsManager: ObservableObject {
     func saveData() {
         let encoder = JSONEncoder()
         do {
-            let data = try encoder.encode(allPlaces)
-            try data.write(to: self.mainURL)
-            print(allPlaces)
+            let data = try encoder.encode(allPlaces.self)
+            try data.write(to: self.destinationURL)
         } catch  {
             print("Error writing: \(error)")
         }
