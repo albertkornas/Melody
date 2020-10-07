@@ -13,6 +13,8 @@ struct ContentView: View {
     var body: some View {
         VStack {
             CampusMapView()
+            
+            BuildingsListView().frame(height: 60.0)
         }.environmentObject(locationsManager)
     }
 }

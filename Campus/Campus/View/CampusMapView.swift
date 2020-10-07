@@ -28,15 +28,15 @@ struct CampusMapView: View {
     
     //MARK: Three different functions for creating annotations
     func annotationsForCategory (item:Place) -> some MapAnnotationProtocol {
-        MapAnnotation(coordinate: item.coordinate) {
+        MapAnnotation(coordinate: item.coordinate!) {
             Text("HI")
         }
     }
     func annotationPins (item:Place) -> some MapAnnotationProtocol {
-        MapPin(coordinate: item.coordinate)
+        MapPin(coordinate: item.coordinate!)
     }
     func annotationMarkers (item:Place) -> some MapAnnotationProtocol {
-        MapMarker(coordinate: item.coordinate)
+        MapMarker(coordinate: item.coordinate!)
     }
     
 }
