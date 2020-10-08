@@ -17,7 +17,7 @@ import MapKit
     var coordinate : CLLocationCoordinate2D {placemark.location!.coordinate}
 }*/
 
-struct Place: Codable, Identifiable {
+struct Place: Codable, Identifiable, Equatable {
     var isFavorited: Bool
     var id = UUID()
     var latitude: CLLocationDegrees
@@ -25,7 +25,7 @@ struct Place: Codable, Identifiable {
     var name: String
     var opp_bldg_code: Double
     var year_constructed: Int?
-    var coordinate: CLLocationCoordinate2D?
+    var coordinate: CLLocationCoordinate2D {CLLocationCoordinate2DMake(latitude, longitude)}
     
     enum CodingKeys: String, CodingKey {
         case isFavorited = "is_favorited"
@@ -45,16 +45,22 @@ class LocationsManager: ObservableObject {
     // Map will annotate these items
     @Published var mappedPlaces = [Place]()
     
+    var favoritedPlaces = [Place]()
+    var plottedPlaces = [Place]()
+    
     @Published var allPlaces: AllPlaces {
         didSet {
             saveData()
         }
     }
     
+    var showingFavorites: Bool = true
+    
     let destinationURL : URL
     
     init() {
         allPlaces = []
+        
         let mainBundle = Bundle.main
         let filename = "buildings"
         let bundleURL = mainBundle.url(forResource: filename, withExtension: "json")!
@@ -74,7 +80,26 @@ class LocationsManager: ObservableObject {
         }
         
         self.allPlaces.sort{$0.name < $1.name}
-        
+    }
+    
+    func clearAnnotations() {
+        mappedPlaces.removeAll()
+    }
+    
+    func toggleFavoritedAnnotations() {
+        if (showingFavorites == false) {
+            clearAnnotations()
+            for favPlace in favoritedPlaces {
+                mappedPlaces.append(favPlace)
+            }
+            showingFavorites = true
+        } else {
+            clearAnnotations()
+            for plottedPlace in plottedPlaces {
+                mappedPlaces.append(plottedPlace)
+            }
+            showingFavorites = false
+        }
     }
     
     func saveData() {
@@ -85,5 +110,19 @@ class LocationsManager: ObservableObject {
         } catch  {
             print("Error writing: \(error)")
         }
+        mappedPlaces.removeAll()
+        favoritedPlaces.removeAll()
+        for place in allPlaces {
+            if place.isFavorited == true {
+                if (showingFavorites == true) {
+                    mappedPlaces.append(place)
+                }
+                favoritedPlaces.append(place)
+            }
+        }
+    }
+    
+    func updateMappedPlaces(index:Int) {
+        
     }
 }

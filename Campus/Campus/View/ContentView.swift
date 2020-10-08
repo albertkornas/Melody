@@ -11,10 +11,11 @@ import MapKit
 struct ContentView: View {
     @ObservedObject var locationsManager = LocationsManager()
     var body: some View {
+        NavigationView {
         VStack {
-            CampusMapView()
-            
-            BuildingsListView().frame(height: 60.0)
+                CampusMapView().navigationBarTitleDisplayMode(.inline)
+                BuildingsListView().frame(height: 60.0)
+            }
         }.environmentObject(locationsManager)
     }
 }

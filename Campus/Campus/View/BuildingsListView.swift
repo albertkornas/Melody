@@ -14,7 +14,7 @@ struct BuildingsListView: View {
         ScrollView(.horizontal) {
             LazyHStack {
                 ForEach(locationsManager.allPlaces.indices, id:\.self) { index in
-                    BuildingView(building: self.$locationsManager.allPlaces[index], index: index)
+                    BuildingView(building: self.$locationsManager.allPlaces[index])
                         .padding()
                 }
             }

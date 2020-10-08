@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FavButton: View {
     @Binding var isFavorited: Bool
+    @EnvironmentObject var locationsManager: LocationsManager
     var body: some View {
         Button(action: {
             self.isFavorited.toggle()

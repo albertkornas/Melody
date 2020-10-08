@@ -10,7 +10,6 @@ import SwiftUI
 struct BuildingView: View {
     
     @Binding var building: Place
-    var index: Int
    
     var body: some View {
         HStack {
