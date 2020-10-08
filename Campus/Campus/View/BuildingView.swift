@@ -8,12 +8,19 @@
 import SwiftUI
 
 struct BuildingView: View {
-    
+    @EnvironmentObject var locationsManager : LocationsManager
     @Binding var building: Place
    
     var body: some View {
         HStack {
-            Text(building.name)
+            VStack {
+                Text(building.name)
+                Button(action: {
+                    locationsManager.plotOnMap(building: building)
+                }) {
+                    Text("Plot on Map")
+                }
+            }
             FavButton(isFavorited: $building.isFavorited)
         }
     }

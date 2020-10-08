@@ -40,7 +40,7 @@ struct Place: Codable, Identifiable, Equatable {
 typealias AllPlaces = [Place]
 class LocationsManager: ObservableObject {
     //MARK: Published values
-    @Published var region = MKCoordinateRegion(center: TownData.initialCoordinate, span: MKCoordinateSpan(latitudeDelta: TownData.span, longitudeDelta: TownData.span))
+    @Published var region = MKCoordinateRegion(center: CampusData.initialCoordinate, span: MKCoordinateSpan(latitudeDelta: CampusData.span, longitudeDelta: CampusData.span))
     
     // Map will annotate these items
     @Published var mappedPlaces = [Place]()
@@ -83,18 +83,22 @@ class LocationsManager: ObservableObject {
     }
     
     func clearAnnotations() {
-        mappedPlaces.removeAll()
+        plottedPlaces.removeAll()
+        mappedPlaces = favoritedPlaces
     }
     
     func toggleFavoritedAnnotations() {
         if (showingFavorites == false) {
-            clearAnnotations()
+            mappedPlaces.removeAll()
             for favPlace in favoritedPlaces {
                 mappedPlaces.append(favPlace)
             }
+            for plottedPlace in plottedPlaces {
+                mappedPlaces.append(plottedPlace)
+            }
             showingFavorites = true
         } else {
-            clearAnnotations()
+            mappedPlaces.removeAll()
             for plottedPlace in plottedPlaces {
                 mappedPlaces.append(plottedPlace)
             }
@@ -111,6 +115,9 @@ class LocationsManager: ObservableObject {
             print("Error writing: \(error)")
         }
         mappedPlaces.removeAll()
+        for place in plottedPlaces {
+            mappedPlaces.append(place)
+        }
         favoritedPlaces.removeAll()
         for place in allPlaces {
             if place.isFavorited == true {
@@ -122,7 +129,18 @@ class LocationsManager: ObservableObject {
         }
     }
     
-    func updateMappedPlaces(index:Int) {
-        
+    func plotOnMap(building: Place) {
+        if (!plottedPlaces.contains(building)) {
+            if (favoritedPlaces.contains(building)) {
+                //overlap
+                let indexOfFav = favoritedPlaces.firstIndex(of: building)!
+                favoritedPlaces.remove(at: indexOfFav)
+            }
+            plottedPlaces.append(building)
+            if (!mappedPlaces.contains(building)) {
+                mappedPlaces.append(building)
+            }
+        }
+        region = MKCoordinateRegion(center: building.coordinate, span: MKCoordinateSpan(latitudeDelta: CampusData.zoomSpan, longitudeDelta: CampusData.zoomSpan))
     }
 }

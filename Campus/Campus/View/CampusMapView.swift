@@ -20,7 +20,7 @@ struct CampusMapView: View {
             annotationItems: locationsManager.mappedPlaces,
             annotationContent: annotationPins)
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     clearButton
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
@@ -33,12 +33,15 @@ struct CampusMapView: View {
     //MARK: Three different functions for creating annotations
     func annotationsForCategory (item:Place) -> some MapAnnotationProtocol {
         MapAnnotation(coordinate: item.coordinate) {
-            Text("HI")
+            
         }
     }
+    
     func annotationPins (item:Place) -> some MapAnnotationProtocol {
-        MapPin(coordinate: item.coordinate)
+        MapPin(coordinate: item.coordinate, tint: item.isFavorited ? Color.blue : Color.red)
+            
     }
+    
     func annotationMarkers (item:Place) -> some MapAnnotationProtocol {
         MapMarker(coordinate: item.coordinate)
     }
@@ -48,7 +51,7 @@ struct CampusMapView: View {
     }
     
     var favoritesButton : some View {Button(action: {locationsManager.toggleFavoritedAnnotations()}) {
-        Image(systemName: "star.fill")}
+        Text("Toggle Favorites")}
     }
     
 }
