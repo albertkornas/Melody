@@ -26,6 +26,9 @@ struct CampusMapView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     favoritesButton
                 }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    centerButton
+                }
             }
     }
     
@@ -52,6 +55,10 @@ struct CampusMapView: View {
     
     var favoritesButton : some View {Button(action: {locationsManager.toggleFavoritedAnnotations()}) {
         Text("Toggle Favorites")}
+    }
+    
+    var centerButton : some View {Button(action: {locationsManager.centerLocation()}) {
+        Text("Center Map")}
     }
     
 }
