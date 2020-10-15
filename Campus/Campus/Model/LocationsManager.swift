@@ -29,6 +29,8 @@ class LocationsManager: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
     }
     
+    @Published var route : MKRoute?
+    
     //MARK: - CLLocationManager Delegate
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         switch manager.authorizationStatus {
@@ -101,6 +103,51 @@ class LocationsManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     func centerLocation() {
         region.center = locationManager.location!.coordinate
+    }
+    
+    func estimatedTime() -> String? {
+        let today = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = .none
+        formatter.timeStyle = .full
+        let eta = Calendar.current.date(byAdding: .second, value: Int(route!.expectedTravelTime), to: today)
+        return formatter.string(from: eta!)
+        
+    }
+    
+    
+    func provideDirectionsTo(to place:Place) {
+        let request = MKDirections.Request()
+        request.source = MKMapItem.forCurrentLocation()
+        let destinationPlacemark = MKPlacemark.init(coordinate: place.coordinate)
+        request.destination = MKMapItem(placemark: destinationPlacemark)
+        request.transportType = .walking
+        request.requestsAlternateRoutes = true
+        let directions = MKDirections(request: request)
+        directions.calculate { (response, error) in
+            guard (error == nil) else {print(error!.localizedDescription); return}
+            if let route = response?.routes.first {
+                self.route = route
+            }
+        }
+    }
+    
+    func provideDirectionsFrom(from place:Place) {
+        let request = MKDirections.Request()
+        request.source = MKMapItem.forCurrentLocation()
+        
+        let source = MKMapItem.forCurrentLocation()
+        let destinationPlacemark = MKPlacemark.init(coordinate: source.placemark.coordinate)
+        request.destination = MKMapItem(placemark: destinationPlacemark)
+        request.transportType = .walking
+        request.requestsAlternateRoutes = true
+        let directions = MKDirections(request: request)
+        directions.calculate { (response, error) in
+            guard (error == nil) else {print(error!.localizedDescription); return}
+            if let route = response?.routes.first {
+                self.route = route
+            }
+        }
     }
     
     

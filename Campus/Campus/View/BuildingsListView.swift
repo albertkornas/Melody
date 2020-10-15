@@ -9,15 +9,24 @@ import SwiftUI
 
 struct BuildingsListView: View {
     @EnvironmentObject var locationsManager : LocationsManager
+    @State private var isShowingSteps = false
     
     var body: some View {
-        ScrollView(.horizontal) {
-            LazyHStack {
+        TabView {
+            
                 ForEach(locationsManager.allPlaces.indices, id:\.self) { index in
-                    BuildingView(building: self.$locationsManager.allPlaces[index])
-                        .padding()
+                    ZStack {
+                    Button(action: { self.isShowingSteps.toggle() }) {
+                        
+                    }.sheet(isPresented: $isShowingSteps) {
+                        NavigationStepsView(route: $locationsManager.route)
+                            
+                    }
+                        BuildingView(building: self.$locationsManager.allPlaces[index])
+                            .padding()
+                    }
                 }
-            }
-        }
+                
+        }.tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
     }
 }

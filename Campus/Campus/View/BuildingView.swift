@@ -15,11 +15,25 @@ struct BuildingView: View {
         HStack {
             VStack {
                 Text(building.name)
+                
                 Button(action: {
                     locationsManager.plotOnMap(building: building)
                 }) {
                     Text("Plot on Map")
                 }
+                
+                Button(action: {
+                    locationsManager.provideDirectionsTo(to: building)
+                }) {
+                    Text("Get Directions To")
+                }
+                
+                Button(action: {
+                    locationsManager.provideDirectionsFrom(from: building)
+                }) {
+                    Text("Get Directions From")
+                }
+                
             }
             FavButton(isFavorited: $building.isFavorited)
         }
