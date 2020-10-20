@@ -4,6 +4,9 @@
    <Group
       location = "group:/Users/albertkornas/cmpsc475/Classics/Classics/classics-files"
       name = "classics-files">
+      <FileRef
+         location = "group:/Users/albertkornas/cmpsc475/Classics/Classics/ClassicsModel.swift">
+      </FileRef>
       <Group
          location = "group:images"
          name = "images">
