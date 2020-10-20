@@ -45,6 +45,107 @@
 		1B7483ED253E68DA00B37F26 /* ClassicsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClassicsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7483F1253E68DA00B37F26 /* ClassicsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicsUITests.swift; sourceTree = "<group>"; };
 		1B7483F3253E68DA00B37F26 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1B7484D4253E6DCB00B37F26 /* the-trial.jpg */ = {isa = PBXFileReference; path = "the-trial.jpg"; sourceTree = "<group>"; };
+		1B7484D5253E6DCB00B37F26 /* season-of-migration-to-the-north.jpg */ = {isa = PBXFileReference; path = "season-of-migration-to-the-north.jpg"; sourceTree = "<group>"; };
+		1B7484D6253E6DCB00B37F26 /* ficciones.jpg */ = {isa = PBXFileReference; path = ficciones.jpg; sourceTree = "<group>"; };
+		1B7484D7253E6DCB00B37F26 /* the-castle.jpg */ = {isa = PBXFileReference; path = "the-castle.jpg"; sourceTree = "<group>"; };
+		1B7484D8253E6DCB00B37F26 /* the-recognition-of-shakuntala.jpg */ = {isa = PBXFileReference; path = "the-recognition-of-shakuntala.jpg"; sourceTree = "<group>"; };
+		1B7484D9253E6DCB00B37F26 /* nineteen-eighty-four.jpg */ = {isa = PBXFileReference; path = "nineteen-eighty-four.jpg"; sourceTree = "<group>"; };
+		1B7484DA253E6DCB00B37F26 /* the-metamorphoses-of-ovid.jpg */ = {isa = PBXFileReference; path = "the-metamorphoses-of-ovid.jpg"; sourceTree = "<group>"; };
+		1B7484DB253E6DCB00B37F26 /* the-possessed.jpg */ = {isa = PBXFileReference; path = "the-possessed.jpg"; sourceTree = "<group>"; };
+		1B7484DC253E6DCB00B37F26 /* the-book-of-job.jpg */ = {isa = PBXFileReference; path = "the-book-of-job.jpg"; sourceTree = "<group>"; };
+		1B7484DD253E6DCB00B37F26 /* njals-saga.jpg */ = {isa = PBXFileReference; path = "njals-saga.jpg"; sourceTree = "<group>"; };
+		1B7484DE253E6DCB00B37F26 /* diary-of-a-madman.jpg */ = {isa = PBXFileReference; path = "diary-of-a-madman.jpg"; sourceTree = "<group>"; };
+		1B7484DF253E6DCB00B37F26 /* pride-and-prejudice.jpg */ = {isa = PBXFileReference; path = "pride-and-prejudice.jpg"; sourceTree = "<group>"; };
+		1B7484E0253E6DCB00B37F26 /* the-idiot.jpg */ = {isa = PBXFileReference; path = "the-idiot.jpg"; sourceTree = "<group>"; };
+		1B7484E1253E6DCB00B37F26 /* voyage-au-bout-de-la-nuit.jpg */ = {isa = PBXFileReference; path = "voyage-au-bout-de-la-nuit.jpg"; sourceTree = "<group>"; };
+		1B7484E2253E6DCB00B37F26 /* ramayana.jpg */ = {isa = PBXFileReference; path = ramayana.jpg; sourceTree = "<group>"; };
+		1B7484E3253E6DCB00B37F26 /* anna-karenina.jpg */ = {isa = PBXFileReference; path = "anna-karenina.jpg"; sourceTree = "<group>"; };
+		1B7484E4253E6DCB00B37F26 /* the-mahab-harata.jpg */ = {isa = PBXFileReference; path = "the-mahab-harata.jpg"; sourceTree = "<group>"; };
+		1B7484E5253E6DCB00B37F26 /* othello.jpg */ = {isa = PBXFileReference; path = othello.jpg; sourceTree = "<group>"; };
+		1B7484E6253E6DCB00B37F26 /* children-of-gebelawi.jpg */ = {isa = PBXFileReference; path = "children-of-gebelawi.jpg"; sourceTree = "<group>"; };
+		1B7484E7253E6DCB00B37F26 /* independent-people.jpg */ = {isa = PBXFileReference; path = "independent-people.jpg"; sourceTree = "<group>"; };
+		1B7484E8253E6DCB00B37F26 /* things-fall-apart.jpg */ = {isa = PBXFileReference; path = "things-fall-apart.jpg"; sourceTree = "<group>"; };
+		1B7484E9253E6DCB00B37F26 /* the-odyssey-of-homer.jpg */ = {isa = PBXFileReference; path = "the-odyssey-of-homer.jpg"; sourceTree = "<group>"; };
+		1B7484EA253E6DCB00B37F26 /* a-la-recherche-du-temps-perdu.jpg */ = {isa = PBXFileReference; path = "a-la-recherche-du-temps-perdu.jpg"; sourceTree = "<group>"; };
+		1B7484EB253E6DCB00B37F26 /* madame-bovary.jpg */ = {isa = PBXFileReference; path = "madame-bovary.jpg"; sourceTree = "<group>"; };
+		1B7484EC253E6DCB00B37F26 /* the-death-of-ivan-ilyich.jpg */ = {isa = PBXFileReference; path = "the-death-of-ivan-ilyich.jpg"; sourceTree = "<group>"; };
+		1B7484ED253E6DCB00B37F26 /* poems-giacomo-leopardi.jpg */ = {isa = PBXFileReference; path = "poems-giacomo-leopardi.jpg"; sourceTree = "<group>"; };
+		1B7484EE253E6DCB00B37F26 /* gargantua-and-pantagruel.jpg */ = {isa = PBXFileReference; path = "gargantua-and-pantagruel.jpg"; sourceTree = "<group>"; };
+		1B7484EF253E6DCB00B37F26 /* ulysses.jpg */ = {isa = PBXFileReference; path = ulysses.jpg; sourceTree = "<group>"; };
+		1B7484F0253E6DCB00B37F26 /* midnights-children.jpg */ = {isa = PBXFileReference; path = "midnights-children.jpg"; sourceTree = "<group>"; };
+		1B7484F1253E6DCB00B37F26 /* the-tale-of-genji.jpg */ = {isa = PBXFileReference; path = "the-tale-of-genji.jpg"; sourceTree = "<group>"; };
+		1B7484F2253E6DCB00B37F26 /* l-etranger.jpg */ = {isa = PBXFileReference; path = "l-etranger.jpg"; sourceTree = "<group>"; };
+		1B7484F3253E6DCB00B37F26 /* leaves-of-grass.jpg */ = {isa = PBXFileReference; path = "leaves-of-grass.jpg"; sourceTree = "<group>"; };
+		1B7484F4253E6DCB00B37F26 /* the-canterbury-tales.jpg */ = {isa = PBXFileReference; path = "the-canterbury-tales.jpg"; sourceTree = "<group>"; };
+		1B7484F5253E6DCB00B37F26 /* oedipus-the-king.jpg */ = {isa = PBXFileReference; path = "oedipus-the-king.jpg"; sourceTree = "<group>"; };
+		1B7484F6253E6DCB00B37F26 /* bostan.jpg */ = {isa = PBXFileReference; path = bostan.jpg; sourceTree = "<group>"; };
+		1B7484F7253E6DCB00B37F26 /* the-adventures-of-huckleberry-finn.jpg */ = {isa = PBXFileReference; path = "the-adventures-of-huckleberry-finn.jpg"; sourceTree = "<group>"; };
+		1B7484F8253E6DCB00B37F26 /* le-pere-goriot.jpg */ = {isa = PBXFileReference; path = "le-pere-goriot.jpg"; sourceTree = "<group>"; };
+		1B7484F9253E6DCB00B37F26 /* a-Dolls-house.jpg */ = {isa = PBXFileReference; path = "a-Dolls-house.jpg"; sourceTree = "<group>"; };
+		1B7484FA253E6DCB00B37F26 /* beloved.jpg */ = {isa = PBXFileReference; path = beloved.jpg; sourceTree = "<group>"; };
+		1B7484FB253E6DCB00B37F26 /* war-and-peace.jpg */ = {isa = PBXFileReference; path = "war-and-peace.jpg"; sourceTree = "<group>"; };
+		1B7484FC253E6DCB00B37F26 /* absalom-absalom.jpg */ = {isa = PBXFileReference; path = "absalom-absalom.jpg"; sourceTree = "<group>"; };
+		1B7484FD253E6DCB00B37F26 /* sons-and-lovers.jpg */ = {isa = PBXFileReference; path = "sons-and-lovers.jpg"; sourceTree = "<group>"; };
+		1B7484FE253E6DCB00B37F26 /* stories-of-anton-chekhov.jpg */ = {isa = PBXFileReference; path = "stories-of-anton-chekhov.jpg"; sourceTree = "<group>"; };
+		1B7484FF253E6DCB00B37F26 /* one-hundred-years-of-solitude.jpg */ = {isa = PBXFileReference; path = "one-hundred-years-of-solitude.jpg"; sourceTree = "<group>"; };
+		1B748500253E6DCB00B37F26 /* the-iliad-of-homer.jpg */ = {isa = PBXFileReference; path = "the-iliad-of-homer.jpg"; sourceTree = "<group>"; };
+		1B748501253E6DCB00B37F26 /* berlin-alexanderplatz.jpg */ = {isa = PBXFileReference; path = "berlin-alexanderplatz.jpg"; sourceTree = "<group>"; };
+		1B748502253E6DCB00B37F26 /* the-man-without-qualities.jpg */ = {isa = PBXFileReference; path = "the-man-without-qualities.jpg"; sourceTree = "<group>"; };
+		1B748503253E6DCB00B37F26 /* stories-of-franz-kafka.jpg */ = {isa = PBXFileReference; path = "stories-of-franz-kafka.jpg"; sourceTree = "<group>"; };
+		1B748504253E6DCB00B37F26 /* the-life-and-opinions-of-tristram-shandy.jpg */ = {isa = PBXFileReference; path = "the-life-and-opinions-of-tristram-shandy.jpg"; sourceTree = "<group>"; };
+		1B748505253E6DCB00B37F26 /* memoirs-of-hadrian.jpg */ = {isa = PBXFileReference; path = "memoirs-of-hadrian.jpg"; sourceTree = "<group>"; };
+		1B748506253E6DCB00B37F26 /* gullivers-travels.jpg */ = {isa = PBXFileReference; path = "gullivers-travels.jpg"; sourceTree = "<group>"; };
+		1B748507253E6DCB00B37F26 /* blindness.jpg */ = {isa = PBXFileReference; path = blindness.jpg; sourceTree = "<group>"; };
+		1B748508253E6DCB00B37F26 /* history.jpg */ = {isa = PBXFileReference; path = history.jpg; sourceTree = "<group>"; };
+		1B748509253E6DCB00B37F26 /* the-sound-of-the-mountain.jpg */ = {isa = PBXFileReference; path = "the-sound-of-the-mountain.jpg"; sourceTree = "<group>"; };
+		1B74850A253E6DCB00B37F26 /* the-golden-notebook.jpg */ = {isa = PBXFileReference; path = "the-golden-notebook.jpg"; sourceTree = "<group>"; };
+		1B74850B253E6DCB00B37F26 /* the-masnavi.jpg */ = {isa = PBXFileReference; path = "the-masnavi.jpg"; sourceTree = "<group>"; };
+		1B74850C253E6DCB00B37F26 /* hunger.jpg */ = {isa = PBXFileReference; path = hunger.jpg; sourceTree = "<group>"; };
+		1B74850D253E6DCB00B37F26 /* l-education-sentimentale.jpg */ = {isa = PBXFileReference; path = "l-education-sentimentale.jpg"; sourceTree = "<group>"; };
+		1B74850E253E6DCB00B37F26 /* essais.jpg */ = {isa = PBXFileReference; path = essais.jpg; sourceTree = "<group>"; };
+		1B74850F253E6DCB00B37F26 /* zorba-the-greek.jpg */ = {isa = PBXFileReference; path = "zorba-the-greek.jpg"; sourceTree = "<group>"; };
+		1B748510253E6DCB00B37F26 /* poems-paul-celan.jpg */ = {isa = PBXFileReference; path = "poems-paul-celan.jpg"; sourceTree = "<group>"; };
+		1B748511253E6DCB00B37F26 /* the-devil-to-pay-in-the-backlands.jpg */ = {isa = PBXFileReference; path = "the-devil-to-pay-in-the-backlands.jpg"; sourceTree = "<group>"; };
+		1B748512253E6DCB00B37F26 /* crime-and-punishment.jpg */ = {isa = PBXFileReference; path = "crime-and-punishment.jpg"; sourceTree = "<group>"; };
+		1B748513253E6DCB00B37F26 /* pedro-paramo.jpg */ = {isa = PBXFileReference; path = "pedro-paramo.jpg"; sourceTree = "<group>"; };
+		1B748514253E6DCB00B37F26 /* lolita.jpg */ = {isa = PBXFileReference; path = lolita.jpg; sourceTree = "<group>"; };
+		1B748515253E6DCB00B37F26 /* the-tin-drum.jpg */ = {isa = PBXFileReference; path = "the-tin-drum.jpg"; sourceTree = "<group>"; };
+		1B748516253E6DCB00B37F26 /* moby-dick.jpg */ = {isa = PBXFileReference; path = "moby-dick.jpg"; sourceTree = "<group>"; };
+		1B748517253E6DCB00B37F26 /* great-expectations.jpg */ = {isa = PBXFileReference; path = "great-expectations.jpg"; sourceTree = "<group>"; };
+		1B748518253E6DCB00B37F26 /* the-book-of-disquiet.jpg */ = {isa = PBXFileReference; path = "the-book-of-disquiet.jpg"; sourceTree = "<group>"; };
+		1B748519253E6DCB00B37F26 /* middlemarch.jpg */ = {isa = PBXFileReference; path = middlemarch.jpg; sourceTree = "<group>"; };
+		1B74851A253E6DCB00B37F26 /* the-magic-mountain.jpg */ = {isa = PBXFileReference; path = "the-magic-mountain.jpg"; sourceTree = "<group>"; };
+		1B74851B253E6DCB00B37F26 /* to-the-lighthouse.jpg */ = {isa = PBXFileReference; path = "to-the-lighthouse.jpg"; sourceTree = "<group>"; };
+		1B74851C253E6DCB00B37F26 /* the-old-man-and-the-sea.jpg */ = {isa = PBXFileReference; path = "the-old-man-and-the-sea.jpg"; sourceTree = "<group>"; };
+		1B74851D253E6DCB00B37F26 /* the-sound-and-the-fury.jpg */ = {isa = PBXFileReference; path = "the-sound-and-the-fury.jpg"; sourceTree = "<group>"; };
+		1B74851E253E6DCB00B37F26 /* nostromo.jpg */ = {isa = PBXFileReference; path = nostromo.jpg; sourceTree = "<group>"; };
+		1B74851F253E6DCB00B37F26 /* hamlet.jpg */ = {isa = PBXFileReference; path = hamlet.jpg; sourceTree = "<group>"; };
+		1B748520253E6DCB00B37F26 /* pippi-longstocking.jpg */ = {isa = PBXFileReference; path = "pippi-longstocking.jpg"; sourceTree = "<group>"; };
+		1B748521253E6DCB00B37F26 /* fairy-tales.jpg */ = {isa = PBXFileReference; path = "fairy-tales.jpg"; sourceTree = "<group>"; };
+		1B748522253E6DCB00B37F26 /* jacques-the-fatalist.jpg */ = {isa = PBXFileReference; path = "jacques-the-fatalist.jpg"; sourceTree = "<group>"; };
+		1B748523253E6DCB00B37F26 /* gypsy-ballads.jpg */ = {isa = PBXFileReference; path = "gypsy-ballads.jpg"; sourceTree = "<group>"; };
+		1B748524253E6DCB00B37F26 /* dead-souls.jpg */ = {isa = PBXFileReference; path = "dead-souls.jpg"; sourceTree = "<group>"; };
+		1B748525253E6DCB00B37F26 /* buddenbrooks.jpg */ = {isa = PBXFileReference; path = buddenbrooks.jpg; sourceTree = "<group>"; };
+		1B748526253E6DCB00B37F26 /* medea.jpg */ = {isa = PBXFileReference; path = medea.jpg; sourceTree = "<group>"; };
+		1B748527253E6DCB00B37F26 /* love-in-the-time-of-cholera.jpg */ = {isa = PBXFileReference; path = "love-in-the-time-of-cholera.jpg"; sourceTree = "<group>"; };
+		1B748528253E6DCB00B37F26 /* the-divine-comedy.jpg */ = {isa = PBXFileReference; path = "the-divine-comedy.jpg"; sourceTree = "<group>"; };
+		1B748529253E6DCB00B37F26 /* the-epic-of-gilgamesh.jpg */ = {isa = PBXFileReference; path = "the-epic-of-gilgamesh.jpg"; sourceTree = "<group>"; };
+		1B74852A253E6DCB00B37F26 /* king-lear.jpg */ = {isa = PBXFileReference; path = "king-lear.jpg"; sourceTree = "<group>"; };
+		1B74852B253E6DCB00B37F26 /* the-decameron.jpg */ = {isa = PBXFileReference; path = "the-decameron.jpg"; sourceTree = "<group>"; };
+		1B74852C253E6DCB00B37F26 /* le-rouge-et-le-noir.jpg */ = {isa = PBXFileReference; path = "le-rouge-et-le-noir.jpg"; sourceTree = "<group>"; };
+		1B74852D253E6DCB00B37F26 /* mrs-dalloway.jpg */ = {isa = PBXFileReference; path = "mrs-dalloway.jpg"; sourceTree = "<group>"; };
+		1B74852E253E6DCB00B37F26 /* tales-and-poems-of-edgar-allan-poe.jpg */ = {isa = PBXFileReference; path = "tales-and-poems-of-edgar-allan-poe.jpg"; sourceTree = "<group>"; };
+		1B74852F253E6DCB00B37F26 /* invisible-man.jpg */ = {isa = PBXFileReference; path = "invisible-man.jpg"; sourceTree = "<group>"; };
+		1B748530253E6DCB00B37F26 /* don-quijote-de-la-mancha.jpg */ = {isa = PBXFileReference; path = "don-quijote-de-la-mancha.jpg"; sourceTree = "<group>"; };
+		1B748531253E6DCB00B37F26 /* faust.jpg */ = {isa = PBXFileReference; path = faust.jpg; sourceTree = "<group>"; };
+		1B748532253E6DCB00B37F26 /* the-aeneid.jpg */ = {isa = PBXFileReference; path = "the-aeneid.jpg"; sourceTree = "<group>"; };
+		1B748533253E6DCB00B37F26 /* molloy-malone-dies-the-unnamable.jpg */ = {isa = PBXFileReference; path = "molloy-malone-dies-the-unnamable.jpg"; sourceTree = "<group>"; };
+		1B748534253E6DCB00B37F26 /* one-thousand-and-one-nights.jpg */ = {isa = PBXFileReference; path = "one-thousand-and-one-nights.jpg"; sourceTree = "<group>"; };
+		1B748535253E6DCB00B37F26 /* wuthering-heights.jpg */ = {isa = PBXFileReference; path = "wuthering-heights.jpg"; sourceTree = "<group>"; };
+		1B748536253E6DCB00B37F26 /* the-brothers-karamazov.jpg */ = {isa = PBXFileReference; path = "the-brothers-karamazov.jpg"; sourceTree = "<group>"; };
+		1B748537253E6DCB00B37F26 /* confessions-of-zeno.jpg */ = {isa = PBXFileReference; path = "confessions-of-zeno.jpg"; sourceTree = "<group>"; };
+		1B748539253E6DCB00B37F26 /* books.json */ = {isa = PBXFileReference; path = books.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +196,7 @@
 		1B7483D3253E68D600B37F26 /* Classics */ = {
 			isa = PBXGroup;
 			children = (
+				1B74853A253E6DCB00B37F26 /* classics-files */,
 				1B7483D4253E68D600B37F26 /* ClassicsApp.swift */,
 				1B7483D6253E68D600B37F26 /* ContentView.swift */,
 				1B7483D8253E68DA00B37F26 /* Assets.xcassets */,
@@ -129,6 +231,123 @@
 			);
 			path = ClassicsUITests;
 			sourceTree = "<group>";
+		};
+		1B748538253E6DCB00B37F26 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				1B7484D4253E6DCB00B37F26 /* the-trial.jpg */,
+				1B7484D5253E6DCB00B37F26 /* season-of-migration-to-the-north.jpg */,
+				1B7484D6253E6DCB00B37F26 /* ficciones.jpg */,
+				1B7484D7253E6DCB00B37F26 /* the-castle.jpg */,
+				1B7484D8253E6DCB00B37F26 /* the-recognition-of-shakuntala.jpg */,
+				1B7484D9253E6DCB00B37F26 /* nineteen-eighty-four.jpg */,
+				1B7484DA253E6DCB00B37F26 /* the-metamorphoses-of-ovid.jpg */,
+				1B7484DB253E6DCB00B37F26 /* the-possessed.jpg */,
+				1B7484DC253E6DCB00B37F26 /* the-book-of-job.jpg */,
+				1B7484DD253E6DCB00B37F26 /* njals-saga.jpg */,
+				1B7484DE253E6DCB00B37F26 /* diary-of-a-madman.jpg */,
+				1B7484DF253E6DCB00B37F26 /* pride-and-prejudice.jpg */,
+				1B7484E0253E6DCB00B37F26 /* the-idiot.jpg */,
+				1B7484E1253E6DCB00B37F26 /* voyage-au-bout-de-la-nuit.jpg */,
+				1B7484E2253E6DCB00B37F26 /* ramayana.jpg */,
+				1B7484E3253E6DCB00B37F26 /* anna-karenina.jpg */,
+				1B7484E4253E6DCB00B37F26 /* the-mahab-harata.jpg */,
+				1B7484E5253E6DCB00B37F26 /* othello.jpg */,
+				1B7484E6253E6DCB00B37F26 /* children-of-gebelawi.jpg */,
+				1B7484E7253E6DCB00B37F26 /* independent-people.jpg */,
+				1B7484E8253E6DCB00B37F26 /* things-fall-apart.jpg */,
+				1B7484E9253E6DCB00B37F26 /* the-odyssey-of-homer.jpg */,
+				1B7484EA253E6DCB00B37F26 /* a-la-recherche-du-temps-perdu.jpg */,
+				1B7484EB253E6DCB00B37F26 /* madame-bovary.jpg */,
+				1B7484EC253E6DCB00B37F26 /* the-death-of-ivan-ilyich.jpg */,
+				1B7484ED253E6DCB00B37F26 /* poems-giacomo-leopardi.jpg */,
+				1B7484EE253E6DCB00B37F26 /* gargantua-and-pantagruel.jpg */,
+				1B7484EF253E6DCB00B37F26 /* ulysses.jpg */,
+				1B7484F0253E6DCB00B37F26 /* midnights-children.jpg */,
+				1B7484F1253E6DCB00B37F26 /* the-tale-of-genji.jpg */,
+				1B7484F2253E6DCB00B37F26 /* l-etranger.jpg */,
+				1B7484F3253E6DCB00B37F26 /* leaves-of-grass.jpg */,
+				1B7484F4253E6DCB00B37F26 /* the-canterbury-tales.jpg */,
+				1B7484F5253E6DCB00B37F26 /* oedipus-the-king.jpg */,
+				1B7484F6253E6DCB00B37F26 /* bostan.jpg */,
+				1B7484F7253E6DCB00B37F26 /* the-adventures-of-huckleberry-finn.jpg */,
+				1B7484F8253E6DCB00B37F26 /* le-pere-goriot.jpg */,
+				1B7484F9253E6DCB00B37F26 /* a-Dolls-house.jpg */,
+				1B7484FA253E6DCB00B37F26 /* beloved.jpg */,
+				1B7484FB253E6DCB00B37F26 /* war-and-peace.jpg */,
+				1B7484FC253E6DCB00B37F26 /* absalom-absalom.jpg */,
+				1B7484FD253E6DCB00B37F26 /* sons-and-lovers.jpg */,
+				1B7484FE253E6DCB00B37F26 /* stories-of-anton-chekhov.jpg */,
+				1B7484FF253E6DCB00B37F26 /* one-hundred-years-of-solitude.jpg */,
+				1B748500253E6DCB00B37F26 /* the-iliad-of-homer.jpg */,
+				1B748501253E6DCB00B37F26 /* berlin-alexanderplatz.jpg */,
+				1B748502253E6DCB00B37F26 /* the-man-without-qualities.jpg */,
+				1B748503253E6DCB00B37F26 /* stories-of-franz-kafka.jpg */,
+				1B748504253E6DCB00B37F26 /* the-life-and-opinions-of-tristram-shandy.jpg */,
+				1B748505253E6DCB00B37F26 /* memoirs-of-hadrian.jpg */,
+				1B748506253E6DCB00B37F26 /* gullivers-travels.jpg */,
+				1B748507253E6DCB00B37F26 /* blindness.jpg */,
+				1B748508253E6DCB00B37F26 /* history.jpg */,
+				1B748509253E6DCB00B37F26 /* the-sound-of-the-mountain.jpg */,
+				1B74850A253E6DCB00B37F26 /* the-golden-notebook.jpg */,
+				1B74850B253E6DCB00B37F26 /* the-masnavi.jpg */,
+				1B74850C253E6DCB00B37F26 /* hunger.jpg */,
+				1B74850D253E6DCB00B37F26 /* l-education-sentimentale.jpg */,
+				1B74850E253E6DCB00B37F26 /* essais.jpg */,
+				1B74850F253E6DCB00B37F26 /* zorba-the-greek.jpg */,
+				1B748510253E6DCB00B37F26 /* poems-paul-celan.jpg */,
+				1B748511253E6DCB00B37F26 /* the-devil-to-pay-in-the-backlands.jpg */,
+				1B748512253E6DCB00B37F26 /* crime-and-punishment.jpg */,
+				1B748513253E6DCB00B37F26 /* pedro-paramo.jpg */,
+				1B748514253E6DCB00B37F26 /* lolita.jpg */,
+				1B748515253E6DCB00B37F26 /* the-tin-drum.jpg */,
+				1B748516253E6DCB00B37F26 /* moby-dick.jpg */,
+				1B748517253E6DCB00B37F26 /* great-expectations.jpg */,
+				1B748518253E6DCB00B37F26 /* the-book-of-disquiet.jpg */,
+				1B748519253E6DCB00B37F26 /* middlemarch.jpg */,
+				1B74851A253E6DCB00B37F26 /* the-magic-mountain.jpg */,
+				1B74851B253E6DCB00B37F26 /* to-the-lighthouse.jpg */,
+				1B74851C253E6DCB00B37F26 /* the-old-man-and-the-sea.jpg */,
+				1B74851D253E6DCB00B37F26 /* the-sound-and-the-fury.jpg */,
+				1B74851E253E6DCB00B37F26 /* nostromo.jpg */,
+				1B74851F253E6DCB00B37F26 /* hamlet.jpg */,
+				1B748520253E6DCB00B37F26 /* pippi-longstocking.jpg */,
+				1B748521253E6DCB00B37F26 /* fairy-tales.jpg */,
+				1B748522253E6DCB00B37F26 /* jacques-the-fatalist.jpg */,
+				1B748523253E6DCB00B37F26 /* gypsy-ballads.jpg */,
+				1B748524253E6DCB00B37F26 /* dead-souls.jpg */,
+				1B748525253E6DCB00B37F26 /* buddenbrooks.jpg */,
+				1B748526253E6DCB00B37F26 /* medea.jpg */,
+				1B748527253E6DCB00B37F26 /* love-in-the-time-of-cholera.jpg */,
+				1B748528253E6DCB00B37F26 /* the-divine-comedy.jpg */,
+				1B748529253E6DCB00B37F26 /* the-epic-of-gilgamesh.jpg */,
+				1B74852A253E6DCB00B37F26 /* king-lear.jpg */,
+				1B74852B253E6DCB00B37F26 /* the-decameron.jpg */,
+				1B74852C253E6DCB00B37F26 /* le-rouge-et-le-noir.jpg */,
+				1B74852D253E6DCB00B37F26 /* mrs-dalloway.jpg */,
+				1B74852E253E6DCB00B37F26 /* tales-and-poems-of-edgar-allan-poe.jpg */,
+				1B74852F253E6DCB00B37F26 /* invisible-man.jpg */,
+				1B748530253E6DCB00B37F26 /* don-quijote-de-la-mancha.jpg */,
+				1B748531253E6DCB00B37F26 /* faust.jpg */,
+				1B748532253E6DCB00B37F26 /* the-aeneid.jpg */,
+				1B748533253E6DCB00B37F26 /* molloy-malone-dies-the-unnamable.jpg */,
+				1B748534253E6DCB00B37F26 /* one-thousand-and-one-nights.jpg */,
+				1B748535253E6DCB00B37F26 /* wuthering-heights.jpg */,
+				1B748536253E6DCB00B37F26 /* the-brothers-karamazov.jpg */,
+				1B748537253E6DCB00B37F26 /* confessions-of-zeno.jpg */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		1B74853A253E6DCB00B37F26 /* classics-files */ = {
+			isa = PBXGroup;
+			children = (
+				1B748538253E6DCB00B37F26 /* images */,
+				1B748539253E6DCB00B37F26 /* books.json */,
+			);
+			name = "classics-files";
+			path = "/Users/albertkornas/cmpsc475/Classics/Classics/classics-files";
+			sourceTree = "<absolute>";
 		};
 /* End PBXGroup section */
 
