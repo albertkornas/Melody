@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ClassicsApp: App {
+    let classicModel = ClassicModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().environmentObject(classicModel)
         }
     }
 }

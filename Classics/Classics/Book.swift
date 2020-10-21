@@ -8,7 +8,7 @@
 import Foundation
 
 struct Book: Hashable {
-    let author: String
+    let author: String?
     let country: String
     let image: String
     let language: String
@@ -16,6 +16,9 @@ struct Book: Hashable {
     let pages: Int
     let title: String
     let year: Int
+    var read: Bool
+    var pageNum: Int
+    var notes: String?
     
     private enum CodingKeys: String, CodingKey {
         case author
@@ -26,6 +29,9 @@ struct Book: Hashable {
         case pages
         case title
         case year
+        case read
+        case pageNum = "page_num"
+        case notes
     }
 }
 
@@ -34,7 +40,6 @@ extension Book: Codable {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         
         //Use decode on properties that are always present
-        author = try values.decode(String.self, forKey: .author)
         country = try values.decode(String.self, forKey: .country)
         image = try values.decode(String.self, forKey: .image)
         language = try values.decode(String.self, forKey: .language)
@@ -44,12 +49,16 @@ extension Book: Codable {
         year = try values.decode(Int.self, forKey: .year)
         
         //Use decodeIfPresent because these properties may not be present
-        
+        author = try values.decodeIfPresent(String.self, forKey: .author)
+        notes = try values.decodeIfPresent(String.self, forKey: .notes)
         /*These properties will most likely be
         1. Current Page Num
         2. Notes
          */
         
         //Don't forget to assign default value
+        read = try values.decodeIfPresent(Bool.self, forKey: .read) ?? false
+        pageNum = try values.decodeIfPresent(Int.self, forKey: .pageNum) ?? 0
+        
     }
 }
