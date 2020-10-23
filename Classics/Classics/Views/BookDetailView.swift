@@ -25,7 +25,7 @@ struct BookDetailView: View {
             //Toggle whether or not they are currently reading the book
             Form{
                 Button(action: {self.book.read.toggle()}) {
-                    Text(book.read ? "Mark as Unread" : "Mark as Read")
+                    Text(book.read ? "Mark as Not Reading" : "Mark as Reading")
                         .padding()
                         .foregroundColor(book.read ? .green : .red)
                 }

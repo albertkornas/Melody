@@ -16,6 +16,7 @@
 		1B74853C253E90A500B37F26 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74853B253E90A500B37F26 /* Book.swift */; };
 		1B96935A2540B59700BB1544 /* books.json in Resources */ = {isa = PBXBuildFile; fileRef = 1B9693592540B59700BB1544 /* books.json */; };
 		1B9693622540B68000BB1544 /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9693612540B68000BB1544 /* BookDetailView.swift */; };
+		1BD43160254395FE00BEFB20 /* FilterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD4315F254395FE00BEFB20 /* FilterType.swift */; };
 		1BE9A9B92540A8C500B6A4D1 /* ClassicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE9A9B82540A8C500B6A4D1 /* ClassicModel.swift */; };
 		1BE9A9BE2540AAF700B6A4D1 /* StorageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE9A9BD2540AAF700B6A4D1 /* StorageModel.swift */; };
 		1BE9A9C32540B08A00B6A4D1 /* ClassicsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE9A9C22540B08A00B6A4D1 /* ClassicsListView.swift */; };
@@ -154,6 +155,7 @@
 		1B74853B253E90A500B37F26 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Book.swift; path = /Users/albertkornas/cmpsc475/Classics/Classics/Book.swift; sourceTree = "<absolute>"; };
 		1B9693592540B59700BB1544 /* books.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = books.json; sourceTree = "<group>"; };
 		1B9693612540B68000BB1544 /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		1BD4315F254395FE00BEFB20 /* FilterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterType.swift; sourceTree = "<group>"; };
 		1BE9A9B82540A8C500B6A4D1 /* ClassicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicModel.swift; sourceTree = "<group>"; };
 		1BE9A9BD2540AAF700B6A4D1 /* StorageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageModel.swift; sourceTree = "<group>"; };
 		1BE9A9C22540B08A00B6A4D1 /* ClassicsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicsListView.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 			children = (
 				1B9693592540B59700BB1544 /* books.json */,
 				1B74853B253E90A500B37F26 /* Book.swift */,
+				1BD4315F254395FE00BEFB20 /* FilterType.swift */,
 				1BE9A9B82540A8C500B6A4D1 /* ClassicModel.swift */,
 				1BE9A9BD2540AAF700B6A4D1 /* StorageModel.swift */,
 			);
@@ -522,6 +525,7 @@
 				1BE9A9BE2540AAF700B6A4D1 /* StorageModel.swift in Sources */,
 				1BE9A9B92540A8C500B6A4D1 /* ClassicModel.swift in Sources */,
 				1B7483D7253E68D600B37F26 /* ContentView.swift in Sources */,
+				1BD43160254395FE00BEFB20 /* FilterType.swift in Sources */,
 				1BE9A9C32540B08A00B6A4D1 /* ClassicsListView.swift in Sources */,
 				1B7483D5253E68D600B37F26 /* ClassicsApp.swift in Sources */,
 				1B74853C253E90A500B37F26 /* Book.swift in Sources */,
