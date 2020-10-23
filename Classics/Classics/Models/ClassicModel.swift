@@ -12,18 +12,20 @@ class ClassicModel : ObservableObject {
     let storageModel : StorageModel
     
     @Published var classics : Books
-    
+    let dateFormatter = DateFormatter()
     init() {
         let _storageModel = StorageModel()
         classics = _storageModel.classics
         storageModel = _storageModel
+        dateFormatter.dateStyle = .short
+        dateFormatter.timeStyle = .short
     }
     
     func saveData() {
-        storageModel.saveData()
+        storageModel.saveData(classicBooks: classics)
     }
     
-    func addNote(index: Int, newNote: Note) {
+    func addNote(index: Int, newNote: Note, date: Date) {
         classics[index].notes.append(newNote)
     }
     

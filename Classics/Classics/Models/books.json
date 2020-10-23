@@ -1,14 +1,9 @@
 [
   {
-    "notes":[
-        {
-    "progress": 500,
-    "content": "This is a note"
-    },
-        {"progress": 230,
-            "content": "Another note"
-        }
-    ],
+    "notes":[{
+    "progress": 100,
+    "content": "hello",
+    "date": 1034}],
     "author": "Chinua Achebe",
     "country": "Nigeria",
     "image": "things-fall-apart",

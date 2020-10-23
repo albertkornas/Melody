@@ -38,12 +38,12 @@ struct Book: Hashable {
 struct Note: Hashable, Codable {
     let progress: Int
     var content: String
-    //let date: Date
+    let date: Date?
     
     private enum CodingKeys: String, CodingKey {
         case progress
         case content
-        //case date
+        case date
     }
 }
 typealias allNotes = [Note]
@@ -63,11 +63,6 @@ extension Book: Codable {
         
         //Use decodeIfPresent because these properties may not be present
         author = try values.decodeIfPresent(String.self, forKey: .author)
-        
-        /*These properties will most likely be
-        1. Current Page Num
-        2. Notes
-         */
         
         //Don't forget to assign default value
         read = try values.decodeIfPresent(Bool.self, forKey: .read) ?? false

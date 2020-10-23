@@ -18,7 +18,9 @@ struct BookDetailView: View {
     @State private var editingNoteContent: String = ""
     @Environment(\.editMode) var editMode
     
+    let ind: Int
     var body: some View {
+        
         VStack {
             //Toggle whether or not they are currently reading the book
             Form{
@@ -30,20 +32,28 @@ struct BookDetailView: View {
                 
                 Section(header: Text("Progress")) {
                     Text("On page \(book.pageNum)/\(book.pages)")
-                    TextField("Edit Page Number", text: $pageNumber)
+                    TextField("Edit Page Number", text: $pageNumber, onEditingChanged: { _ in
+                                let newPageNumber = Int(pageNumber)
+                                print("Hey")
+                                if (book.pageNum < newPageNumber ?? book.pageNum) {
+                                    book.pageNum = newPageNumber!
+                                } })
                         .disabled(self.editMode?.wrappedValue == .inactive)
+                        .keyboardType(.numberPad)
                 }
                 Section(header: Text("Add a Note")) {
                     TextEditor(text: $notes)
                     Button("Add") {
-                        let note = Note(progress: book.pageNum, content: notes)
-                        classicsModel.addNote(index: 0, newNote: note)
+                        let currentTime = Date()
+                        let note = Note(progress: book.pageNum, content: notes, date: currentTime)
+                        classicsModel.addNote(index: ind, newNote: note, date: Date())
+                        
                     }
                 }
                 
                 Section(header: Text("Notes")) {
-                ForEach (book.notes.indices, id: \.self) {index in
-                    DisclosureGroup("Page \(book.notes[index].progress)", isExpanded: $topExpanded) {
+                    ForEach (book.notes.indices.reversed(), id: \.self) {index in
+                    DisclosureGroup("Page \(book.notes[index].progress) on \(classicsModel.dateFormatter.string(from: book.notes[index].date ?? Date()+50000))", isExpanded: $topExpanded) {
                             TextEditor(text: $book.notes[index].content)
                                 .padding()
                                     .disabled(self.editMode?.wrappedValue == .inactive)

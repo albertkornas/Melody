@@ -10,7 +10,7 @@ import Foundation
 class StorageModel {
     private let destinationURL: URL
     var classics: [Book]
-    
+
     init() {
         let filename = "books"
         
@@ -36,18 +36,15 @@ class StorageModel {
                 print(error)
                 classics = []
             }
-        
-        //Compute notes here
     }
     
     //MARK: - Saving Data
-    func saveData() {
+    func saveData(classicBooks: [Book]) {
         let encoder = JSONEncoder()
         do {
-            let data = try encoder.encode(classics)
+            let data = try encoder.encode(classicBooks)
             try data.write(to: destinationURL)
         } catch {
-            print("Error writing data")
         }
     }
 }
