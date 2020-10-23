@@ -23,4 +23,8 @@ class ClassicModel : ObservableObject {
         storageModel.saveData()
     }
     
+    func addNote(index: Int, newNote: Note) {
+        classics[index].notes.append(newNote)
+    }
+    
 }

@@ -18,7 +18,7 @@ struct Book: Hashable {
     let year: Int
     var read: Bool
     var pageNum: Int
-    var notes: String?
+    var notes: [Note]
     
     private enum CodingKeys: String, CodingKey {
         case author
@@ -35,6 +35,18 @@ struct Book: Hashable {
     }
 }
 
+struct Note: Hashable, Codable {
+    let progress: Int
+    var content: String
+    //let date: Date
+    
+    private enum CodingKeys: String, CodingKey {
+        case progress
+        case content
+        //case date
+    }
+}
+typealias allNotes = [Note]
 extension Book: Codable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
@@ -47,10 +59,11 @@ extension Book: Codable {
         pages = try values.decode(Int.self, forKey: .pages)
         title = try values.decode(String.self, forKey: .title)
         year = try values.decode(Int.self, forKey: .year)
+        notes = try values.decode([Note].self, forKey: .notes)
         
         //Use decodeIfPresent because these properties may not be present
         author = try values.decodeIfPresent(String.self, forKey: .author)
-        notes = try values.decodeIfPresent(String.self, forKey: .notes)
+        
         /*These properties will most likely be
         1. Current Page Num
         2. Notes

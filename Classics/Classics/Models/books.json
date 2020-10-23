@@ -1,5 +1,14 @@
 [
   {
+    "notes":[
+        {
+    "progress": 500,
+    "content": "This is a note"
+    },
+        {"progress": 230,
+            "content": "Another note"
+        }
+    ],
     "author": "Chinua Achebe",
     "country": "Nigeria",
     "image": "things-fall-apart",
@@ -10,6 +19,7 @@
     "year": 1958
   },
   {
+    "notes":[],
     "author": "Hans Christian Andersen",
     "country": "Denmark",
     "image": "fairy-tales",
@@ -18,8 +28,10 @@
     "pages": 784,
     "title": "Fairy Tales",
     "year": 1836
+    
   },
   {
+    "notes":[],
     "author": "Dante Alighieri",
     "country": "Italy",
     "image": "the-divine-comedy",
@@ -28,8 +40,10 @@
     "pages": 928,
     "title": "The Divine Comedy",
     "year": 1315
+    
   },
   {
+    "notes":[],
     "country": "Sumer and Akkadian Empire",
     "image": "the-epic-of-gilgamesh",
     "language": "Akkadian",
@@ -37,8 +51,10 @@
     "pages": 160,
     "title": "The Epic Of Gilgamesh",
     "year": -1700
+    
   },
   {
+    "notes":[],
     "country": "Achaemenid Empire",
     "image": "the-book-of-job",
     "language": "Hebrew",
@@ -46,8 +62,10 @@
     "pages": 176,
     "title": "The Book Of Job",
     "year": -600
+    
   },
   {
+    "notes":[],
     "country": "India/Iran/Iraq/Egypt/Tajikistan",
     "image": "one-thousand-and-one-nights",
     "language": "Arabic",
@@ -55,8 +73,10 @@
     "pages": 288,
     "title": "One Thousand and One Nights",
     "year": 1200
+    
   },
   {
+    "notes":[],
     "country": "Iceland",
     "image": "njals-saga",
     "language": "Old Norse",
@@ -64,8 +84,10 @@
     "pages": 384,
     "title": "Nj\u00e1l's Saga",
     "year": 1350
+    
   },
   {
+    "notes":[],
     "author": "Jane Austen",
     "country": "United Kingdom",
     "image": "pride-and-prejudice",
@@ -74,8 +96,10 @@
     "pages": 226,
     "title": "Pride and Prejudice",
     "year": 1813
+    
   },
   {
+    "notes":[],
     "author": "Honor\u00e9 de Balzac",
     "country": "France",
     "image": "le-pere-goriot",
@@ -84,8 +108,10 @@
     "pages": 443,
     "title": "Le P\u00e9re Goriot",
     "year": 1835
+    
   },
   {
+    "notes":[],
     "author": "Samuel Beckett",
     "country": "Republic of Ireland",
     "image": "molloy-malone-dies-the-unnamable",
@@ -94,8 +120,10 @@
     "pages": 256,
     "title": "Molloy, Malone Dies, The Unnamable, the trilogy",
     "year": 1952
+    
   },
   {
+    "notes":[],
     "author": "Giovanni Boccaccio",
     "country": "Italy",
     "image": "the-decameron",
@@ -104,8 +132,10 @@
     "pages": 1024,
     "title": "The Decameron",
     "year": 1351
+    
   },
   {
+    "notes":[],
     "author": "Jorge Luis Borges",
     "country": "Argentina",
     "image": "ficciones",
@@ -114,8 +144,10 @@
     "pages": 224,
     "title": "Ficciones",
     "year": 1965
+    
   },
   {
+    "notes":[],
     "author": "Emily Bront\u00eb",
     "country": "United Kingdom",
     "image": "wuthering-heights",
@@ -124,8 +156,10 @@
     "pages": 342,
     "title": "Wuthering Heights",
     "year": 1847
+    
   },
   {
+    "notes":[],
     "author": "Albert Camus",
     "country": "Algeria, French Empire",
     "image": "l-etranger",
@@ -134,8 +168,10 @@
     "pages": 185,
     "title": "The Stranger",
     "year": 1942
+    
   },
   {
+    "notes":[],
     "author": "Paul Celan",
     "country": "Romania, France",
     "image": "poems-paul-celan",
@@ -144,8 +180,10 @@
     "pages": 320,
     "title": "Poems",
     "year": 1952
+    
   },
   {
+    "notes":[],
     "author": "Louis-Ferdinand C\u00e9line",
     "country": "France",
     "image": "voyage-au-bout-de-la-nuit",
@@ -154,8 +192,10 @@
     "pages": 505,
     "title": "Journey to the End of the Night",
     "year": 1932
+    
   },
   {
+    "notes":[],
     "author": "Miguel de Cervantes",
     "country": "Spain",
     "image": "don-quijote-de-la-mancha",
@@ -164,8 +204,10 @@
     "pages": 1056,
     "title": "Don Quijote De La Mancha",
     "year": 1610
+    
   },
   {
+    "notes":[],
     "author": "Geoffrey Chaucer",
     "country": "England",
     "image": "the-canterbury-tales",
@@ -174,8 +216,10 @@
     "pages": 544,
     "title": "The Canterbury Tales",
     "year": 1450
+    
   },
   {
+    "notes":[],
     "author": "Anton Chekhov",
     "country": "Russia",
     "image": "stories-of-anton-chekhov",
@@ -184,8 +228,10 @@
     "pages": 194,
     "title": "Stories",
     "year": 1886
+    
   },
   {
+    "notes":[],
     "author": "Joseph Conrad",
     "country": "United Kingdom",
     "image": "nostromo",
@@ -194,8 +240,10 @@
     "pages": 320,
     "title": "Nostromo",
     "year": 1904
+    
   },
   {
+    "notes":[],
     "author": "Charles Dickens",
     "country": "United Kingdom",
     "image": "great-expectations",
@@ -204,8 +252,10 @@
     "pages": 194,
     "title": "Great Expectations",
     "year": 1861
+    
   },
   {
+    "notes":[],
     "author": "Denis Diderot",
     "country": "France",
     "image": "jacques-the-fatalist",
@@ -214,8 +264,10 @@
     "pages": 596,
     "title": "Jacques the Fatalist",
     "year": 1796
+    
   },
   {
+    "notes":[],
     "author": "Alfred D\u00f6blin",
     "country": "Germany",
     "image": "berlin-alexanderplatz",
@@ -224,8 +276,10 @@
     "pages": 600,
     "title": "Berlin Alexanderplatz",
     "year": 1929
+    
   },
   {
+    "notes":[],
     "author": "Fyodor Dostoevsky",
     "country": "Russia",
     "image": "crime-and-punishment",
@@ -234,8 +288,10 @@
     "pages": 551,
     "title": "Crime and Punishment",
     "year": 1866
+    
   },
   {
+    "notes":[],
     "author": "Fyodor Dostoevsky",
     "country": "Russia",
     "image": "the-idiot",
@@ -244,8 +300,10 @@
     "pages": 656,
     "title": "The Idiot",
     "year": 1869
+    
   },
   {
+    "notes":[],
     "author": "Fyodor Dostoevsky",
     "country": "Russia",
     "image": "the-possessed",
@@ -254,8 +312,10 @@
     "pages": 768,
     "title": "The Possessed",
     "year": 1872
+    
   },
   {
+    "notes":[],
     "author": "Fyodor Dostoevsky",
     "country": "Russia",
     "image": "the-brothers-karamazov",
@@ -264,8 +324,10 @@
     "pages": 824,
     "title": "The Brothers Karamazov",
     "year": 1880
+    
   },
   {
+    "notes":[],
     "author": "George Eliot",
     "country": "United Kingdom",
     "image": "middlemarch",
@@ -274,8 +336,10 @@
     "pages": 800,
     "title": "Middlemarch",
     "year": 1871
+    
   },
   {
+    "notes":[],
     "author": "Ralph Ellison",
     "country": "United States",
     "image": "invisible-man",
@@ -284,8 +348,10 @@
     "pages": 581,
     "title": "Invisible Man",
     "year": 1952
+    
   },
   {
+    "notes":[],
     "author": "Euripides",
     "country": "Greece",
     "image": "medea",
@@ -294,8 +360,10 @@
     "pages": 104,
     "title": "Medea",
     "year": -431
+    
   },
   {
+    "notes":[],
     "author": "William Faulkner",
     "country": "United States",
     "image": "absalom-absalom",
@@ -304,8 +372,10 @@
     "pages": 313,
     "title": "Absalom, Absalom!",
     "year": 1936
+    
   },
   {
+    "notes":[],
     "author": "William Faulkner",
     "country": "United States",
     "image": "the-sound-and-the-fury",
@@ -314,8 +384,10 @@
     "pages": 326,
     "title": "The Sound and the Fury",
     "year": 1929
+    
   },
   {
+    "notes":[],
     "author": "Gustave Flaubert",
     "country": "France",
     "image": "madame-bovary",
@@ -324,8 +396,10 @@
     "pages": 528,
     "title": "Madame Bovary",
     "year": 1857
+    
   },
   {
+    "notes":[],
     "author": "Gustave Flaubert",
     "country": "France",
     "image": "l-education-sentimentale",
@@ -334,8 +408,10 @@
     "pages": 606,
     "title": "Sentimental Education",
     "year": 1869
+    
   },
   {
+    "notes":[],
     "author": "Federico Garc\u00eda Lorca",
     "country": "Spain",
     "image": "gypsy-ballads",
@@ -344,8 +420,10 @@
     "pages": 218,
     "title": "Gypsy Ballads",
     "year": 1928
+    
   },
   {
+    "notes":[],
     "author": "Gabriel Garc\u00eda M\u00e1rquez",
     "country": "Colombia",
     "image": "one-hundred-years-of-solitude",
@@ -354,8 +432,10 @@
     "pages": 417,
     "title": "One Hundred Years of Solitude",
     "year": 1967
+    
   },
   {
+    "notes":[],
     "author": "Gabriel Garc\u00eda M\u00e1rquez",
     "country": "Colombia",
     "image": "love-in-the-time-of-cholera",
@@ -364,8 +444,10 @@
     "pages": 368,
     "title": "Love in the Time of Cholera",
     "year": 1985
+    
   },
   {
+    "notes":[],
     "author": "Johann Wolfgang von Goethe",
     "country": "Saxe-Weimar",
     "image": "faust",
@@ -374,8 +456,10 @@
     "pages": 158,
     "title": "Faust",
     "year": 1832
+    
   },
   {
+    "notes":[],
     "author": "Nikolai Gogol",
     "country": "Russia",
     "image": "dead-souls",
@@ -384,8 +468,10 @@
     "pages": 432,
     "title": "Dead Souls",
     "year": 1842
+    
   },
   {
+    "notes":[],
     "author": "G\u00fcnter Grass",
     "country": "Germany",
     "image": "the-tin-drum",
@@ -394,8 +480,10 @@
     "pages": 600,
     "title": "The Tin Drum",
     "year": 1959
+    
   },
   {
+    "notes":[],
     "author": "Jo\u00e3o Guimar\u00e3es Rosa",
     "country": "Brazil",
     "image": "the-devil-to-pay-in-the-backlands",
@@ -404,8 +492,10 @@
     "pages": 494,
     "title": "The Devil to Pay in the Backlands",
     "year": 1956
+    
   },
   {
+    "notes":[],
     "author": "Knut Hamsun",
     "country": "Norway",
     "image": "hunger",
@@ -414,8 +504,10 @@
     "pages": 176,
     "title": "Hunger",
     "year": 1890
+    
   },
   {
+    "notes":[],
     "author": "Ernest Hemingway",
     "country": "United States",
     "image": "the-old-man-and-the-sea",
@@ -424,8 +516,10 @@
     "pages": 128,
     "title": "The Old Man and the Sea",
     "year": 1952
+    
   },
   {
+    "notes":[],
     "author": "Homer",
     "country": "Greece",
     "image": "the-iliad-of-homer",
@@ -434,8 +528,10 @@
     "pages": 608,
     "title": "Iliad",
     "year": -735
+    
   },
   {
+    "notes":[],
     "author": "Homer",
     "country": "Greece",
     "image": "the-odyssey-of-homer",
@@ -444,8 +540,10 @@
     "pages": 374,
     "title": "Odyssey",
     "year": -800
+    
   },
   {
+    "notes":[],
     "author": "Henrik Ibsen",
     "country": "Norway",
     "image": "a-Dolls-house",
@@ -454,8 +552,10 @@
     "pages": 68,
     "title": "A Doll's House",
     "year": 1879
+    
   },
   {
+    "notes":[],
     "author": "James Joyce",
     "country": "Irish Free State",
     "image": "ulysses",
@@ -464,8 +564,10 @@
     "pages": 228,
     "title": "Ulysses",
     "year": 1922
+    
   },
   {
+    "notes":[],
     "author": "Franz Kafka",
     "country": "Czechoslovakia",
     "image": "stories-of-franz-kafka",
@@ -474,8 +576,10 @@
     "pages": 488,
     "title": "Stories",
     "year": 1924
+    
   },
   {
+    "notes":[],
     "author": "Franz Kafka",
     "country": "Czechoslovakia",
     "image": "the-trial",
@@ -484,8 +588,10 @@
     "pages": 160,
     "title": "The Trial",
     "year": 1925
+    
   },
   {
+    "notes":[],
     "author": "Franz Kafka",
     "country": "Czechoslovakia",
     "image": "the-castle",
@@ -494,8 +600,10 @@
     "pages": 352,
     "title": "The Castle",
     "year": 1926
+    
   },
   {
+    "notes":[],
     "author": "K\u0101lid\u0101sa",
     "country": "India",
     "image": "the-recognition-of-shakuntala",
@@ -504,8 +612,10 @@
     "pages": 147,
     "title": "The recognition of Shakuntala",
     "year": 150
+    
   },
   {
+    "notes":[],
     "author": "Yasunari Kawabata",
     "country": "Japan",
     "image": "the-sound-of-the-mountain",
@@ -514,8 +624,10 @@
     "pages": 288,
     "title": "The Sound of the Mountain",
     "year": 1954
+    
   },
   {
+    "notes":[],
     "author": "Nikos Kazantzakis",
     "country": "Greece",
     "image": "zorba-the-greek",
@@ -524,8 +636,10 @@
     "pages": 368,
     "title": "Zorba the Greek",
     "year": 1946
+    
   },
   {
+    "notes":[],
     "author": "D. H. Lawrence",
     "country": "United Kingdom",
     "image": "sons-and-lovers",
@@ -534,8 +648,10 @@
     "pages": 432,
     "title": "Sons and Lovers",
     "year": 1913
+    
   },
   {
+    "notes":[],
     "author": "Halld\u00f3r Laxness",
     "country": "Iceland",
     "image": "independent-people",
@@ -544,8 +660,10 @@
     "pages": 470,
     "title": "Independent People",
     "year": 1934
+    
   },
   {
+    "notes":[],
     "author": "Giacomo Leopardi",
     "country": "Italy",
     "image": "poems-giacomo-leopardi",
@@ -554,8 +672,10 @@
     "pages": 184,
     "title": "Poems",
     "year": 1818
+    
   },
   {
+    "notes":[],
     "author": "Doris Lessing",
     "country": "United Kingdom",
     "image": "the-golden-notebook",
@@ -564,8 +684,10 @@
     "pages": 688,
     "title": "The Golden Notebook",
     "year": 1962
+    
   },
   {
+    "notes":[],
     "author": "Astrid Lindgren",
     "country": "Sweden",
     "image": "pippi-longstocking",
@@ -574,8 +696,10 @@
     "pages": 160,
     "title": "Pippi Longstocking",
     "year": 1945
+    
   },
   {
+    "notes":[],
     "author": "Lu Xun",
     "country": "China",
     "image": "diary-of-a-madman",
@@ -584,8 +708,10 @@
     "pages": 389,
     "title": "Diary of a Madman",
     "year": 1918
+    
   },
   {
+    "notes":[],
     "author": "Naguib Mahfouz",
     "country": "Egypt",
     "image": "children-of-gebelawi",
@@ -594,8 +720,10 @@
     "pages": 355,
     "title": "Children of Gebelawi",
     "year": 1959
+    
   },
   {
+    "notes":[],
     "author": "Thomas Mann",
     "country": "Germany",
     "image": "buddenbrooks",
@@ -604,8 +732,10 @@
     "pages": 736,
     "title": "Buddenbrooks",
     "year": 1901
+    
   },
   {
+    "notes":[],
     "author": "Thomas Mann",
     "country": "Germany",
     "image": "the-magic-mountain",
@@ -614,8 +744,10 @@
     "pages": 720,
     "title": "The Magic Mountain",
     "year": 1924
+    
   },
   {
+    "notes":[],
     "author": "Herman Melville",
     "country": "United States",
     "image": "moby-dick",
@@ -624,8 +756,10 @@
     "pages": 378,
     "title": "Moby Dick",
     "year": 1851
+    
   },
   {
+    "notes":[],
     "author": "Michel de Montaigne",
     "country": "France",
     "image": "essais",
@@ -634,8 +768,10 @@
     "pages": 404,
     "title": "Essays",
     "year": 1595
+    
   },
   {
+    "notes":[],
     "author": "Elsa Morante",
     "country": "Italy",
     "image": "history",
@@ -644,8 +780,10 @@
     "pages": 600,
     "title": "History",
     "year": 1974
+    
   },
   {
+    "notes":[],
     "author": "Toni Morrison",
     "country": "United States",
     "image": "beloved",
@@ -654,8 +792,10 @@
     "pages": 321,
     "title": "Beloved",
     "year": 1987
+    
   },
   {
+    "notes":[],
     "author": "Murasaki Shikibu",
     "country": "Japan",
     "image": "the-tale-of-genji",
@@ -664,8 +804,10 @@
     "pages": 1360,
     "title": "The Tale of Genji",
     "year": 1006
+    
   },
   {
+    "notes":[],
     "author": "Robert Musil",
     "country": "Austria",
     "image": "the-man-without-qualities",
@@ -674,8 +816,10 @@
     "pages": 365,
     "title": "The Man Without Qualities",
     "year": 1931
+    
   },
   {
+    "notes":[],
     "author": "Vladimir Nabokov",
     "country": "Russia/United States",
     "image": "lolita",
@@ -684,8 +828,10 @@
     "pages": 317,
     "title": "Lolita",
     "year": 1955
+    
   },
   {
+    "notes":[],
     "author": "George Orwell",
     "country": "United Kingdom",
     "image": "nineteen-eighty-four",
@@ -694,8 +840,10 @@
     "pages": 272,
     "title": "Nineteen Eighty-Four",
     "year": 1949
+    
   },
   {
+    "notes":[],
     "author": "Ovid",
     "country": "Roman Empire",
     "image": "the-metamorphoses-of-ovid",
@@ -704,8 +852,10 @@
     "pages": 576,
     "title": "Metamorphoses",
     "year": 100
+    
   },
   {
+    "notes":[],
     "author": "Fernando Pessoa",
     "country": "Portugal",
     "image": "the-book-of-disquiet",
@@ -714,8 +864,10 @@
     "pages": 272,
     "title": "The Book of Disquiet",
     "year": 1928
+    
   },
   {
+    "notes":[],
     "author": "Edgar Allan Poe",
     "country": "United States",
     "image": "tales-and-poems-of-edgar-allan-poe",
@@ -724,8 +876,10 @@
     "pages": 842,
     "title": "Tales",
     "year": 1950
+    
   },
   {
+    "notes":[],
     "author": "Marcel Proust",
     "country": "France",
     "image": "a-la-recherche-du-temps-perdu",
@@ -734,8 +888,10 @@
     "pages": 2408,
     "title": "In Search of Lost Time",
     "year": 1920
+    
   },
   {
+    "notes":[],
     "author": "Fran\u00e7ois Rabelais",
     "country": "France",
     "image": "gargantua-and-pantagruel",
@@ -744,8 +900,10 @@
     "pages": 623,
     "title": "Gargantua and Pantagruel",
     "year": 1533
+    
   },
   {
+    "notes":[],
     "author": "Juan Rulfo",
     "country": "Mexico",
     "image": "pedro-paramo",
@@ -754,8 +912,10 @@
     "pages": 124,
     "title": "Pedro P\u00e1ramo",
     "year": 1955
+    
   },
   {
+    "notes":[],
     "author": "Rumi",
     "country": "Sultanate of Rum",
     "image": "the-masnavi",
@@ -764,8 +924,10 @@
     "pages": 438,
     "title": "The Masnavi",
     "year": 1236
+    
   },
   {
+    "notes":[],
     "author": "Salman Rushdie",
     "country": "United Kingdom, India",
     "image": "midnights-children",
@@ -774,8 +936,10 @@
     "pages": 536,
     "title": "Midnight's Children",
     "year": 1981
+    
   },
   {
+    "notes":[],
     "author": "Saadi",
     "country": "Persia, Persian Empire",
     "image": "bostan",
@@ -784,8 +948,10 @@
     "pages": 298,
     "title": "Bostan",
     "year": 1257
+    
   },
   {
+    "notes":[],
     "author": "Tayeb Salih",
     "country": "Sudan",
     "image": "season-of-migration-to-the-north",
@@ -794,8 +960,10 @@
     "pages": 139,
     "title": "Season of Migration to the North",
     "year": 1966
+    
   },
   {
+    "notes":[],
     "author": "Jos\u00e9 Saramago",
     "country": "Portugal",
     "image": "blindness",
@@ -804,8 +972,10 @@
     "pages": 352,
     "title": "Blindness",
     "year": 1995
+    
   },
   {
+    "notes":[],
     "author": "William Shakespeare",
     "country": "England",
     "image": "hamlet",
@@ -814,8 +984,10 @@
     "pages": 432,
     "title": "Hamlet",
     "year": 1603
+    
   },
   {
+    "notes":[],
     "author": "William Shakespeare",
     "country": "England",
     "image": "king-lear",
@@ -824,8 +996,10 @@
     "pages": 384,
     "title": "King Lear",
     "year": 1608
+    
   },
   {
+    "notes":[],
     "author": "William Shakespeare",
     "country": "England",
     "image": "othello",
@@ -834,8 +1008,10 @@
     "pages": 314,
     "title": "Othello",
     "year": 1609
+    
   },
   {
+    "notes":[],
     "author": "Sophocles",
     "country": "Greece",
     "image": "oedipus-the-king",
@@ -844,8 +1020,10 @@
     "pages": 88,
     "title": "Oedipus the King",
     "year": -430
+    
   },
   {
+    "notes":[],
     "author": "Stendhal",
     "country": "France",
     "image": "le-rouge-et-le-noir",
@@ -854,8 +1032,10 @@
     "pages": 576,
     "title": "The Red and the Black",
     "year": 1830
+    
   },
   {
+    "notes":[],
     "author": "Laurence Sterne",
     "country": "England",
     "image": "the-life-and-opinions-of-tristram-shandy",
@@ -864,8 +1044,10 @@
     "pages": 640,
     "title": "The Life And Opinions of Tristram Shandy",
     "year": 1760
+    
   },
   {
+    "notes":[],
     "author": "Italo Svevo",
     "country": "Italy",
     "image": "confessions-of-zeno",
@@ -874,8 +1056,10 @@
     "pages": 412,
     "title": "Confessions of Zeno",
     "year": 1923
+    
   },
   {
+    "notes":[],
     "author": "Jonathan Swift",
     "country": "Ireland",
     "image": "gullivers-travels",
@@ -884,8 +1068,10 @@
     "pages": 178,
     "title": "Gulliver's Travels",
     "year": 1726
+    
   },
   {
+    "notes":[],
     "author": "Leo Tolstoy",
     "country": "Russia",
     "image": "war-and-peace",
@@ -894,8 +1080,10 @@
     "pages": 1296,
     "title": "War and Peace",
     "year": 1867
+    
   },
   {
+    "notes":[],
     "author": "Leo Tolstoy",
     "country": "Russia",
     "image": "anna-karenina",
@@ -904,8 +1092,10 @@
     "pages": 864,
     "title": "Anna Karenina",
     "year": 1877
+    
   },
   {
+    "notes":[],
     "author": "Leo Tolstoy",
     "country": "Russia",
     "image": "the-death-of-ivan-ilyich",
@@ -914,8 +1104,10 @@
     "pages": 92,
     "title": "The Death of Ivan Ilyich",
     "year": 1886
+    
   },
   {
+    "notes":[],
     "author": "Mark Twain",
     "country": "United States",
     "image": "the-adventures-of-huckleberry-finn",
@@ -924,8 +1116,10 @@
     "pages": 224,
     "title": "The Adventures of Huckleberry Finn",
     "year": 1884
+    
   },
   {
+    "notes":[],
     "author": "Valmiki",
     "country": "India",
     "image": "ramayana",
@@ -934,8 +1128,10 @@
     "pages": 152,
     "title": "Ramayana",
     "year": -450
+    
   },
   {
+    "notes":[],
     "author": "Virgil",
     "country": "Roman Empire",
     "image": "the-aeneid",
@@ -944,8 +1140,10 @@
     "pages": 442,
     "title": "The Aeneid",
     "year": -23
+    
   },
   {
+    "notes":[],
     "author": "Vyasa",
     "country": "India",
     "image": "the-mahab-harata",
@@ -954,8 +1152,10 @@
     "pages": 276,
     "title": "Mahabharata",
     "year": -700
+    
   },
   {
+    "notes":[],
     "author": "Walt Whitman",
     "country": "United States",
     "image": "leaves-of-grass",
@@ -964,8 +1164,10 @@
     "pages": 152,
     "title": "Leaves of Grass",
     "year": 1855
+    
   },
   {
+    "notes":[],
     "author": "Virginia Woolf",
     "country": "United Kingdom",
     "image": "mrs-dalloway",
@@ -974,8 +1176,10 @@
     "pages": 216,
     "title": "Mrs Dalloway",
     "year": 1925
+    
   },
   {
+    "notes":[],
     "author": "Virginia Woolf",
     "country": "United Kingdom",
     "image": "to-the-lighthouse",
@@ -984,8 +1188,10 @@
     "pages": 209,
     "title": "To the Lighthouse",
     "year": 1927
+    
   },
   {
+    "notes":[],
     "author": "Marguerite Yourcenar",
     "country": "France/Belgium",
     "image": "memoirs-of-hadrian",

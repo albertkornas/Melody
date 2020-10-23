@@ -13,7 +13,7 @@ struct ClassicsListView: View {
     var body: some View {
         List {
             ForEach(classicModel.classics.indices, id:\.self) {index in
-                NavigationLink(destination: BookDetailView(book: self.$classicModel.classics[index])) {
+                NavigationLink(destination: BookDetailView(classicsModel: classicModel, book: self.$classicModel.classics[index])) {
                     BookRowView(book: classicModel.classics[index])
                 }.id(index)
             }

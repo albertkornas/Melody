@@ -11,9 +11,17 @@ import SwiftUI
 struct ClassicsApp: App {
     let classicModel = ClassicModel()
     
+    @Environment(\.scenePhase) private var scenePhase
     var body: some Scene {
         WindowGroup {
             ContentView().environmentObject(classicModel)
+        }.onChange(of: scenePhase) {phase in
+            switch phase {
+            case .inactive:
+                classicModel.saveData()
+            default:
+                break
+            }
         }
     }
 }

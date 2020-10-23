@@ -36,6 +36,8 @@ class StorageModel {
                 print(error)
                 classics = []
             }
+        
+        //Compute notes here
     }
     
     //MARK: - Saving Data

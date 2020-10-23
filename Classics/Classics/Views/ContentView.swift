@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var classicModel : ClassicModel
     var body: some View {
-        ClassicsListView()
+        NavigationView {
+            ClassicsListView()
+        }.environmentObject(classicModel)
     }
 }
 
