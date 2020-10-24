@@ -23,7 +23,10 @@ struct BookDetailView: View {
         
         VStack {
             //Toggle whether or not they are currently reading the book
+            
             Form{
+                Image(book.image)
+                
                 Button(action: {self.book.read.toggle()}) {
                     Text(book.read ? "Mark as Not Reading" : "Mark as Reading")
                         .padding()
