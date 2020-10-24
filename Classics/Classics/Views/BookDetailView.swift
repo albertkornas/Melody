@@ -57,6 +57,9 @@ struct BookDetailView: View {
                 Section(header: Text("Notes")) {
                     ForEach (book.notes.indices.reversed(), id: \.self) {index in
                     DisclosureGroup("Page \(book.notes[index].progress) on \(classicsModel.dateFormatter.string(from: book.notes[index].date ?? Date()+50000))", isExpanded: $topExpanded) {
+                        Button("Delete") {
+                            classicsModel.deleteNote(index: ind)
+                        }
                             TextEditor(text: $book.notes[index].content)
                                 .padding()
                                     .disabled(self.editMode?.wrappedValue == .inactive)
