@@ -29,8 +29,8 @@ class ClassicModel : ObservableObject {
         classics[index].notes.append(newNote)
     }
     
-    func deleteNote(index: Int) {
-        classics[index].notes.remove(at: index)
+    func deleteNote(bookIndex: Int, noteIndex: Int) {
+        classics[bookIndex].notes.remove(at: noteIndex)
     }
     
 }

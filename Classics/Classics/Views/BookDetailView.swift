@@ -47,10 +47,11 @@ struct BookDetailView: View {
                 Section(header: Text("Add a Note")) {
                     TextEditor(text: $notes)
                     Button("Add") {
-                        let currentTime = Date()
-                        let note = Note(progress: book.pageNum, content: notes, date: currentTime)
-                        classicsModel.addNote(index: ind, newNote: note, date: Date())
-                        
+                        if (notes != "") {
+                            let currentTime = Date()
+                            let note = Note(progress: book.pageNum, content: notes, date: currentTime)
+                            classicsModel.addNote(index: ind, newNote: note, date: Date())
+                        }
                     }
                 }
                 
@@ -58,7 +59,7 @@ struct BookDetailView: View {
                     ForEach (book.notes.indices.reversed(), id: \.self) {index in
                     DisclosureGroup("Page \(book.notes[index].progress) on \(classicsModel.dateFormatter.string(from: book.notes[index].date ?? Date()+50000))", isExpanded: $topExpanded) {
                         Button("Delete") {
-                            classicsModel.deleteNote(index: ind)
+                            classicsModel.deleteNote(bookIndex: ind, noteIndex: index)
                         }
                             TextEditor(text: $book.notes[index].content)
                                 .padding()

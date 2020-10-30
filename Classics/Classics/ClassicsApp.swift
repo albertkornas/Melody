@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct ClassicsApp: App {
     let classicModel = ClassicModel()
+    let persistenceController = PersistenceController.shared
     
     @Environment(\.scenePhase) private var scenePhase
     var body: some Scene {

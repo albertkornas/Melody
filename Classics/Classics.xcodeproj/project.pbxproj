@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B28E6F7254CD5370044BE27 /* BookCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1B28E6F5254CD5370044BE27 /* BookCoreData.xcdatamodeld */; };
+		1B28E6FC254CD61C0044BE27 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B28E6FB254CD61C0044BE27 /* Persistence.swift */; };
 		1B7483D5253E68D600B37F26 /* ClassicsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7483D4253E68D600B37F26 /* ClassicsApp.swift */; };
 		1B7483D7253E68D600B37F26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7483D6253E68D600B37F26 /* ContentView.swift */; };
 		1B7483D9253E68DA00B37F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B7483D8253E68DA00B37F26 /* Assets.xcassets */; };
@@ -40,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1B28E6F6254CD5370044BE27 /* BookCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookCoreData.xcdatamodel; sourceTree = "<group>"; };
+		1B28E6FB254CD61C0044BE27 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		1B7483D1253E68D600B37F26 /* Classics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Classics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B7483D4253E68D600B37F26 /* ClassicsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassicsApp.swift; sourceTree = "<group>"; };
 		1B7483D6253E68D600B37F26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -86,6 +90,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B28E6F4254CD4C20044BE27 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				1B28E6F5254CD5370044BE27 /* BookCoreData.xcdatamodeld */,
+				1B28E6FB254CD61C0044BE27 /* Persistence.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		1B7483C8253E68D600B37F26 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +122,7 @@
 		1B7483D3253E68D600B37F26 /* Classics */ = {
 			isa = PBXGroup;
 			children = (
+				1B28E6F4254CD4C20044BE27 /* CoreData */,
 				1B748543253E90AE00B37F26 /* Other */,
 				1B748545253E90CF00B37F26 /* Views */,
 				1B748544253E90C700B37F26 /* Models */,
@@ -314,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1BE9A9BE2540AAF700B6A4D1 /* StorageModel.swift in Sources */,
+				1B28E6F7254CD5370044BE27 /* BookCoreData.xcdatamodeld in Sources */,
 				1BE9A9B92540A8C500B6A4D1 /* ClassicModel.swift in Sources */,
 				1B7483D7253E68D600B37F26 /* ContentView.swift in Sources */,
 				1BD43160254395FE00BEFB20 /* FilterType.swift in Sources */,
@@ -321,6 +336,7 @@
 				1B7483D5253E68D600B37F26 /* ClassicsApp.swift in Sources */,
 				1B74853C253E90A500B37F26 /* Book.swift in Sources */,
 				1B9693622540B68000BB1544 /* BookDetailView.swift in Sources */,
+				1B28E6FC254CD61C0044BE27 /* Persistence.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +650,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1B28E6F5254CD5370044BE27 /* BookCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1B28E6F6254CD5370044BE27 /* BookCoreData.xcdatamodel */,
+			);
+			currentVersion = 1B28E6F6254CD5370044BE27 /* BookCoreData.xcdatamodel */;
+			path = BookCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 1B7483C9253E68D600B37F26 /* Project object */;
 }
