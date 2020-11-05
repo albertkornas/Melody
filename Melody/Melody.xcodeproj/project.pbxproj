@@ -1,0 +1,626 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1B122E462554B92400523F6D /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B122E452554B92400523F6D /* SongModel.swift */; };
+		1BDDC74825534A6E00FB4C97 /* MelodyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDC74725534A6E00FB4C97 /* MelodyApp.swift */; };
+		1BDDC74A25534A6E00FB4C97 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDC74925534A6E00FB4C97 /* ContentView.swift */; };
+		1BDDC74C25534A7100FB4C97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BDDC74B25534A7100FB4C97 /* Assets.xcassets */; };
+		1BDDC74F25534A7100FB4C97 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1BDDC74E25534A7100FB4C97 /* Preview Assets.xcassets */; };
+		1BDDC75125534A7100FB4C97 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDC75025534A7100FB4C97 /* Persistence.swift */; };
+		1BDDC75425534A7100FB4C97 /* Melody.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDC75225534A7100FB4C97 /* Melody.xcdatamodeld */; };
+		1BDDC75F25534A7100FB4C97 /* MelodyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDC75E25534A7100FB4C97 /* MelodyTests.swift */; };
+		1BDDC76A25534A7100FB4C97 /* MelodyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDC76925534A7100FB4C97 /* MelodyUITests.swift */; };
+		1BDDC77B25534C8F00FB4C97 /* algkid.json in Resources */ = {isa = PBXBuildFile; fileRef = 1BDDC77A25534C8F00FB4C97 /* algkid.json */; };
+		1BDDC7812553620B00FB4C97 /* MelodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDC7802553620B00FB4C97 /* MelodyModel.swift */; };
+		1BDDC7892553654B00FB4C97 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDC7882553654B00FB4C97 /* LoginView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1BDDC75B25534A7100FB4C97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BDDC73C25534A6E00FB4C97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BDDC74325534A6E00FB4C97;
+			remoteInfo = Melody;
+		};
+		1BDDC76625534A7100FB4C97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1BDDC73C25534A6E00FB4C97 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1BDDC74325534A6E00FB4C97;
+			remoteInfo = Melody;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1B122E452554B92400523F6D /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
+		1BDDC74425534A6E00FB4C97 /* Melody.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Melody.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BDDC74725534A6E00FB4C97 /* MelodyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyApp.swift; sourceTree = "<group>"; };
+		1BDDC74925534A6E00FB4C97 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		1BDDC74B25534A7100FB4C97 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1BDDC74E25534A7100FB4C97 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1BDDC75025534A7100FB4C97 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		1BDDC75325534A7100FB4C97 /* Melody.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Melody.xcdatamodel; sourceTree = "<group>"; };
+		1BDDC75525534A7100FB4C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BDDC75A25534A7100FB4C97 /* MelodyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MelodyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BDDC75E25534A7100FB4C97 /* MelodyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyTests.swift; sourceTree = "<group>"; };
+		1BDDC76025534A7100FB4C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BDDC76525534A7100FB4C97 /* MelodyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MelodyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1BDDC76925534A7100FB4C97 /* MelodyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyUITests.swift; sourceTree = "<group>"; };
+		1BDDC76B25534A7100FB4C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1BDDC77A25534C8F00FB4C97 /* algkid.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = algkid.json; sourceTree = "<group>"; };
+		1BDDC7802553620B00FB4C97 /* MelodyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyModel.swift; sourceTree = "<group>"; };
+		1BDDC7882553654B00FB4C97 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1BDDC74125534A6E00FB4C97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BDDC75725534A7100FB4C97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BDDC76225534A7100FB4C97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1BDDC73B25534A6E00FB4C97 = {
+			isa = PBXGroup;
+			children = (
+				1BDDC74625534A6E00FB4C97 /* Melody */,
+				1BDDC75D25534A7100FB4C97 /* MelodyTests */,
+				1BDDC76825534A7100FB4C97 /* MelodyUITests */,
+				1BDDC74525534A6E00FB4C97 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1BDDC74525534A6E00FB4C97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDC74425534A6E00FB4C97 /* Melody.app */,
+				1BDDC75A25534A7100FB4C97 /* MelodyTests.xctest */,
+				1BDDC76525534A7100FB4C97 /* MelodyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1BDDC74625534A6E00FB4C97 /* Melody */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDC74725534A6E00FB4C97 /* MelodyApp.swift */,
+				1BDDC77F255361F500FB4C97 /* Models */,
+				1BDDC74925534A6E00FB4C97 /* ContentView.swift */,
+				1BDDC7882553654B00FB4C97 /* LoginView.swift */,
+				1BDDC77A25534C8F00FB4C97 /* algkid.json */,
+				1BDDC74B25534A7100FB4C97 /* Assets.xcassets */,
+				1BDDC75025534A7100FB4C97 /* Persistence.swift */,
+				1BDDC75525534A7100FB4C97 /* Info.plist */,
+				1BDDC75225534A7100FB4C97 /* Melody.xcdatamodeld */,
+				1BDDC74D25534A7100FB4C97 /* Preview Content */,
+			);
+			path = Melody;
+			sourceTree = "<group>";
+		};
+		1BDDC74D25534A7100FB4C97 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDC74E25534A7100FB4C97 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1BDDC75D25534A7100FB4C97 /* MelodyTests */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDC75E25534A7100FB4C97 /* MelodyTests.swift */,
+				1BDDC76025534A7100FB4C97 /* Info.plist */,
+			);
+			path = MelodyTests;
+			sourceTree = "<group>";
+		};
+		1BDDC76825534A7100FB4C97 /* MelodyUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDC76925534A7100FB4C97 /* MelodyUITests.swift */,
+				1BDDC76B25534A7100FB4C97 /* Info.plist */,
+			);
+			path = MelodyUITests;
+			sourceTree = "<group>";
+		};
+		1BDDC77F255361F500FB4C97 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1BDDC7802553620B00FB4C97 /* MelodyModel.swift */,
+				1B122E452554B92400523F6D /* SongModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1BDDC74325534A6E00FB4C97 /* Melody */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BDDC76E25534A7100FB4C97 /* Build configuration list for PBXNativeTarget "Melody" */;
+			buildPhases = (
+				1BDDC74025534A6E00FB4C97 /* Sources */,
+				1BDDC74125534A6E00FB4C97 /* Frameworks */,
+				1BDDC74225534A6E00FB4C97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Melody;
+			productName = Melody;
+			productReference = 1BDDC74425534A6E00FB4C97 /* Melody.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1BDDC75925534A7100FB4C97 /* MelodyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BDDC77125534A7100FB4C97 /* Build configuration list for PBXNativeTarget "MelodyTests" */;
+			buildPhases = (
+				1BDDC75625534A7100FB4C97 /* Sources */,
+				1BDDC75725534A7100FB4C97 /* Frameworks */,
+				1BDDC75825534A7100FB4C97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BDDC75C25534A7100FB4C97 /* PBXTargetDependency */,
+			);
+			name = MelodyTests;
+			productName = MelodyTests;
+			productReference = 1BDDC75A25534A7100FB4C97 /* MelodyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1BDDC76425534A7100FB4C97 /* MelodyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1BDDC77425534A7100FB4C97 /* Build configuration list for PBXNativeTarget "MelodyUITests" */;
+			buildPhases = (
+				1BDDC76125534A7100FB4C97 /* Sources */,
+				1BDDC76225534A7100FB4C97 /* Frameworks */,
+				1BDDC76325534A7100FB4C97 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1BDDC76725534A7100FB4C97 /* PBXTargetDependency */,
+			);
+			name = MelodyUITests;
+			productName = MelodyUITests;
+			productReference = 1BDDC76525534A7100FB4C97 /* MelodyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1BDDC73C25534A6E00FB4C97 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					1BDDC74325534A6E00FB4C97 = {
+						CreatedOnToolsVersion = 12.0.1;
+					};
+					1BDDC75925534A7100FB4C97 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 1BDDC74325534A6E00FB4C97;
+					};
+					1BDDC76425534A7100FB4C97 = {
+						CreatedOnToolsVersion = 12.0.1;
+						TestTargetID = 1BDDC74325534A6E00FB4C97;
+					};
+				};
+			};
+			buildConfigurationList = 1BDDC73F25534A6E00FB4C97 /* Build configuration list for PBXProject "Melody" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1BDDC73B25534A6E00FB4C97;
+			productRefGroup = 1BDDC74525534A6E00FB4C97 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1BDDC74325534A6E00FB4C97 /* Melody */,
+				1BDDC75925534A7100FB4C97 /* MelodyTests */,
+				1BDDC76425534A7100FB4C97 /* MelodyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1BDDC74225534A6E00FB4C97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDDC77B25534C8F00FB4C97 /* algkid.json in Resources */,
+				1BDDC74F25534A7100FB4C97 /* Preview Assets.xcassets in Resources */,
+				1BDDC74C25534A7100FB4C97 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BDDC75825534A7100FB4C97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BDDC76325534A7100FB4C97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1BDDC74025534A6E00FB4C97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDDC7892553654B00FB4C97 /* LoginView.swift in Sources */,
+				1BDDC75125534A7100FB4C97 /* Persistence.swift in Sources */,
+				1BDDC75425534A7100FB4C97 /* Melody.xcdatamodeld in Sources */,
+				1B122E462554B92400523F6D /* SongModel.swift in Sources */,
+				1BDDC74A25534A6E00FB4C97 /* ContentView.swift in Sources */,
+				1BDDC74825534A6E00FB4C97 /* MelodyApp.swift in Sources */,
+				1BDDC7812553620B00FB4C97 /* MelodyModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BDDC75625534A7100FB4C97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDDC75F25534A7100FB4C97 /* MelodyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1BDDC76125534A7100FB4C97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BDDC76A25534A7100FB4C97 /* MelodyUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1BDDC75C25534A7100FB4C97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BDDC74325534A6E00FB4C97 /* Melody */;
+			targetProxy = 1BDDC75B25534A7100FB4C97 /* PBXContainerItemProxy */;
+		};
+		1BDDC76725534A7100FB4C97 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1BDDC74325534A6E00FB4C97 /* Melody */;
+			targetProxy = 1BDDC76625534A7100FB4C97 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1BDDC76C25534A7100FB4C97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1BDDC76D25534A7100FB4C97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1BDDC76F25534A7100FB4C97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Melody/Preview Content\"";
+				DEVELOPMENT_TEAM = 9MF6LAF8FW;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Melody/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.auk7.Melody;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1BDDC77025534A7100FB4C97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Melody/Preview Content\"";
+				DEVELOPMENT_TEAM = 9MF6LAF8FW;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = Melody/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.auk7.Melody;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		1BDDC77225534A7100FB4C97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MelodyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.auk7.MelodyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Melody.app/Melody";
+			};
+			name = Debug;
+		};
+		1BDDC77325534A7100FB4C97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MelodyTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.auk7.MelodyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Melody.app/Melody";
+			};
+			name = Release;
+		};
+		1BDDC77525534A7100FB4C97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MelodyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.auk7.MelodyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Melody;
+			};
+			name = Debug;
+		};
+		1BDDC77625534A7100FB4C97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = MelodyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.psu.cse.auk7.MelodyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Melody;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1BDDC73F25534A6E00FB4C97 /* Build configuration list for PBXProject "Melody" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BDDC76C25534A7100FB4C97 /* Debug */,
+				1BDDC76D25534A7100FB4C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BDDC76E25534A7100FB4C97 /* Build configuration list for PBXNativeTarget "Melody" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BDDC76F25534A7100FB4C97 /* Debug */,
+				1BDDC77025534A7100FB4C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BDDC77125534A7100FB4C97 /* Build configuration list for PBXNativeTarget "MelodyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BDDC77225534A7100FB4C97 /* Debug */,
+				1BDDC77325534A7100FB4C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1BDDC77425534A7100FB4C97 /* Build configuration list for PBXNativeTarget "MelodyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1BDDC77525534A7100FB4C97 /* Debug */,
+				1BDDC77625534A7100FB4C97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1BDDC75225534A7100FB4C97 /* Melody.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1BDDC75325534A7100FB4C97 /* Melody.xcdatamodel */,
+			);
+			currentVersion = 1BDDC75325534A7100FB4C97 /* Melody.xcdatamodel */;
+			path = Melody.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1BDDC73C25534A6E00FB4C97 /* Project object */;
+}
