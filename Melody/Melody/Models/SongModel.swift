@@ -13,5 +13,13 @@ struct Song {
     var image: String
     var artist: String
     var name: String
-
+    
+    init(id: String, title: String, image: String, artist: String, name: String) {
+        self.id = id
+        self.title = title
+        self.image = image
+        self.artist = artist
+        self.name = name
+    }
+    
 }
