@@ -11,10 +11,12 @@ struct Playlist : Codable, Identifiable {
     
     var id: String
     var attributes: Attributes
+    var tracks: [Song]?
     
     enum CodingKeys: String, CodingKey {
         case id
         case attributes
+        case tracks
     }
 }
 
