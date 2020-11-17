@@ -7,19 +7,25 @@
 
 import Foundation
 
-struct Song {
-    var id: String
-    var title: String
-    var image: String
-    var artist: String
-    var name: String
+struct Song : Codable, Hashable {
+    var albumName: String?
+    var artistName: String?
+    var artworkURL: String?
+    var trackName: String?
+    var duration: Int?
     
-    init(id: String, title: String, image: String, artist: String, name: String) {
-        self.id = id
-        self.title = title
-        self.image = image
-        self.artist = artist
-        self.name = name
+    private enum CodingKeys: String, CodingKey {
+        case albumName
+        case artistName
+        case artworkURL = "url"
+        case trackName = "name"
+        case duration = "durationInMillis"
     }
     
+    init(albumName: String?, artistName: String?, artworkURL: String?, trackName: String?) {
+        self.albumName = albumName
+        self.artistName = artistName
+        self.artworkURL = artworkURL
+        self.trackName = trackName
+    }
 }

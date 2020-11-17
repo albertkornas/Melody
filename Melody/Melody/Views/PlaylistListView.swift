@@ -8,11 +8,16 @@
 import SwiftUI
 
 struct PlaylistListView: View {
-    @Binding var playlists : [Song]
+    @Binding var playlists : [Playlist]
+
     var body: some View {
-        ForEach(playlists.indices, id:\.self) {index in
-            NavigationLink(destination: SongPlayerView(song: self.$playlists[0])) {
-                SongRowView(song: self.$playlists[0])
+        VStack {
+            Text("Playlists")
+                .fontWeight(.bold)
+            VStack {
+                ForEach(playlists.indices, id:\.self) {index in
+                    Text(playlists[index].attributes.name)
+                }
             }
         }
     }

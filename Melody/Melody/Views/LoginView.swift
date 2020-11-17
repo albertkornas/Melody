@@ -10,15 +10,7 @@ import StoreKit
 
 struct LoginView: View {
     var body: some View {
-        Text("Hello, World!")
-            .onAppear() {
-                SKCloudServiceController.requestAuthorization { (status) in
-                    if status == .authorized {
-                        print("Status authorized")
-                        print(MelodyModel().fetchUserPlaylists())
-                    }
-                }
-            }
+        Text("Login")
     }
 
 }

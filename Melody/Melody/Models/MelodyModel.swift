@@ -76,7 +76,7 @@ class MelodyModel : ObservableObject {
             var musicRequest = URLRequest(url: musicURL)
             musicRequest.httpMethod = "GET"
             musicRequest.addValue("Bearer \(self.devToken)", forHTTPHeaderField: "Authorization")
-            musicRequest.addValue(self.getUserToken(), forHTTPHeaderField: "Music-User-Token")
+            musicRequest.addValue("AnTcWbrKGBgwW5eDP6y5+roA8idmysW9amYcU3LmJ8Ukb0zsuLABH13/CD/u4m10AwaF5fXyLP7fY5zuLp49jOhLTnxYzokyxMJMos3Seq6X033M0aTOOVILzefFP2jZ74Ah9/qkWJ5Pr5gHniKD0Uk4eZdS1nqAnzycWNjFfUWmY4H+LjLJ+bMa0mhWhspXaEM5YKlhQIS2WpjZo+ybEzRINhuV91YK2wmUKzEymGtsVtLIFw==", forHTTPHeaderField: "Music-User-Token")
             
             DispatchQueue.main.async {
                 URLSession.shared.dataTask(with: musicRequest) { (data, response, error) in
@@ -85,7 +85,11 @@ class MelodyModel : ObservableObject {
                         let decoder = JSONDecoder()
                         do {
                             let retrievedData = try decoder.decode(JSONData.self, from: data)
-                            self.playlists = retrievedData.data
+                            DispatchQueue.main.async {
+                                self.playlists = retrievedData.data
+                                self.fetchPlaylist(identifier: self.playlists[0].id)
+                            }
+                            
                         } catch {
                             print(error)
                         }
@@ -94,4 +98,33 @@ class MelodyModel : ObservableObject {
             }
         }
     }
+    
+    func fetchPlaylist(identifier: String) {
+        DispatchQueue.global(qos: .userInitiated).async {
+            let musicURL = URL(string: "https://api.music.apple.com/v1/me/library/playlists/\(identifier)?include=tracks")!
+            var musicRequest = URLRequest(url: musicURL)
+            musicRequest.httpMethod = "GET"
+            musicRequest.addValue("Bearer \(self.devToken)", forHTTPHeaderField: "Authorization")
+            musicRequest.addValue("AnTcWbrKGBgwW5eDP6y5+roA8idmysW9amYcU3LmJ8Ukb0zsuLABH13/CD/u4m10AwaF5fXyLP7fY5zuLp49jOhLTnxYzokyxMJMos3Seq6X033M0aTOOVILzefFP2jZ74Ah9/qkWJ5Pr5gHniKD0Uk4eZdS1nqAnzycWNjFfUWmY4H+LjLJ+bMa0mhWhspXaEM5YKlhQIS2WpjZo+ybEzRINhuV91YK2wmUKzEymGtsVtLIFw==", forHTTPHeaderField: "Music-User-Token")
+            
+            DispatchQueue.main.async {
+                URLSession.shared.dataTask(with: musicRequest) { (data, response, error) in
+                    guard error == nil else { return }
+                    if let data = data {
+                        let decoder = JSONDecoder()
+                        do {
+                            //here dataResponse received from a network request
+                                    let jsonResponse = try JSONSerialization.jsonObject(with:
+                                                           data, options: [])
+                                    print(jsonResponse) //Response result
+                            
+                        } catch {
+                            print(error)
+                        }
+                    }
+                }.resume()
+            }
+        }
+    }
+    
 }
