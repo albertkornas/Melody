@@ -6,9 +6,11 @@
 //
 
 import SwiftUI
+import MediaPlayer
 
 struct SongPlayerView: View {
     @Binding var song : Song
+    @Binding var musicPlayer: MPMusicPlayerController
     var body: some View {
         Text("hi")
     }

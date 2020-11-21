@@ -11,9 +11,10 @@ import SwiftUI
 struct MelodyApp: App {
     let persistenceController = PersistenceController.shared
     let melodyModel = MelodyModel()
+    @State var str = "hello"
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(selection: $str)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(melodyModel)
         }

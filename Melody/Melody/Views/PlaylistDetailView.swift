@@ -37,7 +37,7 @@ struct PlaylistDetailView: View {
 
 
 struct PlaylistDetailView_Previews: PreviewProvider {
-    @State static var songArray = [Song(albumName: "A", artistName: "The Weeknd", artworkURL: "L", trackName: "Blinding Lights")]
+    @State static var songArray = [Song(albumName: "A", artistName: "The Weeknd", artworkURL: nil, trackName: "Blinding Lights")]
     static var previews: some View {
         PlaylistDetailView(songs: $songArray)
     }

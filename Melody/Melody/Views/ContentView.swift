@@ -7,19 +7,40 @@
 
 import SwiftUI
 import CoreData
+import MediaPlayer
 
 struct ContentView: View {
     
-    
+    @Binding var selection: String
     @Environment(\.managedObjectContext) private var viewContext
-
+    @State private var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
+    @State var test = Song(albumName: "Test", artistName: "The Weeknd", artworkURL: nil, trackName: "Track name")
 
     var body: some View {
             HomeView()
+        TabView(selection: $selection) {
+            SongPlayerView(song: $test, musicPlayer: $musicPlayer)
+                .tag(0)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "music.note")
+                        Text("Player")
+                    }
+                }
+            HomeView()
+                .tag(1)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
+                    }
+                }
+        }
+        .accentColor(.blue)
 
     }
 
@@ -62,8 +83,9 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
+/*struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+*/

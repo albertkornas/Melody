@@ -16,7 +16,6 @@ struct Playlist : Codable, Identifiable {
     enum CodingKeys: String, CodingKey {
         case id
         case attributes
-        case tracks
     }
 }
 

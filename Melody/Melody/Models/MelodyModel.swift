@@ -15,10 +15,10 @@ class MelodyModel : ObservableObject {
     
     let privateKey = """
 -----BEGIN PRIVATE KEY-----
-    MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgZZr8qRLtVuEsDYEM
-    8iC/u9dc2K5CcirEXCs4MyWhsjCgCgYIKoZIzj0DAQehRANCAAS+YYXf4vjtil0u
-    s9U6Mgf+eDvGQKseRdRDZt+30nxlrqvDIC0JhEJOa3LKK76nwAptzbNEiDK4OjlD
-    t+MSB13l
+MIGTAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBHkwdwIBAQQgZZr8qRLtVuEsDYEM
+8iC/u9dc2K5CcirEXCs4MyWhsjCgCgYIKoZIzj0DAQehRANCAAS+YYXf4vjtil0u
+s9U6Mgf+eDvGQKseRdRDZt+30nxlrqvDIC0JhEJOa3LKK76nwAptzbNEiDK4OjlD
+t+MSB13l
     -----END PRIVATE KEY-----
 """
     
@@ -60,6 +60,7 @@ class MelodyModel : ObservableObject {
             if let token = receivedToken {
                 userToken = token
                 print("Got user token")
+                print("Token: \(userToken)")
             }
             semaphore.signal()
         }
@@ -67,10 +68,8 @@ class MelodyModel : ObservableObject {
         return userToken
     }
     
-    
     func fetchUserPlaylists() {
         print("Attemping url session")
-     
         DispatchQueue.global(qos: .userInitiated).async {
             let musicURL = URL(string: "https://api.music.apple.com/v1/me/library/playlists")!
             var musicRequest = URLRequest(url: musicURL)
@@ -84,23 +83,35 @@ class MelodyModel : ObservableObject {
                     if let data = data {
                         let decoder = JSONDecoder()
                         do {
+                            let jsonString = String(data: data, encoding: .utf8)
+                            //print(jsonString)
                             let retrievedData = try decoder.decode(JSONData.self, from: data)
+                            var pl:[Playlist] = []
                             DispatchQueue.main.async {
-                                self.playlists = retrievedData.data
-                                self.fetchPlaylist(identifier: self.playlists[0].id)
+                                pl = retrievedData.data
+                                self.fetchTracks(playlist: pl[0]) { output in
+                                    pl[0].tracks = output
+                                    print("PL[0] Tracks = \(pl[0].tracks)")
+                                    self.playlists = pl
+                                }
+                                
                             }
-                            
+
                         } catch {
                             print(error)
                         }
                     }
+                    
                 }.resume()
             }
         }
     }
     
-    func fetchPlaylist(identifier: String) {
+    func fetchTracks(playlist: Playlist, completionBlock: @escaping ([Song]) -> Void) -> Void {
+        print("Yea")
+        var songArray : [Song] = []
         DispatchQueue.global(qos: .userInitiated).async {
+            let identifier = playlist.id
             let musicURL = URL(string: "https://api.music.apple.com/v1/me/library/playlists/\(identifier)?include=tracks")!
             var musicRequest = URLRequest(url: musicURL)
             musicRequest.httpMethod = "GET"
@@ -108,23 +119,29 @@ class MelodyModel : ObservableObject {
             musicRequest.addValue("AnTcWbrKGBgwW5eDP6y5+roA8idmysW9amYcU3LmJ8Ukb0zsuLABH13/CD/u4m10AwaF5fXyLP7fY5zuLp49jOhLTnxYzokyxMJMos3Seq6X033M0aTOOVILzefFP2jZ74Ah9/qkWJ5Pr5gHniKD0Uk4eZdS1nqAnzycWNjFfUWmY4H+LjLJ+bMa0mhWhspXaEM5YKlhQIS2WpjZo+ybEzRINhuV91YK2wmUKzEymGtsVtLIFw==", forHTTPHeaderField: "Music-User-Token")
             
             DispatchQueue.main.async {
-                URLSession.shared.dataTask(with: musicRequest) { (data, response, error) in
+                URLSession.shared.dataTask(with: musicRequest, completionHandler: { data, response, error in
                     guard error == nil else { return }
                     if let data = data {
                         let decoder = JSONDecoder()
                         do {
-                            //here dataResponse received from a network request
-                                    let jsonResponse = try JSONSerialization.jsonObject(with:
-                                                           data, options: [])
-                                    print(jsonResponse) //Response result
-                            
+                            let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
+                            var arr: [[NSDictionary]] = dictionary.value(forKeyPath: "data.relationships.tracks.data.attributes") as! [[NSDictionary]]
+                            print(arr[0])
+                            for (index, song) in arr[0].enumerated() {
+                                let song = Song(albumName: song["albumName"] as! String, artistName: song["artistName"] as! String, artworkURL: song["artwork"] as! NSDictionary, trackName: song["name"] as! String)
+                                songArray.append(song)
+                                
+                            }
+                            DispatchQueue.main.async {
+                                completionBlock(songArray)
+                            }
                         } catch {
                             print(error)
                         }
                     }
-                }.resume()
+                }).resume()
             }
         }
+        print("Returning song array: \(songArray)")
     }
-    
 }
