@@ -12,7 +12,9 @@ struct HomeView: View {
     @EnvironmentObject var melodyModel : MelodyModel
     
     var body: some View {
-        PlaylistListView(playlists: $melodyModel.playlists)
+        NavigationView {
+            PlaylistListView(playlists: $melodyModel.playlists)
+        }
         .onAppear() {
             SKCloudServiceController.requestAuthorization { (status) in
                 if status == .authorized {
