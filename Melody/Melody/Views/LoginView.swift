@@ -10,7 +10,7 @@ import StoreKit
 
 struct LoginView: View {
     var body: some View {
-        Text("Login")
+        Text("Placeholder")
     }
 
 }

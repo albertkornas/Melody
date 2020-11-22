@@ -26,11 +26,14 @@ struct PlaylistListView: View {
                                 .rotationEffect(Angle(degrees: -90))
                                 .fixedSize(horizontal: true, vertical: false)
             
-                            
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack {
                                     ForEach(playlists[0].tracks!, id:\.self) { track in
                                         NavigationLink(destination: PlaylistDetailView(playlist: $playlists[index], mediaPlayer: $mediaPlayer)) {
                                         imageArtwork(song: track)
                                     }
+                                    }
+                                }
                             }
                         }
                     }

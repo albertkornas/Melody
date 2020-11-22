@@ -72,12 +72,13 @@ t+MSB13l
     
     func fetchUserPlaylists() {
         print("Attemping url session")
+        getUserToken()
         DispatchQueue.global(qos: .userInitiated).async {
             let musicURL = URL(string: "https://api.music.apple.com/v1/me/library/playlists")!
             var musicRequest = URLRequest(url: musicURL)
             musicRequest.httpMethod = "GET"
             musicRequest.addValue("Bearer \(self.devToken)", forHTTPHeaderField: "Authorization")
-            musicRequest.addValue("AnTcWbrKGBgwW5eDP6y5+roA8idmysW9amYcU3LmJ8Ukb0zsuLABH13/CD/u4m10AwaF5fXyLP7fY5zuLp49jOhLTnxYzokyxMJMos3Seq6X033M0aTOOVILzefFP2jZ74Ah9/qkWJ5Pr5gHniKD0Uk4eZdS1nqAnzycWNjFfUWmY4H+LjLJ+bMa0mhWhspXaEM5YKlhQIS2WpjZo+ybEzRINhuV91YK2wmUKzEymGtsVtLIFw==", forHTTPHeaderField: "Music-User-Token")
+            musicRequest.addValue("At+AEPYcLjKMjLCOpyZWxL9qzf2tS/VJZnjANP2iVa+jgMWp8TKLYoe3Zrk1wHy2JtuQN3JfiXI4fZTW5ZLQK8Z1Q07GHilN5xst7eKJForp4/sRDHKGs5v7bUHOtLT6wwU/Xv+Ot0rAfkAxTBY0kzPRMmr7JTA7OegNbnd0i9qrlk+nTwE7jqdHsfBbtZaCOfED3ugTcjHaUOjtuLvS5G8rHuUCm9MhUAiDewR65EEGB+wlNA==", forHTTPHeaderField: "Music-User-Token")
             
             DispatchQueue.main.async {
                 URLSession.shared.dataTask(with: musicRequest) { (data, response, error) in
@@ -118,7 +119,7 @@ t+MSB13l
             var musicRequest = URLRequest(url: musicURL)
             musicRequest.httpMethod = "GET"
             musicRequest.addValue("Bearer \(self.devToken)", forHTTPHeaderField: "Authorization")
-            musicRequest.addValue("AnTcWbrKGBgwW5eDP6y5+roA8idmysW9amYcU3LmJ8Ukb0zsuLABH13/CD/u4m10AwaF5fXyLP7fY5zuLp49jOhLTnxYzokyxMJMos3Seq6X033M0aTOOVILzefFP2jZ74Ah9/qkWJ5Pr5gHniKD0Uk4eZdS1nqAnzycWNjFfUWmY4H+LjLJ+bMa0mhWhspXaEM5YKlhQIS2WpjZo+ybEzRINhuV91YK2wmUKzEymGtsVtLIFw==", forHTTPHeaderField: "Music-User-Token")
+            musicRequest.addValue("At+AEPYcLjKMjLCOpyZWxL9qzf2tS/VJZnjANP2iVa+jgMWp8TKLYoe3Zrk1wHy2JtuQN3JfiXI4fZTW5ZLQK8Z1Q07GHilN5xst7eKJForp4/sRDHKGs5v7bUHOtLT6wwU/Xv+Ot0rAfkAxTBY0kzPRMmr7JTA7OegNbnd0i9qrlk+nTwE7jqdHsfBbtZaCOfED3ugTcjHaUOjtuLvS5G8rHuUCm9MhUAiDewR65EEGB+wlNA==", forHTTPHeaderField: "Music-User-Token")
             
             DispatchQueue.main.async {
                 URLSession.shared.dataTask(with: musicRequest, completionHandler: { data, response, error in
@@ -127,6 +128,7 @@ t+MSB13l
                         let decoder = JSONDecoder()
                         do {
                             let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
+                            print(dictionary)
                             var arr: [[NSDictionary]] = dictionary.value(forKeyPath: "data.relationships.tracks.data.attributes") as! [[NSDictionary]]
                             print(arr[0])
                             for (index, song) in arr[0].enumerated() {

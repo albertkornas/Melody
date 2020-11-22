@@ -13,6 +13,10 @@ struct PlaylistDetailView: View {
     @Binding var mediaPlayer: MPMusicPlayerController
     
     var body: some View {
+        VStack(alignment: .leading) {
+        Text("  \(playlist.attributes.name)")
+            .font(.headline)
+            
         List {
             ForEach(playlist.tracks!, id:\.self) { song in
                     HStack {
@@ -28,15 +32,19 @@ struct PlaylistDetailView: View {
                         
                         Button(action: {
                             let songId : String = song.playParams!["catalogId"] as! String
-                            print(songId)
-                            self.mediaPlayer.setQueue(with: [songId ])
-                            self.mediaPlayer.play()
+                            if (self.mediaPlayer.playbackState == .playing) {
+                                self.mediaPlayer.pause()
+                            } else {
+                                self.mediaPlayer.setQueue(with: [songId ])
+                                self.mediaPlayer.play()
+                            }
                         }) {
                             Image(systemName: "play.fill")
                                 .foregroundColor(.green)
                         }
                     }
                 }
+        }
         }
     }
 }
