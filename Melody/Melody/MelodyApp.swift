@@ -14,7 +14,7 @@ struct MelodyApp: App {
     @State var str = "hello"
     var body: some Scene {
         WindowGroup {
-            ContentView(selection: $str)
+            ContentView(str: $str)
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(melodyModel)
         }

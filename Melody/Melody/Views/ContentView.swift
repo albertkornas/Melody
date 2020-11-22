@@ -11,37 +11,18 @@ import MediaPlayer
 
 struct ContentView: View {
     
-    @Binding var selection: String
+    @Binding var str : String
     @Environment(\.managedObjectContext) private var viewContext
     @State private var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-    @State var test = Song(albumName: "Test", artistName: "The Weeknd", artworkURL: nil, trackName: "Track name")
 
     var body: some View {
-            HomeView()
-        TabView(selection: $selection) {
-            SongPlayerView(song: $test, musicPlayer: $musicPlayer)
-                .tag(0)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "music.note")
-                        Text("Player")
-                    }
-                }
-            HomeView()
-                .tag(1)
-                .tabItem {
-                    VStack {
-                        Image(systemName: "magnifyingglass")
-                        Text("Search")
-                    }
-                }
+        NavigationView {
+            WelcomeScreen(str: $str)
         }
-        .accentColor(.blue)
-
     }
 
     private func addItem() {
