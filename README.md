@@ -7,8 +7,8 @@ Melody is an audio streaming platform app available on iPhone. It utilizes the A
 
 ## Usage
 1. Log in to the sandbox Apple ID by navigating to Settings -> Apple ID (the top section in settings) -> Sign Out, then sign in using the  following credentials:
-  1. Username: auk7@psu.edu
-  1. Password: CS473melody
+    1. Username: auk7@psu.edu
+    1. Password: CS473melody
 1. Open the Apple 'Music' app and ensure it contains the following playlists:
   1. <img src="https://user-images.githubusercontent.com/26030830/99919882-1882dc80-2cee-11eb-9e42-fd9478b6c2a7.jpg" width="250">
 1. Open the 'Melody' app. You should land on the 'Welcome' screen
