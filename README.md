@@ -29,7 +29,7 @@ One of the issues I ran into after switching to the sandbox PSU Apple ID is 'Aut
 Every time the home screen loads, the correct 3-line 'Music-User-Token' is printed in the debug console. **(I understand we shouldn't have debug statements, but this is the best method I could come up with for this possible issue)**
 
 If you are receiving this error after tapping 'Sign In' on the welcome screen, you must edit the Music-User-Token:
-<https://user-images.githubusercontent.com/26030830/99920367-fd659c00-2cf0-11eb-9f15-73c8be9e3501.png" width="700">
+<im src="https://user-images.githubusercontent.com/26030830/99920367-fd659c00-2cf0-11eb-9f15-73c8be9e3501.png" width="700">
 
 You can easily fix this issue by *replacing* the musicToken variable located in MelodyModel.swift with the 3-line token printed in the debug console:
 <img src="https://user-images.githubusercontent.com/26030830/99920267-554fd300-2cf0-11eb-8ecd-38c54ced58e4.png" width="700">
