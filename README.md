@@ -40,4 +40,4 @@ Restart the app and you should now successfully be able to view the playlists. I
 Another issue I ran into while testing was that once in a blue moon, a song would refuse to play after tapping it. I researched this issue and it seems to be an issue on Apple's end (?). The issue can be resolved by restarting the app.
 
 
-I have done my best to isolate bugs and provide a product that will smoothly function as intended, but unknown issues are likely to exist. If you find yourself facing catastrophic issues, please text or call me at (484)-904-3581 and I will do my best to fix the issue or provide clearer instructions in a timely manner.
+I have done my best to isolate bugs and provide a product that will smoothly function as intended, but unknown issues are likely to exist. If you find yourself facing catastrophic issues, please contact me on Slack/Canvas, or also feel free to text or call me at (484)-904-3581 and I will do my best to fix the issue or provide clearer instructions in a timely manner.
