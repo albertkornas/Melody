@@ -26,7 +26,7 @@ class WebImageLoader: ObservableObject {
         var musicRequest = URLRequest(url: url)
         musicRequest.httpMethod = "GET"
         musicRequest.addValue("Bearer \(self.devToken)", forHTTPHeaderField: "Authorization")
-        musicRequest.addValue("AnTcWbrKGBgwW5eDP6y5+roA8idmysW9amYcU3LmJ8Ukb0zsuLABH13/CD/u4m10AwaF5fXyLP7fY5zuLp49jOhLTnxYzokyxMJMos3Seq6X033M0aTOOVILzefFP2jZ74Ah9/qkWJ5Pr5gHniKD0Uk4eZdS1nqAnzycWNjFfUWmY4H+LjLJ+bMa0mhWhspXaEM5YKlhQIS2WpjZo+ybEzRINhuV91YK2wmUKzEymGtsVtLIFw==", forHTTPHeaderField: "Music-User-Token")
+        musicRequest.addValue(MelodyModel().musicToken, forHTTPHeaderField: "Music-User-Token")
         
         let task = URLSession.shared.dataTask(with: musicRequest) { data, response, error in
             guard let data = data else { return }

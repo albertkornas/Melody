@@ -16,7 +16,6 @@ struct HomeView: View {
         .onAppear() {
             SKCloudServiceController.requestAuthorization { (status) in
                 if status == .authorized {
-                    print("Status authorized")
                     melodyModel.fetchUserPlaylists()
                 }
             }
