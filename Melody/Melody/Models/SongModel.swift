@@ -8,11 +8,12 @@
 import Foundation
 
 struct Song : Identifiable, Codable, Hashable {
-    var id: String
+    var id: String?
     var albumName: String?
     var artistName: String?
     var artworkURL: NSDictionary?
     var trackName: String?
+    var playParams: NSDictionary?
     //var duration: Int?
     
     private enum CodingKeys: String, CodingKey {
@@ -23,11 +24,12 @@ struct Song : Identifiable, Codable, Hashable {
         //case duration = "durationInMillis"
     }
     
-    init(albumName: String?, artistName: String?, artworkURL: NSDictionary?, trackName: String?) {
-        self.id = "F"
+    init(albumName: String?, artistName: String?, artworkURL: NSDictionary?, trackName: String?, playParams: NSDictionary?) {
+        self.id = ""
         self.albumName = albumName
         self.artistName = artistName
         self.artworkURL = artworkURL
         self.trackName = trackName
+        self.playParams = playParams
     }
 }

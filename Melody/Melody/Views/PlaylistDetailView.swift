@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import MediaPlayer
 
 struct PlaylistDetailView: View {
     @Binding var playlist: Playlist
-    
+    @Binding var mediaPlayer: MPMusicPlayerController
     
     var body: some View {
         List {
@@ -22,9 +23,14 @@ struct PlaylistDetailView: View {
                                 .font(.caption)
                                 .foregroundColor(.gray)
                         }
+                        
                         Spacer()
+                        
                         Button(action: {
-                            print("Click")
+                            let songId : String = song.playParams!["catalogId"] as! String
+                            print(songId)
+                            self.mediaPlayer.setQueue(with: [songId ])
+                            self.mediaPlayer.play()
                         }) {
                             Image(systemName: "play.fill")
                                 .foregroundColor(.green)

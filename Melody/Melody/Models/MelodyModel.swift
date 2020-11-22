@@ -9,6 +9,7 @@ import Foundation
 import StoreKit
 import SwiftJWT
 
+
 class MelodyModel : ObservableObject {
     
     @Published var playlists : [Playlist]
@@ -24,6 +25,7 @@ t+MSB13l
     
     let devToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IlRIWFdKNUNNMzcifQ.eyJpc3MiOiI5TUY2TEFGOEZXIiwiZXhwIjoxNjE3NjY3NDMzLjI4NjQzNDIsImlhdCI6MTYwNDYyNDYzMy4yODczNjR9.n6KjBgDv5wmxenAYesKksWgBYY-kgWl9h19QmGRst5dr_lVo3w51OzZXxRAUcf8jOfTNcHOVgvixKkU8QvFqTA"
     @Published var labelText : String
+    
 
     init() {
         labelText = "Hi"
@@ -128,7 +130,7 @@ t+MSB13l
                             var arr: [[NSDictionary]] = dictionary.value(forKeyPath: "data.relationships.tracks.data.attributes") as! [[NSDictionary]]
                             print(arr[0])
                             for (index, song) in arr[0].enumerated() {
-                                let song = Song(albumName: song["albumName"] as! String, artistName: song["artistName"] as! String, artworkURL: song["artwork"] as! NSDictionary, trackName: song["name"] as! String)
+                                let song = Song(albumName: song["albumName"] as! String, artistName: song["artistName"] as! String, artworkURL: song["artwork"] as! NSDictionary, trackName: song["name"] as! String, playParams: song["playParams"] as! NSDictionary)
                                 songArray.append(song)
                                 
                             }

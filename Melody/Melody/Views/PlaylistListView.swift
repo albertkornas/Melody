@@ -6,11 +6,13 @@
 //
 
 import SwiftUI
+import MediaPlayer
 
 struct PlaylistListView: View {
     @EnvironmentObject var model: MelodyModel
     @Binding var playlists : [Playlist]
-
+    @State private var mediaPlayer = MPMusicPlayerController.applicationMusicPlayer
+    
     var body: some View {
         VStack {
             Text("Playlists")
@@ -26,7 +28,7 @@ struct PlaylistListView: View {
             
                             
                                     ForEach(playlists[0].tracks!, id:\.self) { track in
-                                        NavigationLink(destination: PlaylistDetailView(playlist: $playlists[index])) {
+                                        NavigationLink(destination: PlaylistDetailView(playlist: $playlists[index], mediaPlayer: $mediaPlayer)) {
                                         imageArtwork(song: track)
                                     }
                             }
