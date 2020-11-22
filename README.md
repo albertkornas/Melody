@@ -29,9 +29,15 @@ One of the issues I ran into after switching to the sandbox PSU Apple ID is 'Aut
 Every time the home screen loads, the correct 3-line 'Music-User-Token' is printed in the debug console. **(I understand we shouldn't have debug statements, but this is the best method I could come up with for this possible issue)**
 
 If you are receiving this error after tapping 'Sign In' on the welcome screen, you must edit the Music-User-Token:
-<img src="https://user-images.githubusercontent.com/26030830/99920267-554fd300-2cf0-11eb-8ecd-38c54ced58e4.png" width="400">
+<https://user-images.githubusercontent.com/26030830/99920367-fd659c00-2cf0-11eb-9f15-73c8be9e3501.png" width="700">
 
 You can easily fix this issue by *replacing* the musicToken variable located in MelodyModel.swift with the 3-line token printed in the debug console:
-<img src="https://user-images.githubusercontent.com/26030830/99920267-554fd300-2cf0-11eb-8ecd-38c54ced58e4.png"
+<img src="https://user-images.githubusercontent.com/26030830/99920267-554fd300-2cf0-11eb-8ecd-38c54ced58e4.png" width="700">
 
-Restart the app and you should now successfully be able to view the playlists.
+Restart the app and you should now successfully be able to view the playlists. I am planning to squash this possible bug by asynchronously generating the 'devToken' and then the 'Music-User-Token', so that I don't need to hardcode it in the next version. (This will be done before the final submission)
+
+
+Another issue I ran into while testing was that once in a blue moon, a song would refuse to play after tapping it. I researched this issue and it seems to be an issue on Apple's end (?). The issue can be resolved by restarting the app.
+
+
+I have done my best to isolate bugs and provide a product that will smoothly function as intended, but unknown issues are likely to exist. If you find yourself facing catastrophic issues, please text or call me at (484)-904-3581 and I will do my best to fix the issue or provide clearer instructions in a timely manner.
