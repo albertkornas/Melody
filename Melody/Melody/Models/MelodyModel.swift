@@ -55,6 +55,7 @@ t+MSB13l
     
         let semaphore = DispatchSemaphore(value: 0)
         SKCloudServiceController().requestUserToken(forDeveloperToken: devToken) { (receivedToken, error) in
+            // 3
             guard error == nil else {
                 return
             }
@@ -83,7 +84,7 @@ t+MSB13l
                     if let data = data {
                         let decoder = JSONDecoder()
                         do {
-                            let jsonString = String(data: data, encoding: .utf8)
+                            //let jsonString = String(data: data, encoding: .utf8)
                             //print(jsonString)
                             let retrievedData = try decoder.decode(JSONData.self, from: data)
                             var pl:[Playlist] = []
@@ -97,7 +98,7 @@ t+MSB13l
                             }
 
                         } catch {
-
+                           // print(error)
                         }
                     }
                     
@@ -120,10 +121,9 @@ t+MSB13l
                 URLSession.shared.dataTask(with: musicRequest, completionHandler: { data, response, error in
                     guard error == nil else { return }
                     if let data = data {
-                        let decoder = JSONDecoder()
                         do {
                             let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
-                            var arr: [[NSDictionary]] = dictionary.value(forKeyPath: "data.relationships.tracks.data.attributes") as! [[NSDictionary]]
+                            let arr: [[NSDictionary]] = dictionary.value(forKeyPath: "data.relationships.tracks.data.attributes") as! [[NSDictionary]]
                             for (index, song) in arr[0].enumerated() {
                                 let song = Song(albumName: song["albumName"] as! String, artistName: song["artistName"] as! String, artworkURL: song["artwork"] as! NSDictionary, trackName: song["name"] as! String, playParams: song["playParams"] as! NSDictionary)
                                 songArray.append(song)
