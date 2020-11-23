@@ -7,19 +7,29 @@
 
 import Foundation
 
-struct Song {
-    var id: String
-    var title: String
-    var image: String
-    var artist: String
-    var name: String
+struct Song : Identifiable, Codable, Hashable {
+    var id: String?
+    var albumName: String?
+    var artistName: String?
+    var artworkURL: NSDictionary?
+    var trackName: String?
+    var playParams: NSDictionary?
+    //var duration: Int?
     
-    init(id: String, title: String, image: String, artist: String, name: String) {
-        self.id = id
-        self.title = title
-        self.image = image
-        self.artist = artist
-        self.name = name
+    private enum CodingKeys: String, CodingKey {
+        case id
+        case albumName
+        case artistName
+        //case artworkURL = "url"
+        //case duration = "durationInMillis"
     }
     
+    init(albumName: String?, artistName: String?, artworkURL: NSDictionary?, trackName: String?, playParams: NSDictionary?) {
+        self.id = ""
+        self.albumName = albumName
+        self.artistName = artistName
+        self.artworkURL = artworkURL
+        self.trackName = trackName
+        self.playParams = playParams
+    }
 }

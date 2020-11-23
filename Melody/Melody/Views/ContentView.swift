@@ -7,12 +7,13 @@
 
 import SwiftUI
 import CoreData
+import MediaPlayer
 
 struct ContentView: View {
     
-    
+    @Binding var str : String
     @Environment(\.managedObjectContext) private var viewContext
-
+    @State private var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
@@ -20,9 +21,8 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            LoginView()
+            WelcomeScreen(str: $str)
         }
-
     }
 
     private func addItem() {
@@ -64,8 +64,9 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-struct ContentView_Previews: PreviewProvider {
+/*struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }
+*/

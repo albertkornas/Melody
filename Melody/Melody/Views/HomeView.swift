@@ -6,13 +6,19 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct HomeView: View {
     @EnvironmentObject var melodyModel : MelodyModel
     
     var body: some View {
-        VStack {
-            //PlaylistListView(playlists: $melodyModel.playlists)
+            PlaylistListView(playlists: $melodyModel.playlists)
+        .onAppear() {
+            SKCloudServiceController.requestAuthorization { (status) in
+                if status == .authorized {
+                    melodyModel.fetchUserPlaylists()
+                }
+            }
         }
     }
 }
