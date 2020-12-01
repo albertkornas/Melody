@@ -24,7 +24,7 @@ t+MSB13l
     -----END PRIVATE KEY-----
 """
     
-    let musicToken = "At+AEPYcLjKMjLCOpyZWxL9qzf2tS/VJZnjANP2iVa+jgMWp8TKLYoe3Zrk1wHy2JtuQN3JfiXI4fZTW5ZLQK8Z1Q07GHilN5xst7eKJForp4/sRDHKGs5v7bUHOtLT6wwU/Xv+Ot0rAfkAxTBY0kzPRMmr7JTA7OegNbnd0i9qrlk+nTwE7jqdHsfBbtZaCOfED3ugTcjHaUOjtuLvS5G8rHuUCm9MhUAiDewR65EEGB+wlNA=="
+    let musicToken = "AijSRnBDjtAbw91/VKmDmIUjrdA8iSlo8J7k1Ixn/zkuX48xx3+5Uv7ooBwGdoIGp9qZ1feDS1wrYCTieYKCzocaB/5PCAhQcGi4mfNZXT7X/ubpl3bIBtS0cl5+J3TwdUidrxoD1TRQCib2590bT1xg0LDL7q8Ohs98/MYSZEeSuXEJIC9xL0qUQSzGseVfl3swWX8ZuZOq4klwHtitr8pzAIuAozHAue4tuwQ+TeJzCotFUw=="
     
     let devToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IlRIWFdKNUNNMzcifQ.eyJpc3MiOiI5TUY2TEFGOEZXIiwiZXhwIjoxNjE3NjY3NDMzLjI4NjQzNDIsImlhdCI6MTYwNDYyNDYzMy4yODczNjR9.n6KjBgDv5wmxenAYesKksWgBYY-kgWl9h19QmGRst5dr_lVo3w51OzZXxRAUcf8jOfTNcHOVgvixKkU8QvFqTA"
     @Published var labelText : String
@@ -124,8 +124,9 @@ t+MSB13l
                         do {
                             let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
                             let arr: [[NSDictionary]] = dictionary.value(forKeyPath: "data.relationships.tracks.data.attributes") as! [[NSDictionary]]
-                            for (index, song) in arr[0].enumerated() {
-                                let song = Song(albumName: song["albumName"] as! String, artistName: song["artistName"] as! String, artworkURL: song["artwork"] as! NSDictionary, trackName: song["name"] as! String, playParams: song["playParams"] as! NSDictionary)
+                            for (_, song) in arr[0].enumerated() {
+                                var song = Song(albumName: song["albumName"] as? String, artistName: song["artistName"] as? String, artworkURL: song["artwork"] as? NSDictionary, trackName: song["name"] as? String, playParams: song["playParams"] as? NSDictionary, duration: song["durationInMillis"] as? Double)
+                                song.duration = song.duration ?? 0 / 1000
                                 songArray.append(song)
                                 
                             }

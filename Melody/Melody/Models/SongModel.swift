@@ -14,22 +14,23 @@ struct Song : Identifiable, Codable, Hashable {
     var artworkURL: NSDictionary?
     var trackName: String?
     var playParams: NSDictionary?
-    //var duration: Int?
+    var duration: Double?
     
     private enum CodingKeys: String, CodingKey {
         case id
         case albumName
         case artistName
         //case artworkURL = "url"
-        //case duration = "durationInMillis"
+        case duration = "durationInMillis"
     }
     
-    init(albumName: String?, artistName: String?, artworkURL: NSDictionary?, trackName: String?, playParams: NSDictionary?) {
+    init(albumName: String?, artistName: String?, artworkURL: NSDictionary?, trackName: String?, playParams: NSDictionary?, duration: Double?) {
         self.id = ""
         self.albumName = albumName
         self.artistName = artistName
         self.artworkURL = artworkURL
         self.trackName = trackName
         self.playParams = playParams
+        self.duration = (duration ?? 0/1000)
     }
 }
