@@ -13,6 +13,7 @@ struct ContentView: View {
     
     @Binding var str : String
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.colorScheme) var colorScheme
     @State private var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],

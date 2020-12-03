@@ -41,18 +41,16 @@ struct SongRowView: View {
             Spacer()
             Button(action: {
                 let songId : String = currentSong.playParams!["catalogId"] as! String
-                if (self.mediaPlayer.playbackState == .playing) {
-                    self.mediaPlayer.pause()
-                } else {
-                    self.mediaPlayer.setQueue(with: [songId])
-                    self.mediaPlayer.play()
-                }
+                self.mediaPlayer.setQueue(with: [songId])
+                self.mediaPlayer.play()
                 self.showPlayerView.toggle()
             }) {
                 Image(systemName: "play.fill")
                     .foregroundColor(.green)
             }.sheet(isPresented: $showPlayerView) {
-                SongPlayerView(song: currentSong, musicPlayer: $mediaPlayer, showPlayerView: self.$showPlayerView)
+                NavigationView {
+                    SongPlayerView(song: currentSong, musicPlayer: $mediaPlayer, showPlayerView: self.$showPlayerView, playingMusic: mediaPlayer.playbackState == .playing ? true : false)
+                }
             }
         }
     }

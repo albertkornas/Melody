@@ -7,6 +7,7 @@
 
 import Foundation
 import Combine
+import CoreGraphics
 
 class WebImageLoader: ObservableObject {
     var didChange = PassthroughSubject<Data, Never>()
@@ -18,8 +19,8 @@ class WebImageLoader: ObservableObject {
     let devToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IlRIWFdKNUNNMzcifQ.eyJpc3MiOiI5TUY2TEFGOEZXIiwiZXhwIjoxNjE3NjY3NDMzLjI4NjQzNDIsImlhdCI6MTYwNDYyNDYzMy4yODczNjR9.n6KjBgDv5wmxenAYesKksWgBYY-kgWl9h19QmGRst5dr_lVo3w51OzZXxRAUcf8jOfTNcHOVgvixKkU8QvFqTA"
     
     init(unformattedString:String) {
-        var newURL = unformattedString.replacingOccurrences(of: "{w}", with: "155")
-        newURL = newURL.replacingOccurrences(of: "{h}", with: "155")
+        var newURL = unformattedString.replacingOccurrences(of: "{w}", with: "1000")
+        newURL = newURL.replacingOccurrences(of: "{h}", with: "1000")
         
         guard let url = URL(string: newURL) else { return }
         

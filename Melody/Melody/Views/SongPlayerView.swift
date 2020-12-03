@@ -12,35 +12,47 @@ struct SongPlayerView: View {
     let song : Song
     @Binding var musicPlayer: MPMusicPlayerController
     @Binding var showPlayerView: Bool
-    @State private var playingMusic = true
+    @State var playingMusic : Bool
     @State private var songProgress = 0.0
 
     var body: some View {
         GeometryReader { window in
             VStack(alignment: .center, spacing: 30) {
-                Image(uiImage: (self.musicPlayer.nowPlayingItem?.artwork?.image(at: CGSize(width: window.size.width-30, height: window.size.width-30)) ?? UIImage()))
-                    .resizable()
-                    .frame(width: window.size.width-30, height: window.size.width-30)
-                    .cornerRadius(25)
-                VStack(alignment: .leading, spacing: 10) {
+                CategoryItem(withArtworkURL: song.artworkURL?["url"] as! String, withSize: abs(window.size.width-30))
+                    .padding(20)
+
+                VStack(alignment: .leading, spacing: 7.5) {
                     Text(self.musicPlayer.nowPlayingItem?.title ?? "")
                         .font(.title)
+                        .padding(.leading, 5)
                     Text(self.musicPlayer.nowPlayingItem?.artist ?? "")
                         .font(.subheadline)
-                    Text("\(song.trackName ?? "")")
+                        .padding(.leading, 5)
                     
                     let durationInSecs = (song.duration ?? 0)/1000
-                    Text("\(durationInSecs)")
-                    Slider(value: $musicPlayer.currentPlaybackTime, in:0...durationInSecs, onEditingChanged: { editing in
-                        /*if (editing == true) {
-                            musicPlayer.pause()
-                        } else {
-                            if (playingMusic == true) {
-                                musicPlayer.play()
+                    
+                    VStack(spacing:2) {
+                        Slider(value: $songProgress, in:0...durationInSecs, onEditingChanged: { editing in
+                            musicPlayer.currentPlaybackTime = songProgress
+                            if (editing == true) {
+                                musicPlayer.pause()
+                            } else {
+                                if (playingMusic == true) {
+                                    musicPlayer.play()
+                                }
                             }
-                        }*/
-                        print(editing)
-                    })
+                        }).foregroundColor(.white)
+                        .frame(width: window.size.width*0.9)
+                        .padding(5)
+                        HStack(spacing: window.size.width*0.7) {
+                            Text(String(format: "%.01d:%.02d", Int(songProgress/60), Int(songProgress.truncatingRemainder(dividingBy: 60))))
+                                .font(.footnote)
+                                .padding(.leading, 5)
+                            Text(String(format: "%.01d:%.02d", Int(durationInSecs/60), Int(durationInSecs.truncatingRemainder(dividingBy: 60))))
+                                .font(.footnote)
+                                .padding(.trailing, 5)
+                        }
+                    }
                 }
                 
                 HStack(spacing: 55) {
@@ -81,25 +93,31 @@ struct SongPlayerView: View {
                     }
                 }
                 .navigationBarTitle(Text("Playing Now"), displayMode: .inline)
-                .navigationBarItems(trailing: Button(action: {
+                .navigationBarItems(
+                    leading: Button(action: {
+                    print("Menu view")
+                }) {
+                    Image(systemName: "text.badge.plus")
+                        .foregroundColor(.white)
+                },
+                    trailing: Button(action: {
                     self.showPlayerView = false
                 }) {
                     Image(systemName: "chevron.down")
-                })
+                        .foregroundColor(.white)
+                }
+                
+                )
             }
         }.onAppear() {
-            if self.musicPlayer.playbackState == .playing {
-                self.playingMusic = true
-            } else {
+            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {_ in
+                songProgress = musicPlayer.currentPlaybackTime
+            })
+            if self.musicPlayer.playbackState != .playing {
                 self.playingMusic = false
+            } else {
+                self.playingMusic = true
             }
         }
     }
 }
-
-/*struct SongPlayerView_Previews: PreviewProvider {
-    static var previews: some View {
-        SongPlayerView()
-    }
-}
-*/

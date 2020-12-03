@@ -47,7 +47,7 @@ struct imageArtwork: View {
     var song: Song
     var body: some View {
         VStack {
-            CategoryItem(withArtworkURL: song.artworkURL?["url"] as! String, withSong: song)
+            CategoryItem(withArtworkURL: song.artworkURL?["url"] as! String, withSize: 155.0)
             Text(song.trackName ?? "")
                 .foregroundColor(.white)
         }

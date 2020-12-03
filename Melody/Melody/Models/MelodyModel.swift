@@ -8,6 +8,7 @@
 import Foundation
 import StoreKit
 import SwiftJWT
+import MediaPlayer
 
 
 class MelodyModel : ObservableObject {
@@ -105,6 +106,10 @@ t+MSB13l
                 }.resume()
             }
         }
+    }
+    
+    func pollPlaybackTime(player: MPMusicPlayerController) -> Double {
+        return player.currentPlaybackTime
     }
     
     func fetchTracks(playlist: Playlist, completionBlock: @escaping ([Song]) -> Void) -> Void {

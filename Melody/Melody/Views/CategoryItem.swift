@@ -11,11 +11,11 @@ struct CategoryItem: View {
 
     @ObservedObject var artworkLoader: WebImageLoader
     @State var artworkImage:UIImage = UIImage()
-    var song: Song
+    let frameSize : CGFloat
     
-    init(withArtworkURL url:String, withSong: Song) {
+    init(withArtworkURL url:String, withSize frameSize: CGFloat) {
+        self.frameSize = frameSize
         artworkLoader = WebImageLoader(unformattedString: url)
-        self.song = withSong
     }
     
     var body: some View {
@@ -29,6 +29,6 @@ struct CategoryItem: View {
                 self.artworkImage = UIImage(data: data) ?? UIImage()
             }
     }
-    let frameSize : CGFloat = 155
+    
 }
 
