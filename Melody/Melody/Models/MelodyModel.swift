@@ -14,7 +14,7 @@ import MediaPlayer
 class MelodyModel : ObservableObject {
     
     @Published var playlists : [Playlist]
-    
+    @Published var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
     
     let privateKey = """
 -----BEGIN PRIVATE KEY-----
@@ -144,5 +144,39 @@ t+MSB13l
                 }).resume()
             }
         }
+    }
+    
+    func searchMusic(input: String!, completionBlock: @escaping ([Song]) -> Void) -> Void {
+        var songResults = [Song]()
+        
+        let url = URL(string: "https://api.music.apple.com/v1/catalog/us/search?term=\(input.replacingOccurrences(of: " ", with: "+"))&types=songs&limit=10")!
+        var request = URLRequest(url: url)
+        request.addValue("Bearer \(self.devToken)", forHTTPHeaderField: "Authorization")
+        request.addValue(self.musicToken, forHTTPHeaderField: "Music-User-Token")
+        
+        DispatchQueue.main.async {
+        URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
+            guard error == nil else { return }
+            if let data = data {
+                do {
+                    let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
+                    let arr: [NSDictionary] = dictionary.value(forKeyPath: "results.songs.data") as! [NSDictionary]
+                    
+                    for song in arr {
+                        let attributes = song["attributes"] as! NSDictionary
+                        let newSong = Song(albumName: attributes["albumName"] as? String, artistName: attributes["artistName"] as? String, artworkURL: attributes["artwork"] as? NSDictionary, trackName: attributes["name"] as? String, playParams: attributes["playParams"] as? NSDictionary, duration: attributes["durationInMillis"] as? Double)
+                        songResults.append(newSong)
+                    }
+
+                    DispatchQueue.main.async {
+                        completionBlock(songResults)
+                    }
+                } catch {
+                    
+                }
+            }
+        }).resume()
+        }
+
     }
 }

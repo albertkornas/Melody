@@ -11,7 +11,6 @@ import MediaPlayer
 struct PlaylistListView: View {
     @EnvironmentObject var model: MelodyModel
     @Binding var playlists : [Playlist]
-    @State private var mediaPlayer = MPMusicPlayerController.applicationMusicPlayer
     
     var body: some View {
         VStack {
@@ -29,7 +28,7 @@ struct PlaylistListView: View {
                             ScrollView(.horizontal, showsIndicators: false) {
                                 HStack {
                                     ForEach(playlists[0].tracks!, id:\.self) { track in
-                                        NavigationLink(destination: PlaylistDetailView(playlist: $playlists[index], mediaPlayer: $mediaPlayer)) {
+                                        NavigationLink(destination: PlaylistDetailView(playlist: $playlists[index], mediaPlayer: $model.musicPlayer)) {
                                         imageArtwork(song: track)
                                     }
                                     }

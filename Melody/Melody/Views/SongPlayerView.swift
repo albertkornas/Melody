@@ -32,6 +32,7 @@ struct SongPlayerView: View {
                     let durationInSecs = (song.duration ?? 0)/1000
                     
                     VStack(spacing:2) {
+                        
                         Slider(value: $songProgress, in:0...durationInSecs, onEditingChanged: { editing in
                             musicPlayer.currentPlaybackTime = songProgress
                             if (editing == true) {
@@ -94,12 +95,19 @@ struct SongPlayerView: View {
                 }
                 .navigationBarTitle(Text("Playing Now"), displayMode: .inline)
                 .navigationBarItems(
-                    leading: Button(action: {
-                    print("Menu view")
-                }) {
-                    Image(systemName: "text.badge.plus")
+                    leading: Menu(content: {
+                        Button(action: {
+                            print("Added to queue")
+                            let songId : String = song.playParams!["catalogId"] as! String
+                            
+                        }) {
+                            Text("Add to Queue")
+                        }
+                        
+                    }, label: {
+                        Image(systemName: "text.badge.plus")
                         .foregroundColor(.white)
-                },
+                }),
                     trailing: Button(action: {
                     self.showPlayerView = false
                 }) {
@@ -110,9 +118,12 @@ struct SongPlayerView: View {
                 )
             }
         }.onAppear() {
-            Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {_ in
-                songProgress = musicPlayer.currentPlaybackTime
-            })
+            DispatchQueue.global(qos: .background).async {
+                Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: {_ in
+                    songProgress = musicPlayer.currentPlaybackTime
+                })
+                RunLoop.current.run()
+            }
             if self.musicPlayer.playbackState != .playing {
                 self.playingMusic = false
             } else {

@@ -10,6 +10,7 @@
 		1B122E462554B92400523F6D /* SongModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B122E452554B92400523F6D /* SongModel.swift */; };
 		1B122E4F2554D43000523F6D /* SwiftJWT in Frameworks */ = {isa = PBXBuildFile; productRef = 1B122E4E2554D43000523F6D /* SwiftJWT */; };
 		1B122E542554DE4F00523F6D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B122E532554DE4F00523F6D /* HomeView.swift */; };
+		1B136BAF257DCBCC004C6E0F /* FinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B136BAE257DCBCC004C6E0F /* FinderView.swift */; };
 		1B388CD525636CF100FEF7D9 /* PlaylistDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B388CD425636CF100FEF7D9 /* PlaylistDetailView.swift */; };
 		1B878EF9255DAF9100DF3027 /* PlaylistListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B878EF8255DAF9100DF3027 /* PlaylistListView.swift */; };
 		1B878EFE255DB05400DF3027 /* SongPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B878EFD255DB05400DF3027 /* SongPlayerView.swift */; };
@@ -52,6 +53,7 @@
 /* Begin PBXFileReference section */
 		1B122E452554B92400523F6D /* SongModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongModel.swift; sourceTree = "<group>"; };
 		1B122E532554DE4F00523F6D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1B136BAE257DCBCC004C6E0F /* FinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FinderView.swift; path = Melody/Views/FinderView.swift; sourceTree = SOURCE_ROOT; };
 		1B388CD425636CF100FEF7D9 /* PlaylistDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistDetailView.swift; sourceTree = "<group>"; };
 		1B878EF8255DAF9100DF3027 /* PlaylistListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistListView.swift; sourceTree = "<group>"; };
 		1B878EFD255DB05400DF3027 /* SongPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongPlayerView.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				1BDDC74925534A6E00FB4C97 /* ContentView.swift */,
 				1BE504B42569E3D500E04A92 /* MainTabView.swift */,
 				1BE504AF2569DF4D00E04A92 /* WelcomeScreen.swift */,
+				1B136BAE257DCBCC004C6E0F /* FinderView.swift */,
 				1BDDC7882553654B00FB4C97 /* LoginView.swift */,
 				1B122E532554DE4F00523F6D /* HomeView.swift */,
 				1B878EF8255DAF9100DF3027 /* PlaylistListView.swift */,
@@ -348,6 +351,7 @@
 				1BDDC74825534A6E00FB4C97 /* MelodyApp.swift in Sources */,
 				1BDDC7812553620B00FB4C97 /* MelodyModel.swift in Sources */,
 				1BBBFF5D2569B74A00880A21 /* CategoryItem.swift in Sources */,
+				1B136BAF257DCBCC004C6E0F /* FinderView.swift in Sources */,
 				1B878F0C255DE95400DF3027 /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

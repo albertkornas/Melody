@@ -6,9 +6,12 @@
 //
 
 import SwiftUI
+import MediaPlayer
 
 struct MainTabView: View {
     @Binding var selection: String
+    @State private var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
+    
     var body: some View {
         TabView(selection: $selection) {
             HomeView()
@@ -19,12 +22,12 @@ struct MainTabView: View {
                         Text("Welcome")
                     }
                 }
-            LoginView()
+            FinderView()
                 .tag(1)
                 .tabItem {
                     VStack {
-                        Image(systemName: "music.note")
-                        Text("Player")
+                        Image(systemName: "magnifyingglass")
+                        Text("Search")
                     }
                 }
         }
