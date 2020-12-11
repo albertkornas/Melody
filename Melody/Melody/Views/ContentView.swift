@@ -10,7 +10,7 @@ import CoreData
 import MediaPlayer
 
 struct ContentView: View {
-    
+    @EnvironmentObject var model: MelodyModel
     @Binding var str : String
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.colorScheme) var colorScheme
@@ -21,9 +21,7 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
-        NavigationView {
-            WelcomeScreen(str: $str)
-        }
+        MainTabView(selection: $str).environmentObject(model)
     }
 
     private func addItem() {

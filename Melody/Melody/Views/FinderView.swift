@@ -56,32 +56,46 @@ struct RowView: View {
     let song: Song
     @Binding var mediaPlayer : MPMusicPlayerController
     @State private var showPlayerView = false
+    @State private var showAddSongView = false
     
     var body: some View {
         GeometryReader { proxy in
-        HStack {
-            CategoryItem(withArtworkURL: song.artworkURL?["url"] as! String, withSize: abs(proxy.size.height*0.90))
-            
-            VStack(alignment: .leading) {
-                Button(action: {
-                    let songId : String = song.playParams!["id"] as! String
-                    mediaPlayer.setQueue(with: [songId])
-                    mediaPlayer.play()
-                    self.showPlayerView.toggle()
-                }) {
-                Text(song.trackName ?? "")
-                    .font(.headline)
-                }.sheet(isPresented: $showPlayerView) {
-                    NavigationView {
-                        SongPlayerView(song: song, musicPlayer: $mediaPlayer, showPlayerView: self.$showPlayerView, playingMusic: true)
+            HStack {
+                CategoryItem(withArtworkURL: song.artworkURL?["url"] as! String, withSize: abs(proxy.size.height*0.90))
+                HStack {
+                    VStack(alignment: .leading) {
+                        Button(action: {
+                            let songId : String = song.playParams!["id"] as! String
+                            mediaPlayer.setQueue(with: [songId])
+                            mediaPlayer.play()
+                            self.showPlayerView.toggle()
+                        }) {
+                        Text(song.trackName ?? "")
+                            .font(.headline)
+                        }.sheet(isPresented: $showPlayerView) {
+                            NavigationView {
+                                SongPlayerView(song: song, musicPlayer: $mediaPlayer, showPlayerView: self.$showPlayerView, playingMusic: true)
+                            }
+                        }
+                        Text(song.artistName ?? "")
+                            .font(.caption)
+                            .foregroundColor(.gray)
                     }
+                    Spacer()
+                    //Add this song to a certain playlist
+                    Button(action: {
+                        self.showAddSongView.toggle()
+                    }) {
+                        Image(systemName: "plus")
+                            .foregroundColor(.white)
+                    }.sheet(isPresented: $showAddSongView) {
+                        NavigationView {
+                            AddSongView(showAddSongView: self.$showAddSongView, song: song)
+                       }
+                    }
+                    .buttonStyle(BorderlessButtonStyle())
                 }
-                Text(song.artistName ?? "")
-                    .font(.caption)
-                    .foregroundColor(.gray)
             }
-
-        }
         }
     }
 }

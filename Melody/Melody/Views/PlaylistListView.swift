@@ -13,26 +13,81 @@ struct PlaylistListView: View {
     @Binding var playlists : [Playlist]
     
     var body: some View {
+        NavigationView {
+            List {
+                Section(header: Text("Recently Played")) {
+                    RecentlyPlayed()
+                }
+                
+                Section(header: Text("Charts")) {
+                    VStack(alignment: .leading) {
+                        Text("Album Charts")
+                            .font(.title)
+                        AlbumCharts()
+                            
+                        Text("Song Charts")
+                            .font(.title)
+                        SongCharts()
+                    }
+                }
+            }.navigationBarTitle("Home")
+        }
+    }
+}
+
+struct ChartCard: View {
+    let cardName : String
+    let imageName: String
+    var body: some View {
         VStack {
-            Text("Playlists")
-                .fontWeight(.bold)
-            VStack {
-                ForEach(playlists.indices, id:\.self) {index in
-                    if (playlists[index].tracks != nil) {
+            Image(imageName)
+                .resizable()
+                .frame(width: 155, height: 155)
+            Text(self.cardName)
+                .font(.subheadline)
+        }.frame(width: 180)
+    }
+}
+
+struct SongCharts: View {
+    var body: some View {
+        HStack {
+            ChartCard(cardName: "Global Top 50", imageName: "Top50Global")
+            ChartCard(cardName: "United States Top 50", imageName: "Top50USA")
+        }
+    }
+}
+
+struct AlbumCharts: View {
+    var body: some View {
+        HStack {
+            ChartCard(cardName: "Top Albums Global", imageName: "TopAlbumsGlobal")
+            ChartCard(cardName: "Top Albums United States", imageName: "TopAlbumsUSA")
+        }
+    }
+}
+
+struct RecentlyPlayed: View {
+    @EnvironmentObject var model: MelodyModel
+    
+    var body: some View {
+        ForEach(model.playlists.indices, id:\.self) {index in
+            if (model.playlists[index].tracks != nil) {
+                HStack {
+                    Text(model.playlists[index].attributes.name)
+                        .fontWeight(.bold)
+                        .rotationEffect(Angle(degrees: -90))
+                        
+                        .fixedSize(horizontal: true, vertical: false)
+                        .frame(width: 30.0)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
                         HStack {
-                            Text(playlists[index].attributes.name)
-                                .fontWeight(.bold)
-                                .rotationEffect(Angle(degrees: -90))
-                                .fixedSize(horizontal: true, vertical: false)
-            
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack {
-                                    ForEach(playlists[0].tracks!, id:\.self) { track in
-                                        NavigationLink(destination: PlaylistDetailView(playlist: $playlists[index], mediaPlayer: $model.musicPlayer)) {
-                                        imageArtwork(song: track)
-                                    }
-                                    }
-                                }
+                            ForEach(model.playlists[index].tracks!, id:\.self) { track in
+                                NavigationLink(destination: PlaylistDetailView(playlist: $model.playlists[index], mediaPlayer: $model.musicPlayer)) {
+                                imageArtwork(song: track)
+                                    .frame(width: 190.0, height: 180)
+                            }
                             }
                         }
                     }
@@ -49,6 +104,7 @@ struct imageArtwork: View {
             CategoryItem(withArtworkURL: song.artworkURL?["url"] as! String, withSize: 155.0)
             Text(song.trackName ?? "")
                 .foregroundColor(.white)
+                .font(.caption)
         }
     }
 }

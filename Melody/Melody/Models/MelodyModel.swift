@@ -15,6 +15,7 @@ class MelodyModel : ObservableObject {
     
     @Published var playlists : [Playlist]
     @Published var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
+    @Published var songQueue : [Song]
     
     let privateKey = """
 -----BEGIN PRIVATE KEY-----
@@ -28,12 +29,15 @@ t+MSB13l
     let musicToken = "AijSRnBDjtAbw91/VKmDmIUjrdA8iSlo8J7k1Ixn/zkuX48xx3+5Uv7ooBwGdoIGp9qZ1feDS1wrYCTieYKCzocaB/5PCAhQcGi4mfNZXT7X/ubpl3bIBtS0cl5+J3TwdUidrxoD1TRQCib2590bT1xg0LDL7q8Ohs98/MYSZEeSuXEJIC9xL0qUQSzGseVfl3swWX8ZuZOq4klwHtitr8pzAIuAozHAue4tuwQ+TeJzCotFUw=="
     
     let devToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IlRIWFdKNUNNMzcifQ.eyJpc3MiOiI5TUY2TEFGOEZXIiwiZXhwIjoxNjE3NjY3NDMzLjI4NjQzNDIsImlhdCI6MTYwNDYyNDYzMy4yODczNjR9.n6KjBgDv5wmxenAYesKksWgBYY-kgWl9h19QmGRst5dr_lVo3w51OzZXxRAUcf8jOfTNcHOVgvixKkU8QvFqTA"
-    @Published var labelText : String
     
+    struct SongData: Codable {
+        let id:String
+        let type: String
+    }
 
     init() {
-        labelText = "Hi"
         playlists = []
+        songQueue = []
     }
     
     func getJWT() {
@@ -71,7 +75,7 @@ t+MSB13l
     }
     
     func fetchUserPlaylists() {
-        getUserToken()
+        self.playlists = []
         DispatchQueue.global(qos: .userInitiated).async {
             let musicURL = URL(string: "https://api.music.apple.com/v1/me/library/playlists")!
             var musicRequest = URLRequest(url: musicURL)
@@ -84,18 +88,22 @@ t+MSB13l
                     guard error == nil else { return }
                     if let data = data {
                         let decoder = JSONDecoder()
+
                         do {
-                            //let jsonString = String(data: data, encoding: .utf8)
-                            //print(jsonString)
+
                             let retrievedData = try decoder.decode(JSONData.self, from: data)
+
                             var pl:[Playlist] = []
                             DispatchQueue.main.async {
-                                pl = retrievedData.data
-                                self.fetchTracks(playlist: pl[0]) { output in
-                                    pl[0].tracks = output
-                                    self.playlists = pl
-                                }
+                                pl = retrievedData.data //All playlists
                                 
+                                for playlistData in pl {
+                                    var newPl = playlistData
+                                    self.fetchTracks(playlist: newPl) { output in
+                                        newPl.tracks = output
+                                        self.playlists.append(newPl)
+                                    }
+                                }
                             }
 
                         } catch {
@@ -144,6 +152,7 @@ t+MSB13l
                 }).resume()
             }
         }
+        
     }
     
     func searchMusic(input: String!, completionBlock: @escaping ([Song]) -> Void) -> Void {
@@ -177,6 +186,59 @@ t+MSB13l
             }
         }).resume()
         }
+    }
+    
+    func fetchCharts() {
+        var playlistResults = [Song]()
+        DispatchQueue.global(qos: .userInitiated).async {
+            let musicURL = URL(string: "https://api.music.apple.com/v1/catalog/us/charts?types=songs")!
+            var musicRequest = URLRequest(url: musicURL)
+            musicRequest.httpMethod = "GET"
+            musicRequest.addValue("Bearer \(self.devToken)", forHTTPHeaderField: "Authorization")
+            musicRequest.addValue(self.musicToken, forHTTPHeaderField: "Music-User-Token")
+            
+            DispatchQueue.main.async {
+                URLSession.shared.dataTask(with: musicRequest) { (data, response, error) in
+                    guard error == nil else { return }
+                    if let data = data {
+                        do {
+                            let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
+                            print(dictionary)
+                        } catch {
+                            print(error)
+                        }
+                    }
+                    
+                }.resume()
+            }
+        }
+    }
+    
+    func appendSongToPlaylist(withIndex: Int, withSong: Song) {
+        let songIdentifier = withSong.playParams?["id"]
+        let songDict = SongData(id: songIdentifier as! String, type: "songs")
+        
+        var headerStr = Data()
+        do {
+            headerStr = try JSONEncoder().encode(songDict)
+        } catch {
+            print("Invalid JSON")
+        }
+        print(self.playlists[withIndex].id)
+        let url = URL(string: "https://api.music.apple.com/v1/me/library/playlists/\(playlists[withIndex].id)/tracks")!
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("Bearer \(self.devToken)", forHTTPHeaderField: "Authorization")
+        request.addValue(self.musicToken, forHTTPHeaderField: "Music-User-Token")
+        request.httpBody = headerStr
+        
+        DispatchQueue.main.async {
+        URLSession.shared.dataTask(with: request, completionHandler: { data, response, error in
+            guard error == nil else {return}
+            
+        }).resume()
+        }
+        self.playlists[withIndex].tracks?.append(withSong)
 
     }
 }
