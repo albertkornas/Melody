@@ -13,7 +13,8 @@ import MediaPlayer
 
 class MelodyModel : ObservableObject {
     
-    @Published var playlists : [Playlist] //The list of playlists that the user has
+    @Published var playlists : [Playlist] //The list of *personal* playlists that the user has
+    @Published var chart: Playlist //The top charts playlist
     @Published var musicPlayer = MPMusicPlayerController.applicationMusicPlayer //Utilized to play Media
     @Published var songQueue : [String] //A queue that holds Song ID's
     //@Published var currentSong : Song
@@ -39,22 +40,10 @@ t+MSB13l
     init() {
         playlists = []
         songQueue = []
+        chart = Playlist(withTracks: [], withChartName: "Loading...")
     }
     
-    func getJWT() {
-        let signer = JWTSigner.es256(privateKey: Data(privateKey.utf8))
-        let calendar = Calendar.current
-        if let exp = calendar.date(byAdding: .month, value: 5, to: Date()) {
-             let claims = ClaimsStandardJWT(iss: "9MF6LAF8FW", exp: exp, iat: Date())
-             let header = Header(kid: "THXWJ5CM37")
-             var myJWT = JWT(header: header, claims: claims)
-             do {
-                  let signedJWT = try myJWT.sign(using: signer)
-                  print(signedJWT)
-             } catch {
-             }
-        }
-    }
+
     
     func getUserToken() {
         var userToken = String()
@@ -110,6 +99,12 @@ t+MSB13l
                     
                 }.resume()
             }
+        }
+    }
+    
+    func loadChart() {
+        self.fetchCharts() { topChart in
+            self.chart = topChart
         }
     }
     
@@ -185,8 +180,7 @@ t+MSB13l
         }
     }
     
-    func fetchCharts() {
-        var playlistResults = [Song]()
+    func fetchCharts(completionBlock: @escaping (Playlist) -> Void) -> Void {
         DispatchQueue.global(qos: .userInitiated).async {
             let musicURL = URL(string: "https://api.music.apple.com/v1/catalog/us/charts?types=songs")!
             var musicRequest = URLRequest(url: musicURL)
@@ -200,7 +194,18 @@ t+MSB13l
                     if let data = data {
                         do {
                             let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
-                            print(dictionary)
+                            let arr: [[NSDictionary]] = dictionary.value(forKeyPath: "results.songs.data.attributes") as! [[NSDictionary]]
+                            print(arr[0])
+                            var songArray = [Song]()
+                            for (_, song) in arr[0].enumerated() {
+                                var song = Song(albumName: song["albumName"] as? String, artistName: song["artistName"] as? String, artworkURL: song["artwork"] as? NSDictionary, trackName: song["name"] as? String, playParams: song["playParams"] as? NSDictionary, duration: song["durationInMillis"] as? Double)
+                                song.duration = song.duration ?? 0 / 1000
+                                songArray.append(song)
+                            }
+                            let chartPlaylist = Playlist(withTracks: songArray, withChartName: "Top 50")
+                            DispatchQueue.main.async {
+                                completionBlock(chartPlaylist)
+                            }
                         } catch {
                             print(error)
                         }
@@ -245,6 +250,12 @@ t+MSB13l
             self.songQueue.insert(withSongId, at: 0)
         }
         self.musicPlayer.setQueue(with: songQueue)
+    }
+    
+    func removeFromQueue(songId: String) {
+        if let index = self.songQueue.firstIndex(of: songId) {
+            self.songQueue.remove(at: index)
+        }
     }
     
     func currentlyPlayingSong() -> Song {

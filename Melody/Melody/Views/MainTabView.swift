@@ -19,7 +19,6 @@ struct MainTabView: View {
     var body: some View {
         TabView(selection: $selection) {
             PlaylistListView(playlists: $melodyModel.playlists)
-
                 .tag(TabState.home)
                 .tabItem {
                     VStack {
@@ -36,13 +35,6 @@ struct MainTabView: View {
                         Text("Search")
                     }
                 }
-            
-            /*SongPlayerView(song: melodyModel.musicPlayer.nowPlayingItem, musicPlayer: <#T##Binding<MPMusicPlayerController>#>, showPlayerView: <#T##Binding<Bool>#>, playingMusic: <#T##Bool#>)
-                .tag(2)
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Search")
-                }*/
         }
         .accentColor(.blue)
     }

@@ -41,8 +41,14 @@ struct SongRowView: View {
             }
             Spacer()
             Button(action: {
-                let songId : String = currentSong.playParams!["catalogId"] as! String
-                model.addToQueue(withSongId: songId, toBeginning: true)
+                if let mediaPlaying = mediaPlayer.nowPlayingItem {
+                    self.model.removeFromQueue(songId: mediaPlaying.playbackStoreID)
+                }
+                var songId = currentSong.playParams?["catalogId"]
+                if songId == nil {
+                    songId = currentSong.playParams?["id"]
+                }
+                model.addToQueue(withSongId: songId as! String, toBeginning: true)
                 mediaPlayer.play()
                 self.showPlayerView.toggle()
             }) {

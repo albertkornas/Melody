@@ -20,7 +20,6 @@ struct Song : Identifiable, Codable, Hashable {
         case id
         case albumName
         case artistName
-        //case artworkURL = "url"
         case duration = "durationInMillis"
     }
     

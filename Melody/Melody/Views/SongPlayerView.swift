@@ -60,43 +60,8 @@ struct SongPlayerView: View {
                         }
                     }
                     
-                    HStack(spacing: 55) {
-                        Button(action: {
-                            if (self.musicPlayer.currentPlaybackTime <= 3) {
-                                self.musicPlayer.skipToPreviousItem()
-                            } else {
-                                self.musicPlayer.skipToBeginning()
-                            }
-                        }) {
-                            Image(systemName: "arrow.left.to.line")
-                                .resizable()
-                                .frame(width: 35, height: 35)
-                                .foregroundColor(.white)
-                        }
-                        Button(action: {
-                            if (self.musicPlayer.playbackState == .playing) {
-                                self.musicPlayer.pause()
-                                self.playingMusic = false
-                            } else {
-                                self.musicPlayer.play()
-                                self.playingMusic = true
-                            }
-                        }) {
-                            
-                            Image(systemName: self.playingMusic ? "pause.circle.fill" : "play.circle.fill")
-                                .resizable()
-                                .frame(width: 70, height: 70)
-                                .foregroundColor(.white)
-                        }
-                        Button(action: {
-                            self.musicPlayer.skipToNextItem()
-                        }) {
-                            Image(systemName: "arrow.right.to.line")
-                                .resizable()
-                                .frame(width: 35, height: 35)
-                                .foregroundColor(.white)
-                        }
-                    }
+                    SongControls(musicPlayer: self.$musicPlayer, playingMusic: self.$playingMusic)
+                        
                     .navigationBarTitle(Text("Playing Now"), displayMode: .inline)
                     .navigationBarItems(
                         trailing: Button(action: {
@@ -120,6 +85,50 @@ struct SongPlayerView: View {
                 } else {
                     self.playingMusic = true
                 }
+            }
+        }
+    }
+}
+
+struct SongControls: View {
+    @Binding var musicPlayer: MPMusicPlayerController
+    @Binding var playingMusic: Bool
+    var body: some View {
+        HStack(spacing: 55) {
+            Button(action: {
+                if (self.musicPlayer.currentPlaybackTime <= 3) {
+                    self.musicPlayer.skipToPreviousItem()
+                } else {
+                    self.musicPlayer.skipToBeginning()
+                }
+            }) {
+                Image(systemName: "arrow.left.to.line")
+                    .resizable()
+                    .frame(width: 35, height: 35)
+                    .foregroundColor(.white)
+            }
+            Button(action: {
+                if (self.musicPlayer.playbackState == .playing) {
+                    self.musicPlayer.pause()
+                    self.playingMusic = false
+                } else {
+                    self.musicPlayer.play()
+                    self.playingMusic = true
+                }
+            }) {
+                
+                Image(systemName: self.playingMusic ? "pause.circle.fill" : "play.circle.fill")
+                    .resizable()
+                    .frame(width: 70, height: 70)
+                    .foregroundColor(.white)
+            }
+            Button(action: {
+                self.musicPlayer.skipToNextItem()
+            }) {
+                Image(systemName: "arrow.right.to.line")
+                    .resizable()
+                    .frame(width: 35, height: 35)
+                    .foregroundColor(.white)
             }
         }
     }

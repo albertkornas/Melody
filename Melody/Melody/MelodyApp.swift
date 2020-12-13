@@ -12,7 +12,7 @@ struct MelodyApp: App {
     let persistenceController = PersistenceController.shared
     let melodyModel = MelodyModel()
     let flowState = FlowState()
-    @State var str = "hello"
+
     var body: some Scene {
         WindowGroup {
             ContentView()

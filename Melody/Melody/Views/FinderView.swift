@@ -67,8 +67,11 @@ struct RowView: View {
                 HStack {
                     VStack(alignment: .leading) {
                         Button(action: {
-                            let songId : String = song.playParams!["id"] as! String
-                            mediaPlayer.setQueue(with: [songId])
+                            var songId = song.playParams?["catalogId"]
+                            if songId == nil {
+                                songId = song.playParams?["id"]
+                            }
+                            model.addToQueue(withSongId: songId as! String, toBeginning: true)
                             mediaPlayer.play()
                             self.showPlayerView.toggle()
                         }) {

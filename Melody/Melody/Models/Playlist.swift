@@ -17,6 +17,13 @@ struct Playlist : Codable, Identifiable {
         case id
         case attributes
     }
+    
+    init(withTracks: [Song]?, withChartName: String) {
+        self.tracks = withTracks
+        self.id = "chart"
+        let attr = Attributes(name: withChartName)
+        self.attributes = attr
+    }
 }
 
 struct JSONData : Codable {
@@ -29,10 +36,8 @@ struct JSONData : Codable {
 
 struct Attributes: Codable {
     var name: String
-    var dateAdded: String
     
     enum CodingKeys: String, CodingKey {
         case name
-        case dateAdded
     }
 }

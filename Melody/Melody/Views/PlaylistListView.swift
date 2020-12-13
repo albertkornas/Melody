@@ -31,38 +31,55 @@ struct PlaylistListView: View {
                     }
                 }
             }.navigationBarTitle("Home")
+        }.onAppear() {
+            self.model.loadChart()
         }
     }
 }
 
+enum ChartIdentifier: Int {
+    case globalSongs = 0
+    case usSongs = 1
+    case globalAlbums = 2
+    case usAlbums = 3
+}
+
 struct ChartCard: View {
+    @EnvironmentObject var model: MelodyModel
     let cardName : String
     let imageName: String
+    let chartId: ChartIdentifier
     var body: some View {
         VStack {
-            Image(imageName)
-                .resizable()
-                .frame(width: 155, height: 155)
-            Text(self.cardName)
-                .font(.subheadline)
+            
+                    Image(imageName)
+                        .resizable()
+                        .frame(width: 155, height: 155)
+                    Text(self.cardName)
+                        .font(.subheadline)
+            
         }.frame(width: 180)
     }
 }
 
 struct SongCharts: View {
+    @EnvironmentObject var model: MelodyModel
     var body: some View {
         HStack {
-            ChartCard(cardName: "Global Top 50", imageName: "Top50Global")
-            ChartCard(cardName: "United States Top 50", imageName: "Top50USA")
+            NavigationLink(destination: PlaylistDetailView(playlist: $model.chart, mediaPlayer: $model.musicPlayer)) {
+                ChartCard(cardName: "Global Top 50", imageName: "Top50Global", chartId: ChartIdentifier.globalSongs)
+            }
+            ChartCard(cardName: "United States Top 50", imageName: "Top50USA", chartId: ChartIdentifier.usSongs)
         }
+            
     }
 }
 
 struct AlbumCharts: View {
     var body: some View {
         HStack {
-            ChartCard(cardName: "Top Albums Global", imageName: "TopAlbumsGlobal")
-            ChartCard(cardName: "Top Albums United States", imageName: "TopAlbumsUSA")
+            ChartCard(cardName: "Top Albums Global", imageName: "TopAlbumsGlobal", chartId: ChartIdentifier.globalAlbums)
+            ChartCard(cardName: "Top Albums United States", imageName: "TopAlbumsUSA", chartId: ChartIdentifier.usAlbums)
         }
     }
 }
