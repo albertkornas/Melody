@@ -18,6 +18,7 @@ struct AddSongView: View {
                     playlistRowView(showAddSongView: $showAddSongView, playlistTitle: model.playlists[index].attributes.name, amountOfTracks: model.playlists[index].tracks?.count, playlistIndex: index, newSong: song)
                 }
             }.navigationBarTitle("Add to Playlist", displayMode: .inline)
+            
             .navigationBarItems(leading: Button(action: {
                 self.showAddSongView = false
             }) {

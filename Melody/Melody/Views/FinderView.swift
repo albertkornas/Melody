@@ -54,9 +54,11 @@ struct FinderView: View {
 
 struct RowView: View {
     let song: Song
+    @EnvironmentObject var model: MelodyModel
     @Binding var mediaPlayer : MPMusicPlayerController
     @State private var showPlayerView = false
     @State private var showAddSongView = false
+    @State private var showOptionsView = false
     
     var body: some View {
         GeometryReader { proxy in
@@ -84,14 +86,11 @@ struct RowView: View {
                     Spacer()
                     //Add this song to a certain playlist
                     Button(action: {
-                        self.showAddSongView.toggle()
+                        self.showOptionsView.toggle()
                     }) {
-                        Image(systemName: "plus")
-                            .foregroundColor(.white)
-                    }.sheet(isPresented: $showAddSongView) {
-                        NavigationView {
-                            AddSongView(showAddSongView: self.$showAddSongView, song: song)
-                       }
+                        Image(systemName: "text.badge.plus")
+                    }.sheet(isPresented: $showOptionsView) {
+                        SongOptionsView(song: song)
                     }
                     .buttonStyle(BorderlessButtonStyle())
                 }

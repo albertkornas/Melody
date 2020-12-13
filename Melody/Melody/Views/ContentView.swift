@@ -14,14 +14,20 @@ struct ContentView: View {
     @Binding var str : String
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.colorScheme) var colorScheme
-
+    @EnvironmentObject var flowState: FlowState
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
 
     var body: some View {
-        MainTabView(selection: $str).environmentObject(model)
+        VStack {
+            if flowState.process == .onboarding {
+                WelcomeScreen(str: $str)
+            } else {
+                MainTabView(selection: $str)
+            }
+        }
     }
 
     private func addItem() {
@@ -63,9 +69,3 @@ private let itemFormatter: DateFormatter = {
     return formatter
 }()
 
-/*struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
-    }
-}
-*/

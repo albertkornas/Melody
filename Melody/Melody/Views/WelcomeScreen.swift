@@ -6,9 +6,13 @@
 //
 
 import SwiftUI
+import StoreKit
 
 struct WelcomeScreen: View {
     @Binding var str : String
+    @EnvironmentObject var model: MelodyModel
+    @EnvironmentObject var flowState: FlowState
+    
     var body: some View {
         NavigationView {
             ZStack {
@@ -20,12 +24,21 @@ struct WelcomeScreen: View {
                             .font(.system(size: 50, design: .rounded))
                         Text("Let's help you get started")
                             .font(.system(size: 14, design: .rounded))
-                        NavigationLink(destination: MainTabView(selection: $str)) {
-                            Text("Sign in")
-                        }
+                        
+                        Button(action: {
+                            self.flowState.process = .home
+                        }) {
+                            Text("Sign in using Apple Music")
+                        }.disabled(model.musicToken == "" ? true : false)
                     }
                 }
             }.navigationBarTitle("")
+        }.onAppear {
+                SKCloudServiceController.requestAuthorization { (status) in
+                    if status == .authorized {
+                        model.getUserToken()
+                    }
+                }
         }
     }
 }

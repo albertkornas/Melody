@@ -26,6 +26,7 @@ struct PlaylistDetailView: View {
 }
 
 struct SongRowView: View {
+    @EnvironmentObject var model: MelodyModel
     let currentSong: Song
     @State var showPlayerView = false
     @Binding var mediaPlayer: MPMusicPlayerController
@@ -41,8 +42,8 @@ struct SongRowView: View {
             Spacer()
             Button(action: {
                 let songId : String = currentSong.playParams!["catalogId"] as! String
-                self.mediaPlayer.setQueue(with: [songId])
-                self.mediaPlayer.play()
+                model.addToQueue(withSongId: songId, toBeginning: true)
+                mediaPlayer.play()
                 self.showPlayerView.toggle()
             }) {
                 Image(systemName: "play.fill")

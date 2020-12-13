@@ -13,9 +13,10 @@ import MediaPlayer
 
 class MelodyModel : ObservableObject {
     
-    @Published var playlists : [Playlist]
-    @Published var musicPlayer = MPMusicPlayerController.applicationMusicPlayer
-    @Published var songQueue : [Song]
+    @Published var playlists : [Playlist] //The list of playlists that the user has
+    @Published var musicPlayer = MPMusicPlayerController.applicationMusicPlayer //Utilized to play Media
+    @Published var songQueue : [String] //A queue that holds Song ID's
+    //@Published var currentSong : Song
     
     let privateKey = """
 -----BEGIN PRIVATE KEY-----
@@ -26,7 +27,7 @@ t+MSB13l
     -----END PRIVATE KEY-----
 """
     
-    let musicToken = "AijSRnBDjtAbw91/VKmDmIUjrdA8iSlo8J7k1Ixn/zkuX48xx3+5Uv7ooBwGdoIGp9qZ1feDS1wrYCTieYKCzocaB/5PCAhQcGi4mfNZXT7X/ubpl3bIBtS0cl5+J3TwdUidrxoD1TRQCib2590bT1xg0LDL7q8Ohs98/MYSZEeSuXEJIC9xL0qUQSzGseVfl3swWX8ZuZOq4klwHtitr8pzAIuAozHAue4tuwQ+TeJzCotFUw=="
+    @Published var musicToken = ""
     
     let devToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IlRIWFdKNUNNMzcifQ.eyJpc3MiOiI5TUY2TEFGOEZXIiwiZXhwIjoxNjE3NjY3NDMzLjI4NjQzNDIsImlhdCI6MTYwNDYyNDYzMy4yODczNjR9.n6KjBgDv5wmxenAYesKksWgBYY-kgWl9h19QmGRst5dr_lVo3w51OzZXxRAUcf8jOfTNcHOVgvixKkU8QvFqTA"
     
@@ -55,23 +56,22 @@ t+MSB13l
         }
     }
     
-    func getUserToken() -> String {
+    func getUserToken() {
         var userToken = String()
-    
-        let semaphore = DispatchSemaphore(value: 0)
         SKCloudServiceController().requestUserToken(forDeveloperToken: devToken) { (receivedToken, error) in
-            // 3
+
             guard error == nil else {
                 return
             }
             if let token = receivedToken {
                 userToken = token
                 print("Token: \(userToken)")
+                self.musicToken = userToken
+                print("MusicToken: \(self.musicToken)")
+                self.fetchUserPlaylists()
             }
-            semaphore.signal()
         }
         
-        return userToken
     }
     
     func fetchUserPlaylists() {
@@ -88,9 +88,7 @@ t+MSB13l
                     guard error == nil else { return }
                     if let data = data {
                         let decoder = JSONDecoder()
-
                         do {
-
                             let retrievedData = try decoder.decode(JSONData.self, from: data)
 
                             var pl:[Playlist] = []
@@ -105,7 +103,6 @@ t+MSB13l
                                     }
                                 }
                             }
-
                         } catch {
                            // print(error)
                         }
@@ -224,7 +221,7 @@ t+MSB13l
         } catch {
             print("Invalid JSON")
         }
-        print(self.playlists[withIndex].id)
+
         let url = URL(string: "https://api.music.apple.com/v1/me/library/playlists/\(playlists[withIndex].id)/tracks")!
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -239,6 +236,21 @@ t+MSB13l
         }).resume()
         }
         self.playlists[withIndex].tracks?.append(withSong)
+    }
+    
+    func addToQueue(withSongId: String, toBeginning: Bool) {
+        if (toBeginning == false) {
+            self.songQueue.append(withSongId)
+        } else {
+            self.songQueue.insert(withSongId, at: 0)
+        }
+        self.musicPlayer.setQueue(with: songQueue)
+    }
+    
+    func currentlyPlayingSong() -> Song {
+        let mediaItem = musicPlayer.nowPlayingItem
 
+        let song = Song(albumName: mediaItem?.albumTitle, artistName: mediaItem?.artist, artworkURL: nil, trackName: mediaItem?.title, playParams: nil, duration: Double(mediaItem?.playbackDuration ?? 0))
+        return song
     }
 }
