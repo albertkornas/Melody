@@ -9,7 +9,6 @@ import SwiftUI
 import StoreKit
 
 struct WelcomeScreen: View {
-    @Binding var str : String
     @EnvironmentObject var model: MelodyModel
     @EnvironmentObject var flowState: FlowState
     

@@ -11,7 +11,7 @@ import MediaPlayer
 
 struct ContentView: View {
     @EnvironmentObject var model: MelodyModel
-    @Binding var str : String
+
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject var flowState: FlowState
@@ -23,9 +23,9 @@ struct ContentView: View {
     var body: some View {
         VStack {
             if flowState.process == .onboarding {
-                WelcomeScreen(str: $str)
+                WelcomeScreen()
             } else {
-                MainTabView(selection: $str)
+                MainTabView(selection: 0)
             }
         }
     }

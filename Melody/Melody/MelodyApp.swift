@@ -15,7 +15,7 @@ struct MelodyApp: App {
     @State var str = "hello"
     var body: some Scene {
         WindowGroup {
-            ContentView(str: $str)
+            ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(melodyModel)
                 .environmentObject(flowState)
