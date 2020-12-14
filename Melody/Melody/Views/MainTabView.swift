@@ -14,7 +14,7 @@ enum TabState {
     case searching
 }
 struct MainTabView: View {
-    @State var selection: Int
+    @State var selection = 0
     @EnvironmentObject var melodyModel : MelodyModel
     var body: some View {
         TabView(selection: $selection) {

@@ -28,7 +28,6 @@
 		1BDDC76A25534A7100FB4C97 /* MelodyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDC76925534A7100FB4C97 /* MelodyUITests.swift */; };
 		1BDDC7812553620B00FB4C97 /* MelodyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDC7802553620B00FB4C97 /* MelodyModel.swift */; };
 		1BE36C4B2584152000A3B40C /* SongOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE36C4A2584152000A3B40C /* SongOptionsView.swift */; };
-		1BE36C50258419C900A3B40C /* CurrentlyPlayingBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE36C4F258419C900A3B40C /* CurrentlyPlayingBar.swift */; };
 		1BE504B02569DF4D00E04A92 /* WelcomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE504AF2569DF4D00E04A92 /* WelcomeScreen.swift */; };
 		1BE504B52569E3D500E04A92 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BE504B42569E3D500E04A92 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
@@ -77,7 +76,6 @@
 		1BDDC76B25534A7100FB4C97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1BDDC7802553620B00FB4C97 /* MelodyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MelodyModel.swift; sourceTree = "<group>"; };
 		1BE36C4A2584152000A3B40C /* SongOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongOptionsView.swift; sourceTree = "<group>"; };
-		1BE36C4F258419C900A3B40C /* CurrentlyPlayingBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentlyPlayingBar.swift; sourceTree = "<group>"; };
 		1BE504AF2569DF4D00E04A92 /* WelcomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeScreen.swift; sourceTree = "<group>"; };
 		1BE504B42569E3D500E04A92 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -114,7 +112,6 @@
 				1B388CD425636CF100FEF7D9 /* PlaylistDetailView.swift */,
 				1BDDC74925534A6E00FB4C97 /* ContentView.swift */,
 				1BE504B42569E3D500E04A92 /* MainTabView.swift */,
-				1BE36C4F258419C900A3B40C /* CurrentlyPlayingBar.swift */,
 				1BE504AF2569DF4D00E04A92 /* WelcomeScreen.swift */,
 				1B136BAE257DCBCC004C6E0F /* FinderView.swift */,
 				1BE36C4A2584152000A3B40C /* SongOptionsView.swift */,
@@ -335,7 +332,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B388CD525636CF100FEF7D9 /* PlaylistDetailView.swift in Sources */,
-				1BE36C50258419C900A3B40C /* CurrentlyPlayingBar.swift in Sources */,
 				1B878EF9255DAF9100DF3027 /* PlaylistListView.swift in Sources */,
 				1BE504B02569DF4D00E04A92 /* WelcomeScreen.swift in Sources */,
 				1B878EFE255DB05400DF3027 /* SongPlayerView.swift in Sources */,

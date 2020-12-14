@@ -21,10 +21,6 @@ struct PlaylistListView: View {
                 
                 Section(header: Text("Charts")) {
                     VStack(alignment: .leading) {
-                        Text("Album Charts")
-                            .font(.title)
-                        AlbumCharts()
-                            
                         Text("Song Charts")
                             .font(.title)
                         SongCharts()
@@ -67,9 +63,8 @@ struct SongCharts: View {
     var body: some View {
         HStack {
             NavigationLink(destination: PlaylistDetailView(playlist: $model.chart, mediaPlayer: $model.musicPlayer)) {
-                ChartCard(cardName: "Global Top 50", imageName: "Top50Global", chartId: ChartIdentifier.globalSongs)
+                ChartCard(cardName: "United States Top 50", imageName: "Top50USA", chartId: ChartIdentifier.usSongs)
             }
-            ChartCard(cardName: "United States Top 50", imageName: "Top50USA", chartId: ChartIdentifier.usSongs)
         }
             
     }

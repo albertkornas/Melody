@@ -43,8 +43,9 @@ t+MSB13l
         chart = Playlist(withTracks: [], withChartName: "Loading...")
     }
     
-
-    
+    /*
+     getUserToken() - Fetches the personalized music token which is later used in making requests to the users playlists, songs, etc...
+     */
     func getUserToken() {
         var userToken = String()
         SKCloudServiceController().requestUserToken(forDeveloperToken: devToken) { (receivedToken, error) in
@@ -54,15 +55,16 @@ t+MSB13l
             }
             if let token = receivedToken {
                 userToken = token
-                print("Token: \(userToken)")
                 self.musicToken = userToken
                 print("MusicToken: \(self.musicToken)")
                 self.fetchUserPlaylists()
             }
         }
-        
     }
     
+    /*
+     fetchUserPlaylists() - Populates the playlists array with a list of the users current playlists
+     */
     func fetchUserPlaylists() {
         self.playlists = []
         DispatchQueue.global(qos: .userInitiated).async {
@@ -93,7 +95,7 @@ t+MSB13l
                                 }
                             }
                         } catch {
-                           // print(error)
+
                         }
                     }
                     
@@ -112,6 +114,9 @@ t+MSB13l
         return player.currentPlaybackTime
     }
     
+    /*
+     fetchTracks(...) - Returns an array of songs for a specific playlist
+     */
     func fetchTracks(playlist: Playlist, completionBlock: @escaping ([Song]) -> Void) -> Void {
         var songArray : [Song] = []
         DispatchQueue.global(qos: .userInitiated).async {
@@ -147,6 +152,10 @@ t+MSB13l
         
     }
     
+    /*
+     searchMusic(...) - Returns a list of songs that relate to the users search keywords
+     */
+    
     func searchMusic(input: String!, completionBlock: @escaping ([Song]) -> Void) -> Void {
         var songResults = [Song]()
         
@@ -180,6 +189,9 @@ t+MSB13l
         }
     }
     
+    /*
+     fetchCharts(...) - Returns the top songs in the US
+     */
     func fetchCharts(completionBlock: @escaping (Playlist) -> Void) -> Void {
         DispatchQueue.global(qos: .userInitiated).async {
             let musicURL = URL(string: "https://api.music.apple.com/v1/catalog/us/charts?types=songs")!
@@ -195,7 +207,7 @@ t+MSB13l
                         do {
                             let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! NSDictionary
                             let arr: [[NSDictionary]] = dictionary.value(forKeyPath: "results.songs.data.attributes") as! [[NSDictionary]]
-                            print(arr[0])
+
                             var songArray = [Song]()
                             for (_, song) in arr[0].enumerated() {
                                 var song = Song(albumName: song["albumName"] as? String, artistName: song["artistName"] as? String, artworkURL: song["artwork"] as? NSDictionary, trackName: song["name"] as? String, playParams: song["playParams"] as? NSDictionary, duration: song["durationInMillis"] as? Double)
@@ -207,7 +219,7 @@ t+MSB13l
                                 completionBlock(chartPlaylist)
                             }
                         } catch {
-                            print(error)
+
                         }
                     }
                     
