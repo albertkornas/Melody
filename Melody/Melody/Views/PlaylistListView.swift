@@ -63,7 +63,7 @@ struct SongCharts: View {
     var body: some View {
         HStack {
             NavigationLink(destination: PlaylistDetailView(playlist: $model.chart, mediaPlayer: $model.musicPlayer)) {
-                ChartCard(cardName: "United States Top 50", imageName: "Top50USA", chartId: ChartIdentifier.usSongs)
+                ChartCard(cardName: "United States Top Songs", imageName: "Top50USA", chartId: ChartIdentifier.usSongs)
             }
         }
             
