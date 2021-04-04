@@ -1,13 +1,9 @@
-# cmpsc475-albertkornas
-
 # Melody
 
 Melody is an audio streaming platform app available on iPhone. It utilizes the Apple Music API to give the user access to millions of songs.
 <img src="https://user-images.githubusercontent.com/26030830/99919639-af4e9980-2cec-11eb-807a-52b02a855900.jpg" width="250">
 
 ## Usage
-1. Open the Apple 'Music' app and ensure it contains the following playlists:
-    1. <img src="https://user-images.githubusercontent.com/26030830/99919882-1882dc80-2cee-11eb-9e42-fd9478b6c2a7.jpg" width="250">
 1. Open the 'Melody' app. You should land on the 'Welcome' screen
     1. <img src="https://user-images.githubusercontent.com/26030830/99919639-af4e9980-2cec-11eb-807a-52b02a855900.jpg" width="250">
 1. Tap 'Sign In' to navigate to the home screen, which contains the first playlist found in Apple Music: 'Easy Rock'
